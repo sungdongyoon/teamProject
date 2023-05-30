@@ -1,0 +1,86 @@
+/* Section - member */
+
+.member {
+  width: 100%;
+  height: calc(100% - 183px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.member_title {
+  text-align: center;
+  margin: 35px 0;
+}
+.member_title h1 {
+  font-size: var(--medium-title);
+  margin-bottom: 10px;
+}
+
+/* Tickets */
+.member_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+  width: 70%;
+  height: 70%;
+}
+.member_ticket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+
+  box-shadow: 0 5px 15px var(--gray);
+  border-radius: 3px;
+  width: 300px;
+  height: 400px;
+  padding: 30px;
+  margin: 0 50px;
+}
+.member_ticket_title {
+  font-size: var(--small-title);
+  margin: 10px 0;
+  margin-bottom: 40px;
+}
+.member_ticket_content {
+  width: 100%;
+}
+.member_ticket_content ul {
+  height: 120px;
+}
+.member_ticket_content li {
+  font-size: var(--small-text);
+  text-align: left;
+  margin-bottom: 15px;
+}
+.member_ticket_content li::before {
+  content: "\f00c";
+  font-family: fontawesome;
+  margin-right: 10px;
+}
+.member_ticket_price {
+  font-size: var(--small-text);
+  width: 100%;
+  text-align: right;
+}
+.member_ticket_total_price {
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: right;
+  font-weight: bold;
+}
+.member_ticket_total_price b {
+  font-size: var(--small-title);
+}
+.member_ticket_buy {
+  padding: 10px 50px;
+  border: none;
+  background-color: var(--yellow);
+  font-weight: 700;
+  cursor: pointer;
+}
