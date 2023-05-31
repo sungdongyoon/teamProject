@@ -1,0 +1,78 @@
+ <!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/1792b891d9.js" crossorigin="anonymous"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js"></script>
+  <title>우산있어? - 이용권 구매</title>
+</head>
+<body>
+  <header>
+    <a href="#" class="header_logo">Logo</a>
+    <div class="header_nav">
+      <a href="#" class="header_nav_btn">Place</a>
+      <a href="#" class="header_nav_btn">Ticket</a>
+      <a href="#" class="header_nav_btn">Contact</a>
+      <a href="#" class="header_nav_btn"><i class="fa-regular fa-map"></i></a>
+      <a href="#" class="header_nav_btn"><i class="fa-regular fa-circle-user"></i></a>
+    </div>
+  </header>
+  <section class="non_member">
+    <div class="non_member_title">
+      <h1>비회원 이용권 구매</h1>
+      <span>비회원은 1회권만 구매 가능합니다!</span>
+    </div>
+    <div class="non_member_content">
+      <div class="non_member_info">
+        <h1 class="non_member_info_title">비회원 정보</h1>
+        <div class="non_member_info_name">
+          <label for="">이름</label>
+          <input type="text">
+        </div>
+        <div class="non_member_info_phoneNum">
+          <label for="">연락처</label>
+          <div class="phoneNum_input">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+          </div>
+        </div>
+        <div class="non_member_info_cert">
+          <div class="mobile_carrier">
+            <input type="radio" id="skt" name="mob_carrier">
+            <input type="radio" id="kt" name="mob_carrier">
+            <input type="radio" id="lg" name="mob_carrier">
+            <input type="radio" id="frugal" name="mob_carrier">
+            <label for="skt">SKT</label>
+            <label for="kt">KT</label>
+            <label for="lg">LG</label>
+            <label for="frugal">알뜰폰</label>
+          </div>
+          <button class="num_request">인증번호 요청</button>
+        </div>
+        <div class="non_member_info_certNum">
+          <label for="">인증번호</label>
+          <div class="certNum_detail">
+            <input type="text">
+            <div class="cert_time">03:00</div>
+            <button class="cert_complete">인증 완료</button>
+          </div>
+        </div>
+        <button class="non_member_info_btn">다음</button>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer_text">
+      <span class="footer_text_left">copyright @ 2023 취업시켜조</span>
+      <span class="footer_text_right">All rights reserved</span>
+    </div>
+  </footer>
+</body>
+</html>
