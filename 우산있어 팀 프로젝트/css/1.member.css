@@ -2,7 +2,7 @@
 
 .member_select {
   width: 100%;
-  height: calc(100% - 183px);
+  height: calc(100% - 240px);
   
   display: flex;
   flex-direction: column;
