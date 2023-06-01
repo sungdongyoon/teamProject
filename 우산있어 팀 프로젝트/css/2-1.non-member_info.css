@@ -26,7 +26,7 @@
   align-items: center;
   border-top: 1px solid var(--gray);
   border-bottom: 1px solid var(--gray);
-  width: 93.75rem;
+  width: 70%;
   height: 43.75rem;
 }
 .non_member_info {
@@ -54,13 +54,14 @@
 .non_member_info_name {
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin: 3.125rem 0;
 }
 .non_member_info_name input {
   width: calc(100% - 150px);
   height: 3.125rem;
-  padding: 0.625;
+  padding: 0.625rem;
 
   border-radius: 5px;
   border: 1px solid var(--gray);
@@ -71,6 +72,7 @@
 .non_member_info_phoneNum {
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 3.125rem;
 }
@@ -83,7 +85,7 @@
 .phoneNum_input input {
   width: 6.25rem;
   height: 50px;
-  padding: 0.625;
+  padding: 0.625rem;
 
   border-radius: 5px;
   border: 1px solid var(--gray);
@@ -95,7 +97,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: calc(100%);
+  width: 100%;
   height: 40px;
   margin-bottom: 3.125rem;
 }
@@ -138,6 +140,7 @@
 /* 인증번호 */
 .non_member_info_certNum {
   display: flex;
+  justify-content: space-between;
   width: 100%;
   align-items: center;
 }
@@ -184,16 +187,131 @@
 
 /* 다음 버튼 */
 .non_member_info_btn {
-  width: 100%;
-  height: 50px;
+  width: 50%;
+  height: 60px;
   position: absolute;
   bottom: 0;
 
   border: none;
   border-radius: 5px;
-  background-color: var(--dark-blue);
-  color: var(--white);
+  background-color: var(--yellow);
+  color: var(--black);
   font-size: var(--large-text);
+  font-weight: bold;
 
   cursor: pointer;
+}
+
+@media all and (max-width:767px) {
+  .non_member {
+    height: calc(100% - 70px);
+  }
+
+  /* 제목 */
+  .non_member_title {
+    text-align: center;
+    margin: 15px 0;
+  }
+  .non_member_title h1 {
+    font-size: var(--large-text);
+    font-weight: bold;
+    margin-bottom: 0.625rem;
+  }
+  .non_member_title span {
+    font-size: var(--small-text);
+  }
+  
+  /* 정보 */
+  .non_member_content {
+    width: 90%;
+    height: 70%;
+    justify-content: space-between;
+  }
+  .non_member_info {
+    width: 90%;
+    height: calc(100% - 30px);
+  }
+  .non_member_info_title {
+    font-size: var(--large-text);
+    margin: 20px 0;
+  }
+  .non_member_info label {
+    width: 100px;
+    margin-bottom: 10px;
+    font-size: var(--medium-text);
+  }
+
+  /* 이름 */
+  .non_member_info_name {
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .non_member_info_name input {
+    width: 100%;
+    height: 35px;
+  }
+
+  /* 연락처 */
+  .non_member_info_phoneNum {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+  .phoneNum_input {
+    width: 100%;
+  }
+  .phoneNum_input input {
+    width: 25%;
+    height: 35px;
+  }
+
+  /* 통신사 */
+  .non_member_info_cert {
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .mobile_carrier span {
+    width: 50px;
+  }
+  .num_request {
+    width: 100px;
+    height: 40px;
+    font-size: var(--small-text);
+  }
+
+  /* 인증번호 */
+  .non_member_info_certNum {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+  }
+  .certNum_detail {
+    width: 100%;
+  }
+  .certNum_detail input {
+    width: 65%;
+    height: 35px;
+  }
+  .cert_time {
+    right: 35%;
+    height: 35px;
+    width: 50px;
+    line-height: 35px;
+  }
+  .cert_complete {
+    width: 30%;
+    height: 35px;
+  }
+
+  /* 다음 버튼 */
+  .non_member_info_btn {
+    width: 50%;
+    height: 35px;  
+    background-color: var(--yellow);
+    color: var(--black);
+    font-size: var(--medium-text);
+    font-weight: bold;
+  }
 }

@@ -35,8 +35,18 @@
       <h1>회원 이용권 구매</h1>
       <span>원하시는 이용권을 선택해주세요</span>
     </div>
-    <div class="member_content"> 
-      <div class="member_ticket">
+    <div class="member_content">
+      <div class="member_ticket_select">
+        <input type="radio" id="one" name="ticket" checked>
+        <input type="radio" id="three" name="ticket">
+        <input type="radio" id="five" name="ticket">
+        <div class="member_ticket_select_btn">
+          <label for="one">1회권</label>
+          <label for="three">3회권</label>
+          <label for="five">5회권</label>
+        </div>
+      </div>
+      <div class="member_ticket first_ticket">
         <h3 class="member_ticket_title">
           1회권
         </h3>
@@ -54,7 +64,7 @@
         </span>
         <button class="member_ticket_buy one">구매하기</button>
       </div>
-      <div class="member_ticket">
+      <div class="member_ticket second_ticket">
         <h3 class="member_ticket_title">
           3회권
         </h3>
@@ -72,7 +82,7 @@
         </span>
         <button class="member_ticket_buy three">구매하기</button>
       </div>
-      <div class="member_ticket">
+      <div class="member_ticket third_ticket">
         <h3 class="member_ticket_title">
           5회권
         </h3>
@@ -90,6 +100,19 @@
         </span>
         <button class="member_ticket_buy five">구매하기</button>
       </div>
+    </div>
+    <div class="member_mobile_bottom">
+      <div class="mobile_bottom_left">
+        <div class="mobile_bottom_type">
+          <span>선택 이용권</span>
+          <span>1회권</span>
+        </div>
+        <div class="mobile_bottom_price">
+          <span>결제금액</span>
+          <span>8,000원</span>
+        </div>
+      </div>
+      <button class="mobile_bottom_right">다음</button>
     </div>
   </section>
   <footer class="footer">

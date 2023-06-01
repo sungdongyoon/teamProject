@@ -35,13 +35,15 @@
 @media all and (max-width:767px) {
   .main_gnb {
     width: 100vw;
+    height: 90px;
     background-color: var(--dark-blue);
     color: var(--white);
+    padding: 0;
   }
   .mobileNav  {
     width: 100vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
   .main_gnb > .logo{

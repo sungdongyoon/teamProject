@@ -1,0 +1,47 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buy_modal {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 제목 */
+.buy_modal_title {
+  border: 1px solid blue;
+  text-align: center;
+}
+
+/* 이용권 선택 */
+.buy_modal_type {
+  border: 1px solid blue;
+  display: flex;
+}
+.buy_modal_type_left {
+  border: 1px solid green;
+  width: 30%;
+  font-weight: bold;
+}
+.buy_modal_type_right {
+  border: 1px solid green;
+}
+
+/* 가격 */
+.buy_modal_price {
+  border: 1px solid blue;
+  display: flex;
+}
+.buy_modal_price_left {
+  border: 1px solid green;
+  width: 30%;
+}
+.buy_modal_price_right {
+  border: 1px solid green;
+  width: 70%;
+}
