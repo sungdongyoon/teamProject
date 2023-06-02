@@ -232,4 +232,14 @@ iframe {
     font-weight: bold;
     letter-spacing: 2px;
   }
+  iframe {
+    width: 100%;
+    height: calc(100% - 100px);
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 0%);
+    border: 1px solid var(--gray);
+    border-radius: 0px;
+    box-shadow: none;
+  }
 }

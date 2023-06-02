@@ -1,0 +1,162 @@
+.buy_complete {
+  width: 100%;
+  height: calc(100% - 240px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 아이콘 */
+.buy_complete_icon {
+  display: inline-block;
+  height: 170px;
+  width: 130px;
+  text-align: center;
+  line-height: 100px;
+
+  margin: 30px 0;
+}
+.buy_complete_icon img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Title */
+.buy_complete_title {
+  text-align: center;
+  width: 500px;
+}
+.buy_complete_title h1 {
+  font-size: var(--medium-title);
+}
+.buy_complete_title h1 b {
+  color: var(--dark-blue);
+}
+.buy_complete_title span {
+  display: block;
+  font-size: var(--medium-text);
+  margin-top: 50px;
+}
+
+/* Information */
+.buy_complete_info {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+  padding: 10px 0;
+
+  border-top: 3px solid var(--gray);
+  border-bottom: 3px solid var(--gray);
+}
+.buy_complete_info_type,
+.buy_complete_info_date,
+.buy_complete_info_price,
+.buy_complete_info_payment {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+.buy_complete_info_type span,
+.buy_complete_info_date span,
+.buy_complete_info_price span,
+.buy_complete_info_payment span {
+  height: 50px;
+  line-height: 50px;
+  font-size: var(--large-text);
+  font-weight: bold;
+  margin: 20px 0;
+}
+.buy_complete_info_type span:first-child,
+.buy_complete_info_date span:first-child,
+.buy_complete_info_price span:first-child,
+.buy_complete_info_payment span:first-child {
+  color: var(--gray);
+  font-weight: normal;
+}
+
+/* 버튼 */
+.go_rent {
+  display: none;
+}
+.buy_complete_btn {
+  margin: 50px;
+}
+.go_home {
+  width: 300px;
+  height: 80px;
+  font-size: var(--large-text);
+  font-weight: bold;
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media all and (max-width:767px) {
+  .buy_complete {
+    height: calc(100% - 90px);
+  }
+  /* 우산 아이콘 */
+  .buy_complete_icon {
+    height: 90px;
+    width: 60px;
+    line-height: 60px;
+    margin: 20px 0;
+  }
+  /* Title */
+  .buy_complete_title {
+    width: 100%;
+  }
+  .buy_complete_title h1 {
+    font-size: var(--small-title);
+  }
+  .buy_complete_title span {
+    font-size: var(--small-text);
+    margin-top: 20px;
+  }
+  /* Information */
+  .buy_complete_info {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    padding: 5px 20px;
+  }
+  .buy_complete_info_type,
+  .buy_complete_info_date,
+  .buy_complete_info_price,
+  .buy_complete_info_payment {
+    width: 100%;
+  }
+  .buy_complete_info_type span,
+  .buy_complete_info_date span,
+  .buy_complete_info_price span,
+  .buy_complete_info_payment span {
+    font-size: var(--medium-text);
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0;
+  }
+  /* 버튼 */
+  .go_rent {
+    display: inline-block;
+  }
+  .buy_complete_btn {
+    margin: 20px;
+  }
+  .go_home,
+  .go_rent {
+    width: 130px;
+    height: 50px;
+    font-size: var(--medium-text);
+    font-weight: bold;
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+  }
+}

@@ -187,15 +187,15 @@
 
 /* 다음 버튼 */
 .non_member_info_btn {
-  width: 50%;
+  width: 100%;
   height: 60px;
   position: absolute;
   bottom: 0;
 
   border: none;
   border-radius: 5px;
-  background-color: var(--yellow);
-  color: var(--black);
+  background-color: var(--dark-blue);
+  color: var(--white);
   font-size: var(--large-text);
   font-weight: bold;
 
