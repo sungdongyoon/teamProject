@@ -1,0 +1,85 @@
+.user_info {
+  width: 100%;
+  height: calc(100% - 90px);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 제목 */
+.user_info_title {
+  width: 300px;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+  margin-bottom: 40px;
+
+  font-size: var(--large-text);
+  font-weight: bold;
+}
+.user_info_title b {
+  font-size: var(--small-title);
+  color: var(--dark-blue);
+}
+
+/* 잔여 대여권 */
+.user_info_leftover {
+  width: 300px;
+  padding: 20px 40px;
+  border-top: 3px solid var(--gray);
+  border-bottom: 3px solid var(--gray);
+
+  display: flex;
+  flex-direction: column;
+}
+.leftover_title {
+  margin-bottom: 10px;
+}
+.leftover_one,
+.leftover_three,
+.leftover_five {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.leftover_one span:first-child,
+.leftover_three span:first-child,
+.leftover_five span:first-child {
+  font-weight: bold;
+  color: var(--gray);
+}
+
+/* 버튼 */
+.button1 {
+  width: 300px;
+  margin: 30px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+.rental_btn {
+  border: none;
+  background-color: var(--yellow);
+  padding: 10px 20px;
+
+  font-weight: bold;
+  font-size: var(--medium-text);
+}
+.button2 {
+  width: 300px;
+  margin: 50px;
+  margin-top: 70px;
+
+  display: flex;
+  justify-content: center;
+}
+.buy_ticket_btn {
+  border: none;
+  background-color: var(--yellow);
+  width: 100%;
+  height: 80px;
+
+  font-weight: bold;
+  font-size: var(--large-text);
+}
