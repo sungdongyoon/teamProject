@@ -108,6 +108,11 @@ iframe {
   border-radius: 10px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5),
   -5px -5px 15px rgba(0, 0, 0, 0.5);
+  
+  display: none;
+}
+.active {
+  display: block;
 }
 
 @media all and (max-width:767px) {

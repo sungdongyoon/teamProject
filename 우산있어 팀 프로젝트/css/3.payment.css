@@ -190,6 +190,7 @@
 
   font-weight: bold;
   font-size: var(--medium-text);
+  cursor: pointer;
 }
 .buy {
   width: 200px;
@@ -199,6 +200,7 @@
 
   font-weight: bold;
   font-size: var(--medium-text);
+  cursor: pointer;
 }
 
 @media all and (max-width: 767px) {
