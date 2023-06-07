@@ -16,8 +16,26 @@ const paymentTime = document.querySelector(".payment_time");
 const paymentPrice = document.querySelector(".payment_price");
 const paymentMethod = document.querySelector(".payment_method");
 
-paymentTicket.innerText = "1회";
 
-const date = new Date();
-paymentTime.innerHTML = `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, "0")}.${String(date.getDate()).padStart(2, "0")} ${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}`;
+/* 이용권 */
+const ticketInfo = window.localStorage.getItem('ticket');
+const ticketObj = JSON.parse(ticketInfo);
 
+paymentTicket.innerHTML = `${ticketObj.type}`;
+
+
+/* 결제일자 */
+const today = new Date();
+
+let year = today.getFullYear();
+let month = today.getMonth() + 1;
+let date = today.getDate();
+let hours = today.getHours();
+let minutes = today.getMinutes();
+
+paymentTime.innerHTML = `${year}.${String(month).padStart(2, "0")}.${String(date).padStart(2, "0")} ${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+
+/* 결제금액 */
+paymentPrice.innerHTML = `${ticketObj.price}원`
+
+/* 결제수단 */
