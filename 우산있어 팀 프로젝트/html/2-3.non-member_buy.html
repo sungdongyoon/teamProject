@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/1792b891d9.js" crossorigin="anonymous"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/style.css">
-    <script defer src="/script.js"></script>
+    <script defer src="/js/2-3.non-member_buy.js"></script>
     <title>우산있어? - 이용권 구매</title>
   </head>
 <body>
@@ -57,7 +57,78 @@
         <button class="member_ticket_buy one">구매하기</button>
       </div>
     </div>
-    <iframe id="payment_modal" src="/html/3.payment.html"></iframe>
+    <div class="payment_modal">
+      <div class="buy_modal">
+        <h1 class="buy_modal_title">구매하기</h1>
+        <div class="buy_modal_type">
+          <span class="buy_modal_type_left">이용권</span>
+          <span class="buy_modal_type_right">1회권</span>
+        </div>
+        <div class="buy_modal_price">
+          <span class="buy_modal_price_left">가격</span>
+          <span class="buy_modal_price_right"><b>8,000원</b><span>(보증금 7,000원 + 대여료 1,000원)</span></span>
+        </div>
+        <div class="buy_modal_payment">
+          <span class="buy_modal_payment_left">결제수단</span>
+          <div class="buy_modal_payment_right">
+            <div class="card">
+              <input type="radio" id="card" name="payment">
+              <label for="card">카드</label>
+            </div>
+            <div class="naver">
+              <input type="radio" id="naver" name="payment">
+              <label for="naver">네이버페이</label>
+            </div>
+            <div class="kakao">
+              <input type="radio" id="kakao" name="payment">
+              <label for="kakao">카카오페이</label>
+            </div>
+            <div class="zero">
+              <input type="radio" id="zero" name="payment">
+              <label for="zero">제로페이</label>
+            </div>
+          </div>
+        </div>
+        <div class="buy_modal_agree">
+          <div class="agree_first">
+            <div class="agree_first_left">
+              <input type="checkbox" id="first_agree">
+              <label for="first_agree">첫번째 이용약관 동의</label>
+            </div>
+            <span class="agree_first_right">이용약관 보기</span>
+          </div>
+          <div class="agree_second">
+            <div class="agree_second_left">
+              <input type="checkbox" id="second_agree">
+              <label for="second_agree">두번째 이용약관 동의</label>
+            </div>
+            <span class="agree_second_right">이용약관 보기</span>
+          </div>
+          <div class="agree_third">
+            <div class="agree_third_left">
+              <input type="checkbox" id="third_agree">
+              <label for="third_agree">세번째 이용약관 동의</label>
+            </div>
+            <span class="agree_third_right">이용약관 보기</span>
+          </div>
+          <div class="agree_fourth">
+            <div class="agree_fourth_left">
+              <input type="checkbox" id="fourth_agree">
+              <label for="fourth_agree">네번째 이용약관 동의</label>
+            </div>
+            <span class="agree_first_right">이용약관 보기</span>
+          </div>
+        </div>
+        <div class="buy_modal_agreeAll">
+          <input type="checkbox" id="agree_all">
+          <label for="agree_all">이용약관 전체 동의</label>
+        </div>
+        <div class="buy_modal_buttons">
+          <button class="cancel">취소</button>
+          <button class="buy">결제하기</button>
+        </div>
+      </div>
+    </div>
   </section>
   <div class="member_mobile_bottom">
     <div class="mobile_bottom_left">

@@ -96,7 +96,7 @@
   display: none;
 }
 
-iframe {
+.payment_modal {
   width: 1200px;
   height: 800px;
   position: absolute;
@@ -237,7 +237,7 @@ iframe {
     font-weight: bold;
     letter-spacing: 2px;
   }
-  iframe {
+  .payment_modal {
     width: 100%;
     height: calc(100% - 100px);
     top: 0%;

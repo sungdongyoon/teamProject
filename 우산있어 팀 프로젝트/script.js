@@ -11,7 +11,7 @@ $(".member_btn").click(function() {
     // reverseButtons: true // 버튼 순서 거꾸로
   }).then((result) => {
     if(result.isConfirmed) {
-      location.href = "/html/2-1.member-buy.html";
+      location.href = "/html/2-1.member_buy.html";
     }
   })
 })
@@ -33,8 +33,8 @@ $(".non_member_btn").click(function() {
   })
 })
 
-/* 비회원 이용권 선택 */
-document.querySelector(".one").addEventListener("click", () => {
-  document.querySelector("iframe").classList.add("active");
-})
+/* 비회원 정보 */
+document.querySelector(".non_member_info_btn").addEventListener("click", () => [
+  location.href = "/html/2-3.non-member_buy.html"
+])
 
