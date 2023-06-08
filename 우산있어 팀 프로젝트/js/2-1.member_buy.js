@@ -28,13 +28,13 @@ ticketOne.addEventListener("click", () => {
 /* 3회권 */
 ticketThree.addEventListener("click", () => {
   paymentModal.classList.add("active");
-  ticketThreeValue()
+  ticketThreeValue();
 })
 
 /* 5회권 */
 ticketFive.addEventListener("click", () => {
   paymentModal.classList.add("active");
-  ticketFiveValue()
+  ticketFiveValue();
 })
 
 /* 이용권 타입 */
@@ -76,37 +76,49 @@ buyBtn.addEventListener("click", () => {
 
 /* 모바일 */
 
+/* 모바일 하단 메뉴 */
+const mobileType = document.querySelector(".mobile_type");
+const mobilePrice = document.querySelector(".mobile_price");
+const mobileNextBtn = document.querySelector(".mobile_bottom_right");
+
+/* 다음 버튼 */
+mobileNextBtn.addEventListener("click", () => {
+  if(!paymentModal.classList.contains("active")) {
+    paymentModal.classList.add("active");
+  } else {
+    location.href = "/html/4.buy_complete.html";
+  }
+})
+
+
 /* 모바일 티켓 버튼 */
 const one = document.querySelector("#one");
 const three = document.querySelector("#three");
 const five = document.querySelector("#five");
 
+const firstTicket = document.querySelector(".first_ticket");
+const secondTicket = document.querySelector(".second_ticket");
+const thirdTicket = document.querySelector(".third_ticket");
+
 
 one.addEventListener("click", () => {
-  // paymentModal.classList.add("active");
   ticketOneValue();
+  firstTicket.classList.remove("hide");
+  secondTicket.classList.remove("show");
+  thirdTicket.classList.remove("show");
 })
 three.addEventListener("click", () => {
-  // paymentModal.classList.add("active");
   ticketThreeValue();
+  firstTicket.classList.add("hide");
+  secondTicket.classList.add("show");
+  thirdTicket.classList.remove("show");
 })
 five.addEventListener("click", () => {
-  // paymentModal.classList.add("active");
   ticketFiveValue();
+  firstTicket.classList.remove("show");
+  secondTicket.classList.remove("show");
+  thirdTicket.classList.add("show");
 })
-
-
-/* 모바일 하단 메뉴 */
-
-
-const mobileType = document.querySelector(".mobile_type");
-const mobilePrice = document.querySelector(".mobile_price");
-const mobileNextBtn = document.querySelector(".mobile_bottom_right");
-
-const ticketInfo = window.localStorage.getItem('ticket');
-const ticketObj = JSON.parse(ticketInfo);
-
-mobileType.innerHTML = `${ticketObj.type}`;
 
 
 
@@ -125,6 +137,8 @@ function ticketOneValue() {
 
   ticketType.innerHTML = `${ticketObj.type}`;
   ticketPrice.innerHTML = `${ticketObj.price}원 (보증금 7,000원 + 대여료 1,000원)`;
+  mobileType.innerHTML = `${ticketObj.type}`;
+  mobilePrice.innerHTML = `${ticketObj.price}원`;
 
   card.addEventListener("click", () => {
     first.method = '카드';
@@ -155,7 +169,7 @@ function ticketOneValue() {
     const ticketObj = JSON.parse(ticketInfo);
   })
 }
-/* 2회권 */
+/* 3회권 */
 function ticketThreeValue() {
   const third = {
     type: '3회권',
@@ -169,6 +183,8 @@ function ticketThreeValue() {
 
   ticketType.innerHTML = `${ticketObj.type}`;
   ticketPrice.innerHTML = `${ticketObj.price}원 (보증금 18,000원 + 대여료 2,400원)`;
+  mobileType.innerHTML = `${ticketObj.type}`;
+  mobilePrice.innerHTML = `${ticketObj.price}원`;
 
   card.addEventListener("click", () => {
     third.method = '카드';
@@ -200,7 +216,7 @@ function ticketThreeValue() {
   })
 }
 
-/* 3회권 */
+/* 5회권 */
 function ticketFiveValue() {
   const fifth = {
     type: '5회권',
@@ -214,6 +230,9 @@ function ticketFiveValue() {
 
   ticketType.innerHTML = `${ticketObj.type}`;
   ticketPrice.innerHTML = `${ticketObj.price}원 (보증금 25,000원 + 대여료 3,500원)`;
+  mobileType.innerHTML = `${ticketObj.type}`;
+  mobilePrice.innerHTML = `${ticketObj.price}원`;
+  
 
   card.addEventListener("click", () => {
     fifth.method = '카드';
