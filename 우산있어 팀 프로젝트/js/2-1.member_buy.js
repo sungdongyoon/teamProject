@@ -22,6 +22,97 @@ const zero = document.querySelector(".zero");
 /* 1회권 */
 ticketOne.addEventListener("click", () => {
   paymentModal.classList.add("active");
+  ticketOneValue();
+})
+
+/* 3회권 */
+ticketThree.addEventListener("click", () => {
+  paymentModal.classList.add("active");
+  ticketThreeValue()
+})
+
+/* 5회권 */
+ticketFive.addEventListener("click", () => {
+  paymentModal.classList.add("active");
+  ticketFiveValue()
+})
+
+/* 이용권 타입 */
+// const ticket = document.querySelectorAll(".member_ticket_buy");
+// const ticketArr = [1, 3, 5];
+
+// for(let i = 0; i < ticket.length; i++) {
+//   ticket[i].addEventListener("click", () => {
+//     ticketType.innerText = `${ticketArr[i]}회권`;
+//   })
+// }
+
+
+
+/* 약관동의 */
+const agreeAll = document.querySelector(".buy_modal_agreeAll");
+const agrees = document.querySelectorAll(".buy_modal_agree input");
+
+const checkAll = (target) => {
+  const isChecked = target.checked;
+
+  agrees.forEach((el) => {
+    el.checked = isChecked;
+  })
+}
+
+/* 모달 취소 */
+cancelBtn.addEventListener("click", () => {
+  paymentModal.classList.remove("active");
+})
+/* 모달 결제하기 */
+buyBtn.addEventListener("click", () => {
+  location.href = "/html/4.buy_complete.html";
+})
+
+
+
+
+
+/* 모바일 */
+
+/* 모바일 티켓 버튼 */
+const one = document.querySelector("#one");
+const three = document.querySelector("#three");
+const five = document.querySelector("#five");
+
+
+one.addEventListener("click", () => {
+  // paymentModal.classList.add("active");
+  ticketOneValue();
+})
+three.addEventListener("click", () => {
+  // paymentModal.classList.add("active");
+  ticketThreeValue();
+})
+five.addEventListener("click", () => {
+  // paymentModal.classList.add("active");
+  ticketFiveValue();
+})
+
+
+/* 모바일 하단 메뉴 */
+
+
+const mobileType = document.querySelector(".mobile_type");
+const mobilePrice = document.querySelector(".mobile_price");
+const mobileNextBtn = document.querySelector(".mobile_bottom_right");
+
+const ticketInfo = window.localStorage.getItem('ticket');
+const ticketObj = JSON.parse(ticketInfo);
+
+mobileType.innerHTML = `${ticketObj.type}`;
+
+
+
+/* 해당 티켓값에 대한 함수 */
+/* 1회권 */
+function ticketOneValue() {
   const first = {
     type: '1회권',
     price: '8,000',
@@ -63,14 +154,12 @@ ticketOne.addEventListener("click", () => {
     const ticketInfo = window.localStorage.getItem('ticket');
     const ticketObj = JSON.parse(ticketInfo);
   })
-})
-
-/* 3회권 */
-ticketThree.addEventListener("click", () => {
-  paymentModal.classList.add("active");
+}
+/* 2회권 */
+function ticketThreeValue() {
   const third = {
     type: '3회권',
-    price: '20,700'
+    price: '20,400'
   }
 
   const information = JSON.stringify(third);
@@ -79,7 +168,7 @@ ticketThree.addEventListener("click", () => {
   const ticketObj = JSON.parse(ticketInfo);
 
   ticketType.innerHTML = `${ticketObj.type}`;
-  ticketPrice.innerHTML = `${ticketObj.price}원 (보증금 18,000원 + 대여료 2,700원)`;
+  ticketPrice.innerHTML = `${ticketObj.price}원 (보증금 18,000원 + 대여료 2,400원)`;
 
   card.addEventListener("click", () => {
     third.method = '카드';
@@ -109,14 +198,13 @@ ticketThree.addEventListener("click", () => {
     const ticketInfo = window.localStorage.getItem('ticket');
     const ticketObj = JSON.parse(ticketInfo);
   })
-})
+}
 
-/* 5회권 */
-ticketFive.addEventListener("click", () => {
-  paymentModal.classList.add("active");
+/* 3회권 */
+function ticketFiveValue() {
   const fifth = {
     type: '5회권',
-    price: '29,000'
+    price: '28,500'
   }
 
   const information = JSON.stringify(fifth);
@@ -125,7 +213,7 @@ ticketFive.addEventListener("click", () => {
   const ticketObj = JSON.parse(ticketInfo);
 
   ticketType.innerHTML = `${ticketObj.type}`;
-  ticketPrice.innerHTML = `${ticketObj.price}원 (보증금 25,000원 + 대여료 4,000원)`;
+  ticketPrice.innerHTML = `${ticketObj.price}원 (보증금 25,000원 + 대여료 3,500원)`;
 
   card.addEventListener("click", () => {
     fifth.method = '카드';
@@ -155,39 +243,4 @@ ticketFive.addEventListener("click", () => {
     const ticketInfo = window.localStorage.getItem('ticket');
     const ticketObj = JSON.parse(ticketInfo);
   })
-})
-
-/* 이용권 타입 */
-// const ticket = document.querySelectorAll(".member_ticket_buy");
-// const ticketArr = [1, 3, 5];
-
-// for(let i = 0; i < ticket.length; i++) {
-//   ticket[i].addEventListener("click", () => {
-//     ticketType.innerText = `${ticketArr[i]}회권`;
-//   })
-// }
-
-
-
-/* 약관동의 */
-const agreeAll = document.querySelector(".buy_modal_agreeAll");
-const agrees = document.querySelectorAll(".buy_modal_agree input");
-
-const checkAll = (target) => {
-  const isChecked = target.checked;
-
-  agrees.forEach((el) => {
-    el.checked = isChecked;
-  })
 }
-
-/* 모달 취소 */
-cancelBtn.addEventListener("click", () => {
-  paymentModal.classList.remove("active");
-})
-/* 모달 결제하기 */
-buyBtn.addEventListener("click", () => {
-  location.href = "/html/4.buy_complete.html";
-})
-
-
