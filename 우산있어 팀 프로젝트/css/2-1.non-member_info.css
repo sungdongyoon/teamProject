@@ -24,10 +24,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid var(--gray);
-  border-bottom: 1px solid var(--gray);
-  width: 70%;
-  height: 43.75rem;
+  /* border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray); */
+  width: 1200px;
+  height: 700px;
 }
 .non_member_info {
   width: 31.25rem;

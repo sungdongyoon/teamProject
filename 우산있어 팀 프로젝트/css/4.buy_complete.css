@@ -5,13 +5,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 /* 아이콘 */
 .buy_complete_icon {
   display: inline-block;
-  height: 140px;
-  width: 100px;
+  height: 100px;
+  width: 70px;
   text-align: center;
   line-height: 100px;
 
@@ -36,7 +37,7 @@
 .buy_complete_title span {
   display: block;
   font-size: var(--medium-text);
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* Information */
@@ -85,9 +86,9 @@
   margin: 30px;
 }
 .go_home {
-  width: 300px;
-  height: 80px;
-  font-size: var(--large-text);
+  width: 200px;
+  height: 50px;
+  font-size: var(--medium-text);
   font-weight: bold;
   background-color: var(--yellow);
   border: none;

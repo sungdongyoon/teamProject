@@ -12,25 +12,42 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/style.css">
     <script defer src="/js/2-3.non-member_buy.js"></script>
+    <script defer src="/js/navigation.js"></script>
     <title>우산있어? - 이용권 구매</title>
   </head>
 <body>
   <header>
+    <!-- Navigation-->
     <nav class="main_gnb">
       <div class="mobileNav">
         <div class="fas fa-angle-left"></div>
         <div class="logo">우산있어?</div>
-        <div class="fas fa-bars"></div>
+        <!-- <button class="fas fa-bars"></button> -->
+        <button class="toggleBtn">
+          <span class="hamburger_icon"></span>
+        </button>
       </div>
       <div class="logo">우산있어?</div>
       <div class="gnb-content">
+        <!-- <a href="#">About</a> -->
         <a href="#">Place</a>
         <a href="#">Ticket</a>
         <a href="#">FAQ</a>
         <a href="#"><i class="fa-regular fa-map"></i></a>
         <a href="#"><i class="fa-regular fa-circle-user"></i></a>
+        <!-- <a href="#">Rental</a>
+        <a href="#">Contact</a>
+        <a href="#">Profile</a> -->
       </div>
     </nav>
+    <div class="Mobile_gnb_content">
+      <a href="#">About</a>
+      <a href="#">Place</a>
+      <a href="#">Ticket</a>
+      <a href="#">Rental</a>
+      <a href="#">Contact</a>
+      <a href="#">Profile</a>
+    </div>
   </header>
   <section class="member">
     <div class="member_title">
@@ -120,7 +137,7 @@
           </div>
         </div>
         <div class="buy_modal_agreeAll">
-          <input type="checkbox" id="agree_all">
+          <input type="checkbox" id="agree_all" onchange="checkAll(this)">
           <label for="agree_all">이용약관 전체 동의</label>
         </div>
         <div class="buy_modal_buttons">

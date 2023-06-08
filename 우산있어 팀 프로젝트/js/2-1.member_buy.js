@@ -11,14 +11,22 @@ const ticketType = document.querySelector(".buy_modal_type_right");
 const ticketPrice = document.querySelector(".buy_modal_price_right");
 
 
+
+/* 결제수단 */
+const card = document.querySelector(".card");
+const naver = document.querySelector(".naver");
+const kakao = document.querySelector(".kakao");
+const zero = document.querySelector(".zero");
+
+
 /* 1회권 */
 ticketOne.addEventListener("click", () => {
   paymentModal.classList.add("active");
   const first = {
     type: '1회권',
-    price: '8,000'
+    price: '8,000',
   }
-  
+
   const information = JSON.stringify(first);
   window.localStorage.setItem('ticket', information);
   const ticketInfo = window.localStorage.getItem('ticket');
@@ -26,6 +34,35 @@ ticketOne.addEventListener("click", () => {
 
   ticketType.innerHTML = `${ticketObj.type}`;
   ticketPrice.innerHTML = `${ticketObj.price}원 (보증금 7,000원 + 대여료 1,000원)`;
+
+  card.addEventListener("click", () => {
+    first.method = '카드';
+    const information = JSON.stringify(first);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
+  naver.addEventListener("click", () => {
+    first.method = '네이버페이';
+    const information = JSON.stringify(first);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
+  kakao.addEventListener("click", () => {
+    first.method = '카카오페이';
+    const information = JSON.stringify(first);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
+  zero.addEventListener("click", () => {
+    first.method = '제로페이';
+    const information = JSON.stringify(first);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
 })
 
 /* 3회권 */
@@ -43,6 +80,35 @@ ticketThree.addEventListener("click", () => {
 
   ticketType.innerHTML = `${ticketObj.type}`;
   ticketPrice.innerHTML = `${ticketObj.price}원 (보증금 18,000원 + 대여료 2,700원)`;
+
+  card.addEventListener("click", () => {
+    third.method = '카드';
+    const information = JSON.stringify(third);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
+  naver.addEventListener("click", () => {
+    third.method = '네이버페이';
+    const information = JSON.stringify(third);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
+  kakao.addEventListener("click", () => {
+    third.method = '카카오페이';
+    const information = JSON.stringify(third);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
+  zero.addEventListener("click", () => {
+    third.method = '제로페이';
+    const information = JSON.stringify(third);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
 })
 
 /* 5회권 */
@@ -60,6 +126,35 @@ ticketFive.addEventListener("click", () => {
 
   ticketType.innerHTML = `${ticketObj.type}`;
   ticketPrice.innerHTML = `${ticketObj.price}원 (보증금 25,000원 + 대여료 4,000원)`;
+
+  card.addEventListener("click", () => {
+    fifth.method = '카드';
+    const information = JSON.stringify(fifth);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
+  naver.addEventListener("click", () => {
+    fifth.method = '네이버페이';
+    const information = JSON.stringify(fifth);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
+  kakao.addEventListener("click", () => {
+    fifth.method = '카카오페이';
+    const information = JSON.stringify(fifth);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
+  zero.addEventListener("click", () => {
+    fifth.method = '제로페이';
+    const information = JSON.stringify(fifth);
+    window.localStorage.setItem('ticket', information);
+    const ticketInfo = window.localStorage.getItem('ticket');
+    const ticketObj = JSON.parse(ticketInfo);
+  })
 })
 
 /* 이용권 타입 */
@@ -71,6 +166,8 @@ ticketFive.addEventListener("click", () => {
 //     ticketType.innerText = `${ticketArr[i]}회권`;
 //   })
 // }
+
+
 
 /* 약관동의 */
 const agreeAll = document.querySelector(".buy_modal_agreeAll");

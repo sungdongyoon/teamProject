@@ -39,3 +39,4 @@ paymentTime.innerHTML = `${year}.${String(month).padStart(2, "0")}.${String(date
 paymentPrice.innerHTML = `${ticketObj.price}원`
 
 /* 결제수단 */
+paymentMethod.innerHTML = `${ticketObj.method}`;
