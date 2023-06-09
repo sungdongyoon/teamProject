@@ -59,6 +59,7 @@ const checkAll = (target) => {
   agrees.forEach((el) => {
     el.checked = isChecked;
   })
+  
 }
 
 /* 모달 취소 */
@@ -85,10 +86,30 @@ const mobileNextBtn = document.querySelector(".mobile_bottom_right");
 mobileNextBtn.addEventListener("click", () => {
   if(!paymentModal.classList.contains("active")) {
     paymentModal.classList.add("active");
+    mobileNextBtn.disabled = true;
+    toggleSubmitButton();
   } else {
     location.href = "/html/4.buy_complete.html";
   }
 })
+
+
+/* 결제수단 & 이용약관 체크 유무  */
+const agreements = {
+  first_agree: false,
+  second_agree: false,
+  third_agree: false,
+  fourth_agree: false,
+}
+
+function toggleSubmitButton() {
+  const { first_agree, second_agree, third_agree, fourth_agree } = agreements;
+  if(first_agree & second_agree & third_agree & fourth_agree) {
+    mobileNextBtn.disabled = false;
+  } else {
+    mobileNextBtn.disabled = true;
+  }
+}
 
 
 /* 모바일 티켓 버튼 */
@@ -121,8 +142,7 @@ five.addEventListener("click", () => {
 })
 
 
-
-/* 해당 티켓값에 대한 함수 */
+/* 1, 3, 5 회권 함수 */
 /* 1회권 */
 function ticketOneValue() {
   const first = {
