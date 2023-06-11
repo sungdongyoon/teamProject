@@ -11,7 +11,6 @@ const ticketType = document.querySelector(".buy_modal_type_right");
 const ticketPrice = document.querySelector(".buy_modal_price_right");
 
 
-
 /* 결제수단 */
 const card = document.querySelector(".card");
 const naver = document.querySelector(".naver");
@@ -23,30 +22,31 @@ const zero = document.querySelector(".zero");
 ticketOne.addEventListener("click", () => {
   paymentModal.classList.add("active");
   ticketOneValue();
+  // buyBtn.disabled = true;
 })
 
 /* 3회권 */
 ticketThree.addEventListener("click", () => {
   paymentModal.classList.add("active");
   ticketThreeValue();
+  // buyBtn.disabled = true;
 })
 
 /* 5회권 */
 ticketFive.addEventListener("click", () => {
   paymentModal.classList.add("active");
   ticketFiveValue();
+  // buyBtn.disabled = true;
 })
 
-/* 이용권 타입 */
-// const ticket = document.querySelectorAll(".member_ticket_buy");
-// const ticketArr = [1, 3, 5];
 
-// for(let i = 0; i < ticket.length; i++) {
-//   ticket[i].addEventListener("click", () => {
-//     ticketType.innerText = `${ticketArr[i]}회권`;
-//   })
-// }
-
+/* 결제수단 & 이용약관 체크 유무  */
+const agreements = {
+  first_agree: false,
+  second_agree: false,
+  third_agree: false,
+  fourth_agree: false,
+}
 
 
 /* 약관동의 */
@@ -61,6 +61,8 @@ const checkAll = (target) => {
   })
   
 }
+
+
 
 /* 모달 취소 */
 cancelBtn.addEventListener("click", () => {
@@ -86,30 +88,16 @@ const mobileNextBtn = document.querySelector(".mobile_bottom_right");
 mobileNextBtn.addEventListener("click", () => {
   if(!paymentModal.classList.contains("active")) {
     paymentModal.classList.add("active");
-    mobileNextBtn.disabled = true;
-    toggleSubmitButton();
+    // mobileNextBtn.disabled = true;
   } else {
     location.href = "/html/4.buy_complete.html";
   }
 })
 
 
-/* 결제수단 & 이용약관 체크 유무  */
-const agreements = {
-  first_agree: false,
-  second_agree: false,
-  third_agree: false,
-  fourth_agree: false,
-}
 
-function toggleSubmitButton() {
-  const { first_agree, second_agree, third_agree, fourth_agree } = agreements;
-  if(first_agree & second_agree & third_agree & fourth_agree) {
-    mobileNextBtn.disabled = false;
-  } else {
-    mobileNextBtn.disabled = true;
-  }
-}
+
+
 
 
 /* 모바일 티켓 버튼 */
@@ -136,10 +124,11 @@ three.addEventListener("click", () => {
 })
 five.addEventListener("click", () => {
   ticketFiveValue();
-  firstTicket.classList.remove("show");
+  firstTicket.classList.add("hide");
   secondTicket.classList.remove("show");
   thirdTicket.classList.add("show");
 })
+
 
 
 /* 1, 3, 5 회권 함수 */

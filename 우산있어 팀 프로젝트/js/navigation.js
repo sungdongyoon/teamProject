@@ -8,3 +8,18 @@ toggleBtn.addEventListener("click", (e) => {
   mobileGnbContent.classList.toggle("active");
   // gnbContent.classList.toggle("active");
 })
+
+const prevBtn = document.querySelectorAll(".prev_btn");
+const logo = document.querySelectorAll(".logo");
+
+logo.forEach((el) => {
+  el.addEventListener("click", () => {
+    location.href = "/1.member.html";
+  })
+})
+
+prevBtn.forEach((el) => {
+  el.addEventListener("click", () => {
+    history.go(-1);
+  })
+})

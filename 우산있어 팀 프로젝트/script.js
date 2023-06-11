@@ -33,8 +33,3 @@ $(".non_member_btn").click(function() {
   })
 })
 
-/* 비회원 정보 */
-document.querySelector(".non_member_info_btn").addEventListener("click", () => [
-  location.href = "/html/2-3.non-member_buy.html"
-])
-

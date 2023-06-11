@@ -126,6 +126,9 @@
 #lg {
   border-right: none;
 }
+#frugal {
+  font-family: var(--Main-kr);
+}
 .num_request {
   width: 100px;
   height: 40px;
@@ -135,6 +138,10 @@
   border-radius: 5px;
   background-color: var(--yellow);
   cursor: pointer;
+}
+.carrier_active {
+  color: var(--white);
+  background-color: var(--dark-blue);
 }
 
 /* 인증번호 */
@@ -272,8 +279,13 @@
     justify-content: space-between;
     margin-bottom: 20px;
   }
-  .mobile_carrier span {
+  .mobile_carrier label {
     width: 50px;
+    font-size: var(--small-text);
+    margin-top: 10px;
+  }
+  .mobile_carrier input {
+    display: none;
   }
   .num_request {
     width: 100px;

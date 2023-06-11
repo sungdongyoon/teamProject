@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/1792b891d9.js" crossorigin="anonymous"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/style.css">
-    <script defer src="/script.js"></script>
+    <script defer src="/js/2-2.non-member_info.js"></script>
     <script defer src="/js/navigation.js"></script>
     <title>우산있어? - 이용권 구매</title>
   </head>
@@ -20,7 +20,7 @@
     <!-- Navigation-->
     <nav class="main_gnb">
       <div class="mobileNav">
-        <div class="fas fa-angle-left"></div>
+        <div class="fas fa-angle-left prev_btn"></div>
         <div class="logo">우산있어?</div>
         <!-- <button class="fas fa-bars"></button> -->
         <button class="toggleBtn">
@@ -55,18 +55,18 @@
       <span>비회원은 1회권만 구매 가능합니다!</span>
     </div>
     <div class="non_member_content">
-      <div class="non_member_info">
+      <form class="non_member_info">
         <h1 class="non_member_info_title">비회원 정보</h1>
         <div class="non_member_info_name">
-          <label for="">이름</label>
-          <input type="text">
+          <label for="info_name">이름</label>
+          <input type="text" id="info_name">
         </div>
         <div class="non_member_info_phoneNum">
           <label for="">연락처</label>
           <div class="phoneNum_input">
-            <input type="text"> -
-            <input type="text"> -
-            <input type="text">
+            <input type="text" id="info_num1" maxlength="3"> -
+            <input type="text" id="info_num2" maxlength="4"> -
+            <input type="text" id="info_num3" maxlength="4">
           </div>
         </div>
         <div class="non_member_info_cert">
@@ -79,15 +79,15 @@
           <button class="num_request">인증번호 요청</button>
         </div>
         <div class="non_member_info_certNum">
-          <label for="">인증번호</label>
+          <label for="info_certNum">인증번호</label>
           <div class="certNum_detail">
-            <input type="text">
+            <input type="text" id="info_certNum" maxlength="4">
             <div class="cert_time">03:00</div>
             <button class="cert_complete">인증 완료</button>
           </div>
         </div>
         <button class="non_member_info_btn">다음</button>
-      </div>
+      </form>
     </div>
   </section>
   <footer class="footer">

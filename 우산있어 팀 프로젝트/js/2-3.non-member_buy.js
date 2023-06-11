@@ -4,8 +4,6 @@ const cancelBtn = document.querySelector(".cancel");
 const buyBtn = document.querySelector(".buy");
 
 const ticketOne = document.querySelector(".one");
-const ticketThree = document.querySelector(".three");
-const ticketFive = document.querySelector(".five");
 
 const ticketType = document.querySelector(".buy_modal_type_right");
 const ticketPrice = document.querySelector(".buy_modal_price_right");
@@ -66,17 +64,6 @@ ticketOne.addEventListener("click", () => {
 })
 
 
-/* 이용권 타입 */
-// const ticket = document.querySelectorAll(".member_ticket_buy");
-// const ticketArr = [1, 3, 5];
-
-// for(let i = 0; i < ticket.length; i++) {
-//   ticket[i].addEventListener("click", () => {
-//     ticketType.innerText = `${ticketArr[i]}회권`;
-//   })
-// }
-
-
 
 /* 약관동의 */
 const agreeAll = document.querySelector(".buy_modal_agreeAll");
@@ -100,3 +87,17 @@ buyBtn.addEventListener("click", () => {
 })
 
 
+/* 모바일 하단 메뉴 */
+const mobileType = document.querySelector(".mobile_type");
+const mobilePrice = document.querySelector(".mobile_price");
+const mobileNextBtn = document.querySelector(".mobile_bottom_right");
+
+/* 다음 버튼 */
+mobileNextBtn.addEventListener("click", () => {
+  if(!paymentModal.classList.contains("active")) {
+    paymentModal.classList.add("active");
+    // mobileNextBtn.disabled = true;
+  } else {
+    location.href = "/html/4.buy_complete.html";
+  }
+})
