@@ -1,3 +1,4 @@
+isStart = false;
 /* 인증번호 요청 */
 const numRequest = document.querySelector(".num_request");
 
@@ -6,13 +7,11 @@ const check = function() {
   let infoNum2 = document.querySelector("#info_num2").value;
   let infoNum3 = document.querySelector("#info_num3").value;
   
-  numRequest.addEventListener("click", (e) => {
-    e.preventDefault();
-    if(infoNum1) {
-      console.log("hi");
-    }
-  })
-  
+  if(infoNum1 && infoNum2 && infoNum3) {
+    numRequest.disabled = false;
+  } else {
+    numRequest.disabled = true;
+  }
 }
 
 check();
