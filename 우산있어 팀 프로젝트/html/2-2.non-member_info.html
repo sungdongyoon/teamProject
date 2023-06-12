@@ -9,85 +9,58 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/1792b891d9.js" crossorigin="anonymous"></script>
-    <!-- Custom CSS -->
+    <!-- Custom -->
     <link rel="stylesheet" href="/style.css">
+    <script defer src="/script.js"></script>
     <script defer src="/js/2-2.non-member_info.js"></script>
-    <script defer src="/js/navigation.js"></script>
     <title>우산있어? - 이용권 구매</title>
   </head>
 <body>
-  <header>
-    <!-- Navigation-->
-    <nav class="main_gnb">
-      <div class="mobileNav">
-        <div class="fas fa-angle-left prev_btn"></div>
-        <div class="logo">우산있어?</div>
-        <!-- <button class="fas fa-bars"></button> -->
-        <button class="toggleBtn">
-          <span class="hamburger_icon"></span>
-        </button>
-      </div>
-      <div class="logo">우산있어?</div>
-      <div class="gnb-content">
-        <!-- <a href="#">About</a> -->
-        <a href="#">Place</a>
-        <a href="#">Ticket</a>
-        <a href="#">FAQ</a>
-        <a href="#"><i class="fa-regular fa-map"></i></a>
-        <a href="#"><i class="fa-regular fa-circle-user"></i></a>
-        <!-- <a href="#">Rental</a>
-        <a href="#">Contact</a>
-        <a href="#">Profile</a> -->
-      </div>
-    </nav>
-    <div class="Mobile_gnb_content">
-      <a href="#">About</a>
-      <a href="#">Place</a>
-      <a href="#">Ticket</a>
-      <a href="#">Rental</a>
-      <a href="#">Contact</a>
-      <a href="#">Profile</a>
-    </div>
-  </header>
+  <nav class="main_gnb"></nav>
   <section class="non_member">
-    <div class="non_member_title">
+    <!-- <div class="non_member_title">
       <h1>비회원 이용권 구매</h1>
       <span>비회원은 1회권만 구매 가능합니다!</span>
-    </div>
+    </div> -->
     <div class="non_member_content">
-      <form class="non_member_info">
-        <h1 class="non_member_info_title">비회원 정보</h1>
-        <div class="non_member_info_name">
-          <label for="info_name">이름</label>
-          <input type="text" id="info_name">
-        </div>
-        <div class="non_member_info_phoneNum">
-          <label for="">연락처</label>
-          <div class="phoneNum_input">
-            <input type="text" id="info_num1" maxlength="3"> -
-            <input type="text" id="info_num2" maxlength="4"> -
-            <input type="text" id="info_num3" maxlength="4">
+      <div class="non_member_wrap">
+        <form class="non_member_info">
+          <h1 class="non_member_info_title">비회원 정보</h1>
+          <div class="non_member_info_name">
+            <label for="info_name">이름</label>
+            <input type="text" id="info_name">
           </div>
-        </div>
-        <div class="non_member_info_cert">
-          <div class="mobile_carrier">
-            <span id="skt">SKT</span>
-            <span id="kt">KT</span>
-            <span id="lg">LG</span>
-            <span id="frugal">알뜰폰</span>
+          <div class="non_member_info_phoneNum">
+            <label for="">연락처</label>
+            <div class="phoneNum_input">
+              <input type="text" id="info_num1" maxlength="3">
+              <input type="text" id="info_num2" maxlength="4">
+              <input type="text" id="info_num3" maxlength="4">
+            </div>
           </div>
-          <button class="num_request">인증번호 요청</button>
-        </div>
-        <div class="non_member_info_certNum">
-          <label for="info_certNum">인증번호</label>
-          <div class="certNum_detail">
-            <input type="text" id="info_certNum" maxlength="4">
-            <div class="cert_time">03:00</div>
-            <button class="cert_complete" disabled>인증 완료</button>
+          <div class="non_member_info_cert">
+            <div class="mobile_carrier">
+              <span id="skt">SKT</span>
+              <span id="kt">KT</span>
+              <span id="lg">LG</span>
+              <span id="frugal">알뜰폰</span>
+            </div>
+            <button class="num_request">인증번호 요청</button>
           </div>
-        </div>
-        <button class="non_member_info_btn">다음</button>
-      </form>
+          <div class="non_member_info_certNum">
+            <label for="info_certNum">인증번호</label>
+            <div class="certNum_detail">
+              <input type="text" id="info_certNum" maxlength="4">
+              <div class="cert_time">03:00</div>
+              <button class="cert_complete" disabled>인증 완료</button>
+            </div>
+          </div>
+          <button class="non_member_info_btn" disabled>다음</button>
+        </form>
+      </div>
+      <div class="non_member_right">
+        hi
+      </div>
     </div>
   </section>
   <footer class="footer">

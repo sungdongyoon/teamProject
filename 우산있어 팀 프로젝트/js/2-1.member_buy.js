@@ -48,10 +48,21 @@ const agreements = {
   fourth_agree: false,
 }
 
+function toggleSubmitButton() {
+  const { first_agree, second_agree } = agreements;
+  if(first_agree && second_agree) {
+    buyBtn.disabled = false;
+  } else {
+    buyBtn.disabled = true;
+  }
+}
+
 
 /* 약관동의 */
 const agreeAll = document.querySelector(".buy_modal_agreeAll");
 const agrees = document.querySelectorAll(".buy_modal_agree input");
+const firstAgree = document.querySelector("#first_agree");
+const secondAgree = document.querySelector("#second_agree");
 
 const checkAll = (target) => {
   const isChecked = target.checked;
@@ -59,7 +70,6 @@ const checkAll = (target) => {
   agrees.forEach((el) => {
     el.checked = isChecked;
   })
-  
 }
 
 
@@ -93,9 +103,6 @@ mobileNextBtn.addEventListener("click", () => {
     location.href = "/html/4.buy_complete.html";
   }
 })
-
-
-
 
 
 

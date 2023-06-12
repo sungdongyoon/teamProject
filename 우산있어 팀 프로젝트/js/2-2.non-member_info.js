@@ -50,8 +50,9 @@ mobileCarrier.addEventListener("click", e => {
 })
 
 /* 인증번호 요청 클릭 */
-let certTime = document.querySelector(".cert_time");
-let certComplete = document.querySelector(".cert_complete");
+const certTime = document.querySelector(".cert_time");
+const certComplete = document.querySelector(".cert_complete");
+const infoCertNum = document.querySelector("#info_certNum");
 
 numRequest.addEventListener("click", (e) => {
   e.preventDefault();
@@ -60,7 +61,6 @@ numRequest.addEventListener("click", (e) => {
   let time = 180;
   function timer() {
     if(time >= 0) {
-      certComplete.disabled = false;
       let min = Math.floor(time / 60);
       let sec = String(time%60).padStart(2, "0");
       certTime.innerText = `${min}:${sec}`;
@@ -69,10 +69,21 @@ numRequest.addEventListener("click", (e) => {
       certComplete.disabled = true;
     }
   }
-
+  infoCertNum.addEventListener("input", () => {
+    if(infoCertNum.value.length === 4) {
+      certComplete.disabled = false;
+    }
+  })
   setInterval(timer, 1000);
 })
 
+/* 인증완료 */
+
+certComplete.addEventListener("click", (e) => {
+  e.preventDefault();
+  nextBtn.disabled = false;
+  nextBtn.style.opacity = 1;
+})
 
 
 /* 다음 버튼 */
