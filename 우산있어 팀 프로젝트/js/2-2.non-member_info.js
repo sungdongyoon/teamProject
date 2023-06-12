@@ -1,5 +1,21 @@
-isStart = false;
-/* 인증번호 요청 */
+/* 연락처 input */
+let infoNum1 = document.querySelector("#info_num1");
+let infoNum2 = document.querySelector("#info_num2");
+let infoNum3 = document.querySelector("#info_num3");
+
+infoNum1.addEventListener("input", changeFocus);
+infoNum2.addEventListener("input", changeFocus);
+
+function changeFocus() {
+  if(infoNum1.value.length === 3) {
+    infoNum2.focus();
+    if(infoNum2.value.length === 4) {
+      infoNum3.focus();
+    }
+  }
+}
+
+/* 인증번호 요청버튼 활성화 */
 const numRequest = document.querySelector(".num_request");
 
 const check = function() {
@@ -16,7 +32,6 @@ const check = function() {
 
 check();
 
-
 /* 통신사 버튼 */
 const mobileCarrier = document.querySelector(".mobile_carrier");
 
@@ -31,7 +46,33 @@ function select(mc, span) {
 mobileCarrier.addEventListener("click", e => {
   const selected = e.target;
   select(mobileCarrier, selected);
+  check();
 })
+
+/* 인증번호 요청 클릭 */
+let certTime = document.querySelector(".cert_time");
+let certComplete = document.querySelector(".cert_complete");
+
+numRequest.addEventListener("click", (e) => {
+  e.preventDefault();
+  numRequest.innerText = "다시 요청하기"
+
+  let time = 180;
+  function timer() {
+    if(time >= 0) {
+      certComplete.disabled = false;
+      let min = Math.floor(time / 60);
+      let sec = String(time%60).padStart(2, "0");
+      certTime.innerText = `${min}:${sec}`;
+      time = time - 1;
+    } else {
+      certComplete.disabled = true;
+    }
+  }
+
+  setInterval(timer, 1000);
+})
+
 
 
 /* 다음 버튼 */

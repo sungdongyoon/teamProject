@@ -33,3 +33,8 @@ $(".non_member_btn").click(function() {
   })
 })
 
+$(function() {
+  /* Navigation & Footer */ 
+    $('.main_gnb').load('/include/navigation.html');
+    $('.footer').load('/include/footer.html');
+  })
