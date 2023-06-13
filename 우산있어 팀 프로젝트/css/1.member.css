@@ -1,9 +1,16 @@
-/* Section - member select */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .member_select {
   width: 100%;
-  height: 1089px;
+  /* height: 1089px; */
+  height: calc(100% - 240px);
   
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,7 +78,7 @@
 @media all and (max-width:767px) {
   .member_select {
     overflow: visible;
-    height: calc(100% - 240px);
+    height: calc(100% - 120px);
   }
   .member_select_content {
     flex-direction: column;

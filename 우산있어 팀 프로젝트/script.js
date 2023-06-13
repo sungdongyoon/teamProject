@@ -8,7 +8,6 @@ $(".member_btn").click(function() {
     cancelButtonColor: "#d33",
     confirmButtonText: "확인",
     cancelButtonText: "취소",
-    // reverseButtons: true // 버튼 순서 거꾸로
   }).then((result) => {
     if(result.isConfirmed) {
       location.href = "/html/2-1.member_buy.html";

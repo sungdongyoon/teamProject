@@ -2,7 +2,7 @@
 .main_gnb {
   width: 100vw;
   height: 120px;
-  /* position: fixed; */
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -141,13 +141,16 @@
     transition: transform 0.5s ease-in-out;
   }
   .Mobile_gnb_content.active {
+    display: flex;
     row-gap: 20px;
     transform: translateX(0);
     background-color: var(--white);
     color: var(--dark-blue);
     font-size: var(--small-title);
+    /* transition: 0.5s; */
   }
   .Mobile_gnb_content a {
     position: relative;
+    /* color: var(--dark-blue); */
   }
 }
