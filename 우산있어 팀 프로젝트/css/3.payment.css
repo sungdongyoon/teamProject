@@ -151,6 +151,10 @@
   font-size: var(--medium-text);
   cursor: pointer;
 }
+.agree_first label b,
+.agree_second label b {
+  color: red;
+}
 .agree_first input,
 .agree_second input,
 .agree_third input,

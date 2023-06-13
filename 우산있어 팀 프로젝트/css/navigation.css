@@ -9,35 +9,26 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
-  background-color: transparent;
+  background-color: var(--white);
   font-size: var(--large-text);
-  color: var(--black);
+  color: var(--white);
   z-index: 999;
 }
-/* Main Menu Top*/
-.main_gnb.on {
-  background-color: var(--black);
-}
-.logo.on {
-  color: var(--dark-blue);
-}
-.gnb-content.on a,
-.gnb-content.on a i {
-  color: var(--dark-blue);
-}
-
 /* PC Navigation*/
+.main_gnb > .logo {
+  color: var(--dark-blue);
+}
 .gnb-content {
   margin: 0 20px;
-  color: var(--black);
+  color: var(--dark-blue);
 }
 .gnb-content a {
   margin-right: 42px;
-  color: var(--black);
+  color: var(--dark-blue);
 }
 .gnb-content a i {
   font-size: var(--large-text);
-  color: var(--black);
+  color: var(--dark-blue);
 }
 
 /* Mobile Navigation */
@@ -56,9 +47,6 @@
     height: 90px;
     padding: 0 10px;
   }
-  .main_gnb.on {
-    background-color: var(--dark-blue);
-  }
   /* === PC Navigation === */
   .main_gnb > .logo{
     display: none;
@@ -72,8 +60,9 @@
     align-items: center;
     z-index: 999;
   }
-  .mobileNav .logo {
+  .mobileNav .logo a {
     padding-left: 20px;
+    color: var(--white);
   }
 
   /* Toggle Button */

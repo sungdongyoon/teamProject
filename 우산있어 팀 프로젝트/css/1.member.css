@@ -2,7 +2,7 @@
 
 .member_select {
   width: 100%;
-  height: calc(100% - 240px);
+  height: 1089px;
   
   display: flex;
   flex-direction: column;
@@ -11,15 +11,12 @@
 }
 .member_select_title {
   font-size: var(--medium-title);
-  margin: 3.125rem 0;
+  margin-top: 100px;
 }
 .member_select_content {
-  border-top: 3px solid var(--gray);
-  border-bottom: 3px solid var(--gray);
+  /* border-top: 3px solid var(--dark-blue); */
   width: 1200px;
-  /* width: 70% */
-  height: 700px;
-  /* height: 43.75rem; */
+  height: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,6 +32,7 @@
   
   width: 400px;
   height: 300px;
+  border: 1px solid var(--dark-blue);
   border-radius: 10px;
   margin: 0 3.125rem;
 
@@ -73,6 +71,7 @@
 @media all and (max-width:767px) {
   .member_select {
     overflow: visible;
+    height: calc(100% - 240px);
   }
   .member_select_content {
     flex-direction: column;

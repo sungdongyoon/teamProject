@@ -49,8 +49,8 @@
   margin: 20px 0;
   padding: 10px 0;
 
-  border-top: 3px solid var(--gray);
-  border-bottom: 3px solid var(--gray);
+  border-top: 3px solid var(--dark-blue);
+  border-bottom: 3px solid var(--dark-blue);
 }
 .buy_complete_info_type,
 .buy_complete_info_date,

@@ -23,6 +23,7 @@ ticketOne.addEventListener("click", () => {
   paymentModal.classList.add("active");
   ticketOneValue();
   // buyBtn.disabled = true;
+  toggleSubmitButton();
 })
 
 /* 3회권 */
@@ -30,6 +31,7 @@ ticketThree.addEventListener("click", () => {
   paymentModal.classList.add("active");
   ticketThreeValue();
   // buyBtn.disabled = true;
+  toggleSubmitButton();
 })
 
 /* 5회권 */
@@ -37,10 +39,16 @@ ticketFive.addEventListener("click", () => {
   paymentModal.classList.add("active");
   ticketFiveValue();
   // buyBtn.disabled = true;
+  toggleSubmitButton();
 })
 
 
 /* 결제수단 & 이용약관 체크 유무  */
+const agreeAll = document.querySelector(".buy_modal_agreeAll");
+const agrees = document.querySelectorAll(".buy_modal_agree input");
+const firstAgree = document.querySelector("#first_agree");
+const secondAgree = document.querySelector("#second_agree");
+
 const agreements = {
   first_agree: false,
   second_agree: false,
@@ -48,29 +56,49 @@ const agreements = {
   fourth_agree: false,
 }
 
+agrees.forEach((item) => item.addEventListener('input', toggleCheckbox));
+
+function toggleCheckbox(e) {
+  const { checked, id } = e.target;  
+  agreements[id] = checked;
+  this.parentNode.classList.toggle('active');
+  checkAllStatus();
+  toggleSubmitButton();
+}
+
+function checkAllStatus() {
+  const { first_agree, second_agree, third_agree, fourth_agree } = agreements;
+  if (first_agree && second_agree && third_agree && fourth_agree) {
+    agreeAll.checked = true;
+  } else {
+    agreeAll.checked = false;
+  }
+}
+
 function toggleSubmitButton() {
   const { first_agree, second_agree } = agreements;
   if(first_agree && second_agree) {
     buyBtn.disabled = false;
-  } else {
+  } else if (!first_agree && !second_agree) {
     buyBtn.disabled = true;
   }
 }
 
-
-/* 약관동의 */
-const agreeAll = document.querySelector(".buy_modal_agreeAll");
-const agrees = document.querySelectorAll(".buy_modal_agree input");
-const firstAgree = document.querySelector("#first_agree");
-const secondAgree = document.querySelector("#second_agree");
-
-const checkAll = (target) => {
-  const isChecked = target.checked;
-
-  agrees.forEach((el) => {
-    el.checked = isChecked;
-  })
-}
+agreeAll.addEventListener('click', (e) => {
+  const { checked } = e.target;
+  if (checked) {
+    agrees.forEach((item) => {
+      item.checked = true;
+      agreements[item.id] = true;
+    });
+  } else {
+    agrees.forEach((item) => {
+      item.checked = false;
+      agreements[item.id] = false;
+    });
+  }
+  toggleSubmitButton();
+});
 
 
 

@@ -14,10 +14,10 @@
 /* Title */
 .member_title {
   text-align: center;
-  margin: 35px 0;
+  margin-top: 100px;
 }
 .member_title h1 {
-  font-size: var(--medium-title);
+  font-size: var(--large-title);
   margin-bottom: 10px;
 }
 
@@ -25,10 +25,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 3px solid var(--gray);
-  border-bottom: 3px solid var(--gray);
+  /* border-top: 3px solid var(--gray); */
   width: 1200px;
-  height: 700px;
+  height: 800px;
 }
 
 
