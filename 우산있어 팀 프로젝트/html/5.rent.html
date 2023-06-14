@@ -12,42 +12,45 @@
     <!-- Custom -->
     <link rel="stylesheet" href="/style.css">
     <script defer src="/script.js"></script>
+    <script defer src="/js/5.rent.js"></script>
     <title>우산있어? - 이용권 구매</title>
   </head>
 <body>
-  <div class="rent_container">
-    <header>
-      <nav class="main_gnb_rental">
-        <div class="rentalNav">
-          <div class="fas fa-angle-left prev_btn"></div>
-          <div class="logo">대여하기</div>
-          <div class="fa-solid fa-bolt"></div>
+  <div class="container">
+    <div class="rent_container">
+      <header>
+        <nav class="main_gnb_rental">
+          <div class="rentalNav">
+            <div class="fas fa-angle-left prev_btn"></div>
+            <div class="logo">대여하기</div>
+            <div class="fa-solid fa-bolt"></div>
+          </div>
+        </nav>
+      </header>
+      <section class="rental">
+        <div class="rental_icon">
+          <img src="/img/umbrella2.png" alt="">
         </div>
-      </nav>
-    </header>
-    <section class="rental">
-      <div class="rental_icon">
-        <img src="/img/umbrella2.png" alt="">
-      </div>
-      <h3 class="rental_guideText">
-        우산 손잡이의 QR코드 또는<br/>우산번호 5자리를 입력해주세요
-      </h3>
-      <div class="rental_qrCode">
-        <span class="rental_qrCode_title">
-          QR코드
-        </span>
-        <div class="rental_qrCode_box"></div>
-      </div>
-      <div class="rental_umbNum">
-        <span class="rental_umbNum_title">
-          우산 번호 입력
-        </span>
-        <div class="rental_umbNum_detail">
-          <input type="text">
-          <button class="umbNum_check">확인</button>
+        <h3 class="rental_guideText">
+          우산 손잡이의 QR코드 또는<br/>우산번호 5자리를 입력해주세요
+        </h3>
+        <div class="rental_qrCode">
+          <span class="rental_qrCode_title">
+            QR코드
+          </span>
+          <div class="rental_qrCode_box"></div>
         </div>
-      </div>
-    </section>
+        <div class="rental_umbNum">
+          <span class="rental_umbNum_title">
+            우산 번호 입력
+          </span>
+          <div class="rental_umbNum_detail">
+            <input type="text" maxlength="5">
+            <button class="umbNum_check">확인</button>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </body>
 </html>
