@@ -79,8 +79,10 @@ function toggleSubmitButton() {
   const { first_agree, second_agree } = agreements;
   if(first_agree && second_agree) {
     buyBtn.disabled = false;
+    mobileNextBtn.disabled = false;
   } else if (!first_agree && !second_agree) {
     buyBtn.disabled = true;
+    mobileNextBtn.disabled = true;
   }
 }
 
@@ -126,7 +128,7 @@ const mobileNextBtn = document.querySelector(".mobile_bottom_right");
 mobileNextBtn.addEventListener("click", () => {
   if(!paymentModal.classList.contains("active")) {
     paymentModal.classList.add("active");
-    // mobileNextBtn.disabled = true;
+    mobileNextBtn.disabled = true;
   } else {
     location.href = "/html/4.buy_complete.html";
   }

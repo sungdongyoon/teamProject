@@ -11,6 +11,7 @@
   text-align: center;
   margin: 50px 0;
   font-size: var(--medium-title);
+  color: var(--dark-blue);
 }
 
 /* 이용권 선택 */

@@ -31,6 +31,19 @@ $(".non_member_btn").click(function() {
     }
   })
 })
+$(".num_request").click(function() {
+  Swal.fire({
+    title: "인증번호를 전송해드렸습니다!",
+    text: "인증번호 4자리를 3분 이내로 입력해주세요😄",
+    icon: "info",
+    showCancelButton: false,
+    confirmButtonColor: "#001665",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "확인",
+    cancelButtonText: "취소",
+    // reverseButtons: true // 버튼 순서 거꾸로
+  })
+})
 
 $(function() {
   /* Navigation & Footer */ 

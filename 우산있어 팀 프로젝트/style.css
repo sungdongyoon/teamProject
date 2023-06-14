@@ -34,7 +34,7 @@ body.swal2-height-auto {
 
 @media all and (max-width: 767px) {
   .swal2-title {
-    width: 200px;
+    width: 230px;
     height: 50px;
     font-size: var(--medium-text);
   }
@@ -42,16 +42,19 @@ body.swal2-height-auto {
     font-size: var(--small-text);
   }
   .swal2-popup {
-    width: 270px;
+    width: 300px;
   }
   .swal2-modal {
-    width: 280px;
+    width: 310px;
   }
   .swal2-icon {
     width: 50px;
     height: 50px;
   }
   .swal2-warning {
+    font-size: var(--small-text);
+  }
+  .swal2-info {
     font-size: var(--small-text);
   }
   .swal2-actions {

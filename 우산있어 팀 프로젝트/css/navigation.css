@@ -147,10 +147,9 @@
     background-color: var(--white);
     color: var(--dark-blue);
     font-size: var(--small-title);
-    /* transition: 0.5s; */
   }
   .Mobile_gnb_content a {
     position: relative;
-    /* color: var(--dark-blue); */
+    color: var(--dark-blue);
   }
 }
