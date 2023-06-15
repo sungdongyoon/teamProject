@@ -1,0 +1,297 @@
+/* Import Local CSS */
+@import url('/CSS/reset.css');
+@import url('/CSS/variables.css');
+@import url('/Navigation&Footer/navigation.css');
+@import url('/Navigation&Footer/footer.css');
+
+/* 전체 구조 */
+.joinin {
+  width: 100%;
+  height: calc(100% - 240px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 120px;
+  background-color: #fcfcfc;
+}
+.joinin .title {
+  text-align: center;
+  font-size: var(--small-title);
+  margin-bottom: 20px;
+}
+.joinin hr {
+  margin: 0 200px;
+  margin-bottom: 20px;
+}
+.joinin_box {
+  width: 900px;
+  height: calc(100vh - 240px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: var(--medium-text);
+}
+.input_box_carrier {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input_box_carrier input{
+  width: 380px;
+  height: 60px;
+  background-color: var(--white);
+  border: 1px solid var(--dark-blue);
+  border-radius: 7px;
+  padding: 18px;
+  margin-top: 20px;
+}
+.joinin_box input::placeholder {
+  padding-left: 10px;
+  font-size: var(--medium-text);
+
+}
+.error {
+  color: crimson;
+  height: 10px;
+}
+
+/* 통신사 선택박스 */
+.mobile_carrier{
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mobile_carrier span {
+  border: 1px solid var(--dark-blue);
+  background-color: transparent;
+  border-left: none;
+  width: 96px;
+  height: 50px;
+  line-height: 30px;
+  padding: 10px 0;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-size: var(--medium-text);
+}
+.mobile_carrier span:nth-child(1) {
+  border-left: 1px solid var(--dark-blue);
+}
+.mobile_carrier .carrier_active {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+
+
+/* 휴대폰 인증 */
+.phone_box {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.phone_box input {
+  width: 90px;
+  height: 20px;
+  background-color: var(--white);
+  border: 1px solid var(--dark-blue);
+  border-radius: 7px;
+  padding: 18px;
+  text-align: center;
+}
+.admit_send, .admit_finish {
+  width: 90px;
+  border: 1px solid var(--dark-blue);
+  border-radius: 7px;
+  background-color: transparent;
+  padding: 8px 0;
+}
+.admit_finish {
+  margin-left: 20px;
+}
+
+.admit_box {
+  width: 100%;
+  height: 100px;
+  /* border: 3px solid orange; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admit_box input {
+  width: 280px;
+  height: 20px;
+  background-color: var(--white);
+  border: 1px solid var(--dark-blue);
+  border-radius: 7px;
+  padding: 18px 25px;
+  outline: none;
+}
+.token_timer {
+  width: 78px;
+  height: 36px;
+  position: absolute;
+  background-color: var(--yellow);
+  border-left: 1px solid var(--dark-blue);
+  margin-left: 90px;
+  border-radius: 0 7px 7px 0;
+  padding: 8px 17px;
+}
+
+
+/* 약관동의 박스 */
+#agreement_box {
+  margin: auto;
+  width: 500px;
+  /* border: 5px solid red; */
+  line-height: 40px;
+}
+#agreement_box .agreement_detail{
+  display: flex;
+  flex-direction: column;
+  /* border: 3px solid blue; */
+  line-height: 20px;
+  width: 500px;
+  margin: auto;
+}
+#agreement_box .agreement_detail_choice {
+  display: inline-block;
+  padding: 5px 40px;
+
+}
+#agreement_box input{
+  padding: 0;
+  width: auto;
+}
+
+.btn_joinin {
+  width: 500px;
+  height: 100px;
+  background-color: var(--dark-blue);
+  border: transparent;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: var(--large-text);
+  margin: 0 auto;
+  margin-bottom: 28px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn_joinin:hover:enabled {
+  background-color: var(--yellow);
+  color: var(--dark-blue);
+}
+
+.btn_joinin:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+
+
+
+/* 미디어쿼리 */
+@media all and (max-width: 767px) {
+  .joinin {
+    width: 100%;
+  }
+  .joinin hr {
+    margin: 0 50px;
+    margin-bottom: 10px;
+  }
+  .joinin_box {
+    width: 100%;
+    height: 100%;
+  }
+
+  .input_box_carrier {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input_box_carrier input{
+    width: 280px;
+    height: 50px;
+  }
+  .joinin_box input::placeholder {
+    font-size: 14px;
+  }
+
+  /* 통신사 선택박스 */
+  .mobile_carrier{
+    width: 80%;
+    height: 80px;
+    margin: auto;
+  }
+  .mobile_carrier span {
+    font-size: 14px;
+  }
+  
+  /* 휴대폰 인증 */
+  .phone_box {
+    width: 90%;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 12px;
+  }
+  .phone_box input {
+    width: 70px;
+    height: 20px;
+    padding: 18px;
+  }
+  .admit_send, .admit_finish {
+    width: 70px;
+  }
+  .admit_finish {
+    margin-left: 20px;
+  }
+  .admit_box {
+    height: 60px;
+  }
+  .admit_box input {
+    width: 220px;
+  }
+  .token_timer {
+    width: 68px;
+    height: 36px;
+    margin-left: 58px;
+    padding: 6px 12px;
+  }
+  
+  /* 약관동의 박스 */
+  #agreement_box {
+    width: 100%;
+    line-height: 40px;
+    margin-top: 18px;
+  }
+  #check_all {
+    margin: 0 25px;
+  }
+  #agreement_box .agreement_detail{
+    width: 100%;
+  }
+  #agreement_box .agreement_detail_choice {
+    display: inline-block;
+    padding: 5px 30px;
+    font-size: var(--small-text);
+
+  }
+
+
+  /* 가입하기 버튼 */
+  .btn_joinin {
+    width: 300px;
+    height: 50px;
+    font-size: var(--medium-text);
+    margin: 40px auto;
+    cursor: pointer;
+  }
+} 
