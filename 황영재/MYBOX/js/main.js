@@ -45,7 +45,7 @@ mainPics.addEventListener("mouseup", (e)=> {
 // Mouse focus Pause // 
 let loopInterval = setInterval(()=> {
   next()
-}, 3000);
+}, 6000);
 
 mainPics.addEventListener("mouseover", ()=> {
   clearInterval(loopInterval);
@@ -54,7 +54,7 @@ mainPics.addEventListener("mouseover", ()=> {
 mainPics.addEventListener("mouseout", ()=> {
   loopInterval = setInterval(() => {
     next();
-  }, 6500);
+  }, 6000);
 })
 
 /* === Main Down Scroll === */

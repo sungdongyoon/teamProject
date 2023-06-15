@@ -1,0 +1,340 @@
+.buy_modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 제목 */
+.buy_modal_title {
+  text-align: center;
+  margin: 50px 0;
+  font-size: var(--medium-title);
+  color: var(--dark-blue);
+}
+
+/* 이용권 선택 */
+.buy_modal_type {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 70px;
+}
+.buy_modal_type_left {
+  width: 30%;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: var(--large-text);
+}
+.buy_modal_type_right {
+  width: 70%;
+  padding-left: 20px;
+  font-size: var(--large-text);
+}
+
+/* 가격 */
+.buy_modal_price {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 70px;
+}
+.buy_modal_price_left {
+  width: 30%;
+  padding-left: 20px;
+  font-size: var(--large-text);
+  font-weight: bold;
+}
+.buy_modal_price_right {
+  width: 70%;
+  padding-left: 20px;
+  font-size: var(--large-text);
+}
+
+/* 결제수단 */
+.buy_modal_payment {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 70px;
+}
+.buy_modal_payment_left {
+  width: 30%;
+  padding-left: 20px;
+  font-size: var(--large-text);
+  font-weight: bold;
+}
+.buy_modal_payment_right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  height: 100%;
+  padding: 0 20px;
+}
+.card label {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+.naver label {
+  background-color: var(--green);
+  color: var(--white);
+}
+.kakao label {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+.zero label {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+.card label,
+.naver label,
+.kakao label,
+.zero label {
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.card input,
+.naver input,
+.kakao input,
+.zero input {
+  width: 17px;
+  height: 17px;
+}
+
+/* 이용약관 */
+.buy_modal_agree {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 80%;
+  height: 200px;
+  margin-top: 20px;
+
+  border-top: 3px solid var(--gray);
+  border-bottom: 3px solid var(--gray);
+}
+.buy_modal_agree input {
+  margin-right: 10px;
+  font-size: 10px;
+}
+.agree_first,
+.agree_second,
+.agree_third,
+.agree_fourth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.agree_first span,
+.agree_second span,
+.agree_third span,
+.agree_fourth span {
+  cursor: pointer;
+  font-size: var(--small-text);
+}
+.agree_first label,
+.agree_second label,
+.agree_third label,
+.agree_fourth label,
+.buy_modal_agreeAll label {
+  font-size: var(--medium-text);
+  cursor: pointer;
+}
+.agree_first label b,
+.agree_second label b {
+  color: red;
+}
+.agree_first input,
+.agree_second input,
+.agree_third input,
+.agree_fourth input,
+.buy_modal_agreeAll input {
+  width: 15px;
+  height: 15px;
+}
+.buy_modal_agreeAll {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 0;
+  padding-right: 10px;
+}
+.buy_modal_agreeAll input {
+  margin-right: 10px;
+}
+.buy_modal_agreeAll label {
+  margin-bottom: 3px;
+}
+
+/* 버튼 */
+.buy_modal_buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 50px;
+  width: 35%;
+}
+.cancel {
+  width: 200px;
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 5px;
+
+  font-weight: bold;
+  font-size: var(--medium-text);
+  cursor: pointer;
+}
+.buy {
+  width: 200px;
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 5px;
+
+  font-weight: bold;
+  font-size: var(--medium-text);
+  cursor: pointer;
+}
+
+@media all and (max-width: 767px) {
+  /* 제목 */
+  .buy_modal_title {
+    margin: 20px 0;
+    font-size: var(--small-title);
+  }
+  /* 이용권 */
+  .buy_modal_type {
+    height: 50px;
+  }
+  .buy_modal_type_left {
+    width: 20%;
+    padding-left: 0;
+    font-size: var(--medium-text);
+  }
+  .buy_modal_type_right {
+    width: 80%;
+    padding-left: 0;
+    font-size: var(--medium-text);
+    text-align: right;
+  }
+  /* 가격 */
+  .buy_modal_price {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  .buy_modal_price_left {
+    width: 20%;
+    padding-left: 0px;
+    font-size: var(--medium-text);
+  }
+  .buy_modal_price_right {
+    width: 80%;
+    padding-left: 0px;
+    font-size: var(--small-text);
+    text-align: right;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .buy_modal_price_right b {
+    font-size: var(--medium-text);
+  }
+  /* 결제수단 */
+  .buy_modal_payment {
+    width: 80%;
+    height: 150px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .buy_modal_payment_left {
+    width: 20%;
+    padding-left: 0px;
+    font-size: var(--medium-text);
+    font-weight: bold;
+  }
+  .buy_modal_payment_right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 15px 0;
+  }
+  .card label {
+    font-size: var(--small-text);
+  }
+  .naver label {
+    font-size: var(--small-text);
+  }
+  .kakao label {
+    font-size: var(--small-text);
+  }
+  .zero label {
+    font-size: var(--small-text);
+  }
+  .card label,
+  .naver label,
+  .kakao label,
+  .zero label {
+    line-height: 30px;
+    width: 120px;
+    height: 30px;
+  }
+  .card input,
+  .naver input,
+  .kakao input,
+  .zero input {
+    width: 10px;
+    height: 10px;
+  }
+  /* 이용약관 */
+  .buy_modal_agree {
+    height: 150px;
+    margin-top: 10px;
+  }
+  .buy_modal_agree input {
+    margin-right: 0px;
+  }
+  .agree_first,
+  .agree_second,
+  .agree_third,
+  .agree_fourth {
+    padding: 0 10px;
+  }
+  .agree_first label,
+  .agree_second label,
+  .agree_third label,
+  .agree_fourth label,
+  .buy_modal_agreeAll label {
+    font-size: var(--small-text);
+  }
+  .agree_first input,
+  .agree_second input,
+  .agree_third input,
+  .agree_fourth input,
+  .buy_modal_agreeAll input {
+    width: 10px;
+    height: 10px;
+  }
+  .buy_modal_agreeAll {
+    padding: 5px 0;
+  }
+  /* 버튼 */
+  .buy_modal_buttons {
+    display: none;
+  }
+}

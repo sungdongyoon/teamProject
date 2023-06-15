@@ -10,8 +10,9 @@
   <!-- font-awesome -->
   <script src="https://kit.fontawesome.com/0a33749607.js" crossorigin="anonymous"></script>
   <!-- Custom -->
-  <link rel="stylesheet" href="/CSS/joinin.css">
-  <script defer src="/script_joinin.js"></script>
+  <link rel="stylesheet" href="/css/joinin.css">
+  <script defer src="/script.js"></script>
+  <script defer src="/js/joinin.js"></script>
   <title>회원가입</title>
 </head>
 <body>
@@ -53,8 +54,8 @@
         </div>
         <!-- 인증번호 입력란 -->
         <div class="admit_box">
-          <input type="text" class="info_certNum"><span class="token_timer"> 3 : 00 </span>
-          <button class="admit_finish" disabled>인증완료</button>
+          <input type="text" class="info_certNum"><span class="token_timer" id="token"> 3 : 00 </span></input>
+          <button class="admit_finish">인증완료</button>
         </div>
         <!-- 동의약관 -->
         <div id="agreement_box">
@@ -77,12 +78,7 @@
         <button class="btn_joinin" disabled>가입하기</button>
       </div>
     </section>
-    <footer class="footer">
-      <div class="footerInner">
-        <span>copyright ⓒ 2023취업시켜조</span>
-        <span>All rights reserved</span>
-      </div>
-    </footer>  
+    <footer class="footer"></footer>  
   </div>
 </body>
 </html>

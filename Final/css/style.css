@@ -1,0 +1,71 @@
+/* Import CSS */
+@import url('/css/reset.css');
+@import url('/css/variables.css');
+@import url('/css/navigation.css');
+@import url('/css/footer.css');
+
+@import url('/css/1.member.css');
+@import url('/css/2.buy.css');
+@import url('/css/2-1.non-member_info.css');
+@import url('/css/3.payment.css');
+@import url('/css/4.buy_complete.css');
+@import url('/css/5.rent.css');
+@import url('/css/6.map.css');
+@import url('/css/7.ticket_leftover.css');
+
+/* Common CSS */
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--Main-kr);
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+html.swal2-height-auto {
+  height: 100% !important;
+}
+body.swal2-height-auto {
+  height: 100% !important;
+}
+
+
+@media all and (max-width: 767px) {
+  .swal2-title {
+    width: 230px;
+    height: 50px;
+    font-size: var(--medium-text);
+  }
+  .swal2-content {
+    font-size: var(--small-text);
+  }
+  .swal2-popup {
+    width: 300px;
+  }
+  .swal2-modal {
+    width: 310px;
+  }
+  .swal2-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .swal2-warning {
+    font-size: var(--small-text);
+  }
+  .swal2-info {
+    font-size: var(--small-text);
+  }
+  .swal2-actions {
+    font-size: var(--small-text);
+  }
+  .swal2-confirm {
+    width: 60px;
+    height: 30px;
+  }
+  .swal2-cancel {
+    width: 60px;
+    height: 30px;
+  }
+}

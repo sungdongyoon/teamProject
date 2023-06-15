@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/1792b891d9.js" crossorigin="anonymous"></script>
+    <!-- Custom -->
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script defer src="/script.js"></script>
+    <script defer src="/js/2-2.non-member_info.js"></script>
+    <title>우산있어? - 이용권 구매</title>
+  </head>
+<body>
+  <div class="container">
+    <nav class="main_gnb"></nav>
+    <section class="non_member">
+      <div class="non_member_content">
+        <div class="non_member_wrap">
+          <form class="non_member_info">
+            <h1 class="non_member_info_title">비회원 정보</h1>
+            <div class="non_member_info_name">
+              <label for="info_name">이름</label>
+              <input type="text" id="info_name" placeholder="이름을 입력해주세요">
+            </div>
+            <div class="non_member_info_phoneNum">
+              <label for="">연락처</label>
+              <input type="text" id="info_num1" maxlength="11" placeholder="연락처를 입력해주세요(하이픈(-) 제외)">
+              <!-- <div class="phoneNum_input">
+                <input type="text" id="info_num1" maxlength="3" placeholder="연락처를 입력해주세요(하이픈(-) 제외)">
+                <input type="text" id="info_num2" maxlength="4">
+                <input type="text" id="info_num3" maxlength="4">
+              </div> -->
+            </div>
+            <div class="non_member_info_cert">
+              <div class="mobile_carrier">
+                <span id="skt">SKT</span>
+                <span id="kt">KT</span>
+                <span id="lg">LG</span>
+                <span id="frugal">알뜰폰</span>
+              </div>
+              <button class="num_request">인증요청</button>
+            </div>
+            <div class="non_member_info_certNum">
+              <label for="info_certNum">인증번호</label>
+              <div class="certNum_detail">
+                <input type="text" id="info_certNum" maxlength="4" placeholder="인증번호 4자리">
+                <div class="cert_time">03:00</div>
+                <button class="cert_complete" disabled>인증 완료</button>
+              </div>
+            </div>
+            <button class="non_member_info_btn" disabled>다음</button>
+          </form>
+        </div>
+        <div class="non_member_right">
+          <span class="non_member_right_one">아직 회원이 아니신가요?</span>
+          <span class="non_member_right_two">회원가입하고 <br/>더 많은 혜택을 받아보세요!</span>
+          <span class="non_member_right_three">회원가입 하러 가기</span>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footerInner">
+        <span>copyright ⓒ 2023취업시켜조</span>
+        <span>All rights reserved</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

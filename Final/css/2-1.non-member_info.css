@@ -1,0 +1,426 @@
+.non_member {
+  width: 100%;
+  height: calc(100% - 120px);
+
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* 비회원 정보 입력 */
+.non_member_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  width: 1600px;
+  height: 700px;
+}
+.non_member_wrap {
+  width: 700px;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.non_member_info {
+  width: 500px;
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  position: relative;
+}
+.non_member_info_title {
+  width: 100%;
+  text-align: center;
+  color: var(--dark-blue);
+  font-size: var(--small-title);
+}
+.non_member_info label {
+  width: 9.375rem;
+  font-size: var(--large-text);
+}
+
+/* 이름 */
+.non_member_info_name {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3.125rem 0;
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+.non_member_info_name input {
+  width: calc(100% - 150px);
+  height: 3.125rem;
+  padding: 0.625rem;
+
+  /* border-radius: 5px;
+  border: 1px solid var(--gray); */
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  outline: none;
+}
+
+/* 연락처 */
+.non_member_info_phoneNum {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.125rem;
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+.non_member_info_phoneNum input {
+  width: calc(100% - 150px);
+  height: 50px;
+  padding: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  outline: none;
+}
+.phoneNum_input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+.phoneNum_input input {
+  /* width: 6.25rem; */
+  width: 100%;
+  height: 50px;
+  padding: 0.625rem;
+
+  /* border-radius: 5px; */
+  /* border: 1px solid var(--gray); */
+  border: none;
+  border-bottom: 1px solid var(--gray);
+  background-color: transparent;
+  outline: none;
+}
+
+/* 통신사 */
+.non_member_info_cert {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 3.125rem;
+}
+.mobile_carrier {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-family: var(--Main-en);
+}
+.mobile_carrier span {
+  border: 1px solid #ccc;
+  height: inherit;
+  width: 3.75rem;
+  text-align: center;
+  line-height: 40px;
+
+  color: var(--dark-blue);
+  font-size: var(--small-text);
+  cursor: pointer;
+}
+#skt {
+  border-right: none;
+}
+#kt {
+  border-right: none;
+}
+#lg {
+  border-right: none;
+}
+#frugal {
+  font-family: var(--Main-kr);
+}
+.num_request {
+  width: 100px;
+  height: 40px;
+  margin-left: 0.625rem;
+
+  font-weight: bold;
+  color: var(--dark-blue);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: var(--white);
+  cursor: pointer;
+  opacity: 0.5;
+}
+.carrier_active {
+  color: var(--white) !important;
+  background-color: var(--dark-blue);
+}
+
+/* 인증번호 */
+.non_member_info_certNum {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+.certNum_detail {
+  width: calc(100% - 150px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.certNum_detail input {
+  width: 240px;
+  height: 50px;
+  padding: 0.625rem;
+
+  position: relative;
+  /* border-radius: 5px;
+  border: 1px solid var(--gray); */
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  background-color: transparent;
+}
+.cert_time {
+  background-color: var(--white);
+  font-size: var(--small-text);
+  position: absolute;
+  right: 109px;
+
+  color: var(--dark-blue);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+.cert_complete {
+  width: 100px;
+  height: 50px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--white);
+  color: var(--dark-blue);
+  font-weight: bold;
+
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+
+/* 다음 버튼 */
+.non_member_info_btn {
+  width: 100%;
+  height: 60px;
+  margin-top: 80px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--white);
+  color: var(--dark-blue);
+  font-size: var(--large-text);
+  font-weight: bold;
+
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+
+/* 회원가입 유도 */
+
+.non_member_right {
+  width: 900px;
+  height: 700px;
+  background-image: url('/img/umbrella.jpg');
+  background-position: center;
+  background-size: contain;
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  position: relative;
+}
+.non_member_right::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.non_member_right_one {
+  font-size: var(--large-text);
+  color: var(--white);
+  z-index: 10;
+}
+.non_member_right_two {
+  font-size: var(--medium-title);
+  color: var(--white);
+  text-align: center;
+  z-index: 10;
+}
+.non_member_right_three {
+  font-size: var(--large-text);
+  color: var(--white);
+  z-index: 10;
+}
+
+
+@media all and (max-width:767px) {
+  /* 정보 */
+  .non_member {
+    height: 100%;
+    background: url('/img/umbrella.jpg') no-repeat center;
+    background-size: cover;
+    margin-top: 90px;
+
+    position: relative;
+    z-index: 10;
+  }
+  .non_member::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -99;
+  }
+  .non_member_content {
+    width: 90%;
+    height: 550px;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  .non_member_wrap {
+    width: 100%;
+    height: 100%;
+  }
+  .non_member_info {
+    width: 90%;
+    height: calc(100% - 30px);
+  }
+  .non_member_info_title {
+    font-size: var(--large-text);
+    margin: 20px 0;
+  }
+  .non_member_info label {
+    width: 100px;
+    margin-bottom: 10px;
+    font-size: var(--medium-text);
+  }
+
+  /* 이름 */
+  .non_member_info_name {
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .non_member_info_name input {
+    width: 100%;
+    height: 35px;
+  }
+
+  /* 연락처 */
+  .non_member_info_phoneNum {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+  .non_member_info_phoneNum input {
+    width: 100%;
+    height: 35px;
+  }
+  /* .phoneNum_input {
+    width: 100%;
+  }
+  .phoneNum_input input {
+    width: 25%;
+    height: 35px;
+  } */
+
+  /* 통신사 */
+  .non_member_info_cert {
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .mobile_carrier label {
+    width: 50px;
+    font-size: var(--small-text);
+    margin-top: 10px;
+  }
+  .mobile_carrier input {
+    display: none;
+  }
+  .num_request {
+    width: 100px;
+    height: 40px;
+    font-size: var(--small-text);
+    word-break: break-all;
+  }
+
+  /* 인증번호 */
+  .non_member_info_certNum {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+  }
+  .certNum_detail {
+    width: 100%;
+  }
+  .certNum_detail input {
+    width: 65%;
+    height: 35px;
+  }
+  .cert_time {
+    right: 35%;
+    height: 35px;
+    width: 50px;
+    line-height: 35px;
+  }
+  .cert_complete {
+    width: 30%;
+    height: 35px;
+  }
+
+  /* 다음 버튼 */
+  .non_member_info_btn {
+    width: 50%;
+    height: 35px;  
+    margin-top: 50px;
+    background-color: var(--white);
+    color: var(--dark-blue);
+    font-size: var(--medium-text);
+    font-weight: bold;
+  }
+
+  /* 회원가입 유도 */
+  .non_member_right {
+    display: none;
+  }
+}
