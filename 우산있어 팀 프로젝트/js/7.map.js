@@ -1,13 +1,3 @@
-const myKey = "3d5749bbe3e18ab918a6e8aa29cfb8be";
-
-// 서울역
-// let lat = "37.5542";
-// let lon = "126.9708";
-
-// 남산타워
-// let lat = "37.5512";
-// let lon = "126.9883";
-
 const kakaoMapMarker = obj => {
   // 지도 표시 영역
   let mapContainer = document.querySelector('.map');
@@ -34,16 +24,17 @@ const kakaoMapMarker = obj => {
 
     // 위치 정보 저장
     let positions = obj.map(item => ({
-      title: item.RENT_NM,
+      title: item.RENT_ID_NM,
       latlng: new kakao.maps.LatLng(item.STA_LAT, item.STA_LONG),
     }))
+
 
     // 이미지 마커 경로
     let imageSrc = `https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png`
 
     // 이미지 마커 표시
     positions.forEach(position => {
-      let imageSize = new kakao.maps.Size(40, 50)
+      let imageSize = new kakao.maps.Size(30, 40)
 
       let markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize)
 
@@ -53,6 +44,21 @@ const kakaoMapMarker = obj => {
         position: position.latlng,
         title: position.title,
         image: markerImage,
+      })
+      kakao.maps.event.addListener(marker, "click", () => {
+        document.querySelector(".umbrella_info").classList.toggle("show");
+        console.log(marker)
+
+        document.querySelector(".umbrella_info_top h2").innerText = marker.Gb;
+
+        let randomNum = Math.floor(Math.random() * 15 + 1);
+        let umb = Math.floor(Math.random() * 15 + 1);
+        let sunshield = randomNum;
+
+        document.querySelector(".umbrella_leftover").innerText = umb;
+        document.querySelector(".sunshield_leftover").innerText = sunshield;
+
+        document.querySelector(".umbrella_total span").innerText = umb + sunshield;
       })
     })
 
@@ -90,7 +96,8 @@ const kakaoMapMarker = obj => {
           });
         
           // 마커가 지도 위에 표시되도록 설정합니다
-          marker.setMap(map);  
+          marker.setMap(map);
+
           
           // var iwContent = message, // 인포윈도우에 표시할 내용
           //     iwRemoveable = true;
@@ -154,3 +161,11 @@ getData()
 
 
 
+
+/* 대여하기 */
+
+const mapRental = document.querySelector(".map_rental");
+
+mapRental.addEventListener("click", () => {
+  location.href = "/html/5.rent.html";
+})
