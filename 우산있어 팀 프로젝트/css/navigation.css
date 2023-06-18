@@ -40,6 +40,10 @@
   font-size: var(--large-text);
   color: var(--white);
 }
+.logo img {
+  width: 50px;
+  height: 70px;
+}
 
 /* Mobile Navigation */
 .mobileNav {

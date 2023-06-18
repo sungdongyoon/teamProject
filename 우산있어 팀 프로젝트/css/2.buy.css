@@ -50,6 +50,7 @@
   height: 450px;
   padding: 30px;
   margin: 0 50px;
+  opacity: 0;
 }
 .member_ticket_title {
   font-size: var(--small-title);
@@ -90,9 +91,18 @@
 .member_ticket_buy {
   padding: 10px 50px;
   border: none;
+  /* border-radius: 5px; */
+  box-shadow: 0px 3px 5px var(--gray);
   background-color: var(--yellow);
+  transition: 0.5s;
   font-weight: 700;
   cursor: pointer;
+}
+.member_ticket_buy:hover {
+  background-color: var(--white);
+  color: var(--black);
+  border: none;
+  transform: scale(1.05);
 }
 .member_mobile_bottom {
   display: none;
@@ -116,6 +126,32 @@
 .active {
   display: block;
 }
+
+.first_ticket {
+  animation: up 1s ease-in-out forwards;
+}
+.second_ticket {
+  animation: up 1s ease-in-out 0.5s forwards;
+}
+.third_ticket {
+  animation: up 1s ease-in-out 1s forwards;
+}
+
+@keyframes up {
+  0% {
+    /* opacity: 0; */
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes buttonHover {
+  0% {
+
+  }
+}  
 
 @media all and (max-width:767px) {
   .second_ticket,

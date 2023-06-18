@@ -98,3 +98,11 @@ nextBtn.addEventListener("click", (e) => {
   e.preventDefault();
   location.href = "/html/2-3.non-member_buy.html";
 })
+
+
+/* 회원가입 하러 가기 */
+const goJoin = document.querySelector(".non_member_right_three");
+
+goJoin.addEventListener("click", () => {
+  location.href = "";
+})

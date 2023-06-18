@@ -285,6 +285,7 @@
   font-size: var(--large-text);
   color: var(--white);
   z-index: 10;
+  cursor: pointer;
 }
 
 
