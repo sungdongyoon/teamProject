@@ -335,6 +335,20 @@
   }
   /* 버튼 */
   .buy_modal_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .buy {
     display: none;
+  }
+  .cancel {
+    position: absolute;
+    bottom: 20px;
+    background-color: var(--white);
+    border: 1px solid var(--dark-blue);
+    height: 30px;
+    width: 100px;
+    font-size: var(--small-text);
   }
 }

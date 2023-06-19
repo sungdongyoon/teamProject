@@ -1,8 +1,8 @@
 /* Import Local CSS */
-@import url('/css/reset.css');
-@import url('/css/variables.css');
-@import url('/css/navigation.css');
-@import url('/css/footer.css');
+@import url('/CSS/reset.css');
+@import url('/CSS/variables.css');
+@import url('/Navigation&Footer/navigation.css');
+@import url('/Navigation&Footer/footer.css');
 
 .ticket_history {
   width: 100%;
@@ -47,7 +47,6 @@
   align-items: center;
   box-shadow: 0 0 10px #ccc;
   margin-bottom: 20px;
-  border-radius: 5px;
 }
 .history_right {
   margin-left: 40px;
@@ -70,16 +69,15 @@
   display: none;
 }
 
-/* 미디어 쿼리 */
 @media all and (max-width:767px) {
   .ticket_history {
     height: calc(100vh - 120px);
-    /* border: 5px solid red; */
-    margin-top: 110px;
+    border: 5px solid red;
+    margin-top: 170px;
   }
   .ticket_history .title {
     text-align: center;
-    font-size: var(--large-text);
+    font-size: var(--small-title);
     margin-bottom: 10px;
   }
   .ticket_history .subtitle {
@@ -88,42 +86,17 @@
     margin-bottom: 20px;
   }
   .ticket_history hr {
-    width: 300px;
+    width: 1200px;
     margin: 0 auto;
   }
   .history_inner { 
-    /* border: 4px solid yellowgreen; */
+    border: 4px solid yellowgreen;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 30px auto 0;
     font-size: var(--medium-text);
-  }
-
-  .history_detail {
-    width: 80%;
-    height: 90px;
-    box-shadow: 0 0 3px #ccc;
-    margin: 0 auto;
-    margin-bottom: 20px;
-  }
-  .history_right {
-    margin-left: 16px;
-    font-size: var(--large-text);
-    font-weight: bold;
-  }
-  .history_right_detail {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-right: 10px;
-    font-size: var(--small-text);
-  }
-  .history_right_detail .times {
-    font-size: var(--large-text);
-    font-weight: bold;
   }
 
 
@@ -134,12 +107,10 @@
   .btn_go_to_rental {
     display: block;
     width: 150px;
-    height: 60px;
+    height: 70px;
     margin: 0 auto;
     background-color: var(--yellow);
     border: none;
-    border-radius: 5px;
-    margin: 10px auto 30px;
-    font-size: var(--medium-text);
+    margin-bottom: 50px;
   }
 }

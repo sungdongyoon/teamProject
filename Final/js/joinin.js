@@ -68,6 +68,8 @@ admit_send.addEventListener("click", (e) => {
       admit_finish.disabled = false;
       admit_finish.style.opacity = 1;
       admit_finish.style.backgroundColor = "gold";
+      admit_finish.style.color = "black";
+      admit_finish.style.cursor = "pointer";
     }
   })
   setInterval(timer, 1000);

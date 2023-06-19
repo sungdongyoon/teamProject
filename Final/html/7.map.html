@@ -12,8 +12,10 @@
   <!-- Fontawesome -->
   <script src="https://kit.fontawesome.com/1792b891d9.js" crossorigin="anonymous"></script>
   <!-- Custom -->
-  <link rel="stylesheet" href="/css/6.map.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script defer src="/js/7.map.js"></script>
   <script defer src="/script.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5749bbe3e18ab918a6e8aa29cfb8be"></script>
   <title>우산있어? - 이용권 구매</title>
 </head>
 <body>
@@ -24,7 +26,30 @@
         대여소 조회
       </h1>
       <div class="map_wrap">
-        <div class="map"></div>
+        <div class="map">
+          <div class="umbrella_info">
+            <div class="umbrella_info_top">
+              <h2>834. 효창공원앞역 3번출구</h2>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="umbrella_info_bottom">
+              <div class="umbrella_type">
+                <div id="umbrella">
+                  <span>우산</span>
+                  <span class="umbrella_leftover">3</span>
+                </div>
+                <div id="sun_shield">
+                  <span>양산</span>
+                  <span class="sunshield_leftover">4</span>
+                </div>
+              </div>
+              <div class="umbrella_total">
+                <span>7</span>
+              </div>
+            </div>
+          </div>
+          <button class="reload_btn"><i class="fa-solid fa-rotate-right"></i></button>
+        </div>
       </div>
       <button class="map_rental">대여하기</button>
     </section>

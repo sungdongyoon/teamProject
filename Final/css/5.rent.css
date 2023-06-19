@@ -2,12 +2,14 @@
   /* 5.rent.html */
   .rent_container {
     background: url('/img/umbrella3.jpg') no-repeat center;
-    width: 100vw;
-    height: 810px;
+    width: 100%;
+    height: 1000px;
   }
   /* Rental Header */
   .main_gnb_rental {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 90px;
     color: var(--white);
@@ -86,7 +88,6 @@
     width: 140px;
     height: 50px;
     border: none;
-    text-align: center;
   }
   .rental_umbNum_detail button {
     width: 50px;
@@ -97,6 +98,7 @@
   .rental_complete {
     width: 100%;
     height: calc(100% - 90px);
+    margin-top: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;

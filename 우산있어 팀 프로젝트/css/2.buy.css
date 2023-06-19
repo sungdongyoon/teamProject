@@ -43,6 +43,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url('https://img.freepik.com/free-photo/copy-space-yellow-umbrella_23-2148467193.jpg?w=740&t=st=1687165445~exp=1687166045~hmac=2457ba458d6b1c4dd01a94f1e26a0750fb72bf5fc11882c10191cfda946d0b15') center no-repeat;
+  background-size: cover;
 
   box-shadow: 0 5px 15px var(--gray);
   border-radius: 3px;
@@ -52,8 +54,19 @@
   margin: 0 50px;
   opacity: 0;
 }
+.member_ticket::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
 .member_ticket_title {
   font-size: var(--small-title);
+  color: var(--white);
   margin: 10px 0;
   margin-bottom: 40px;
 }
@@ -65,6 +78,7 @@
 }
 .member_ticket_content li {
   font-size: var(--small-text);
+  color: var(--white);
   text-align: left;
   margin-bottom: 15px;
 }
@@ -75,6 +89,7 @@
 }
 .member_ticket_price {
   font-size: var(--small-text);
+  color: var(--white);
   width: 100%;
   text-align: right;
 }
@@ -99,8 +114,8 @@
   cursor: pointer;
 }
 .member_ticket_buy:hover {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--dark-blue);
+  color: var(--white);
   border: none;
   transform: scale(1.05);
 }
@@ -147,11 +162,6 @@
     transform: translateY(0);
   }
 }
-@keyframes buttonHover {
-  0% {
-
-  }
-}  
 
 @media all and (max-width:767px) {
   .second_ticket,
@@ -163,6 +173,7 @@
   }
   .member {
     height: calc(100% - 90px);
+    margin-top: 90px;
   }
   .member_title {
     margin: 15px 0;
@@ -302,5 +313,17 @@
   }
   .hide {
     display: none;
+  }
+  .first_ticket {
+    animation: none;
+    opacity: 1;
+  }
+  .second_ticket {
+    animation: none;
+    opacity: 1;
+  }
+  .third_ticket {
+    animation: none;
+    opacity: 1;
   }
 }

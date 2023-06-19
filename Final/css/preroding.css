@@ -1,0 +1,68 @@
+@import url('/css/reset.css');
+@import url('/css/variables.css');
+
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--Sub-en);
+  animation: splashed 3s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 5s;
+}
+.preloading-inner {
+  height: inherit;
+  background: url('/img/homepagesimage/main01.jpg') -150px center no-repeat;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+}
+.preloading-inner::after {
+  content: '';
+  width: 100vw;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.preloading-header {
+  padding-left: 1em;
+  position: absolute;
+  top: 30%;
+  color: var(--white);
+  font-size: var(--large-text);
+  z-index: 1;
+}
+.slogan {
+  margin-bottom: 1em;
+  line-height: 1.5;
+  font-family: var(--Main-en);
+}
+.slogan em {
+  font-style: normal;
+  font-weight: bold;
+  color: var(--yellow);
+}
+.preloading-header > p:last-child {
+  letter-spacing: 1.4px;
+}
+
+@keyframes splashed {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

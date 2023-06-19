@@ -129,11 +129,18 @@ mobileNextBtn.addEventListener("click", () => {
   if(!paymentModal.classList.contains("active")) {
     paymentModal.classList.add("active");
     mobileNextBtn.disabled = true;
+    cancelBtn.innerText = "뒤로가기";
   } else {
     location.href = "/html/4.buy_complete.html";
   }
 })
 
+/* 취소 버튼 */
+cancelBtn.addEventListener("click", () => {
+  if(window.innerWidth < 767) {
+    mobileNextBtn.disabled = false;
+  }
+})
 
 
 

@@ -1,9 +1,3 @@
-$(function() {
-  /* Navigation & Footer */ 
-    $('.main_gnb').load('/include/navigation.html');
-    $('.footer').load('/include/footer.html');
-  })
-
 $(".member_btn").click(function() {
   Swal.fire({
     title: "웹 상에서는<br/> 대여권 구매만 가능합니다!",
@@ -51,3 +45,8 @@ $(".num_request").click(function() {
   })
 })
 
+$(function() {
+  /* Navigation & Footer */ 
+    $('.main_gnb').load('/include/navigation.html');
+    $('.footer').load('/include/footer.html');
+  })

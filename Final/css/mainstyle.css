@@ -103,6 +103,7 @@
   background-color: var(--white);
   border: none;
   border-radius: 50px;
+  cursor: pointer;
 }
 .rentalBtn:hover {
   background-color: var(--dark-blue);
@@ -185,7 +186,7 @@
 
 /* === Problem Section === */
 .problem {
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -207,7 +208,7 @@
 /* === Raise Problem Section === */
 .raiseProblem {
   width: 100vw;
-  height: 250vh;
+  height: 180vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

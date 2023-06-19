@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
   <script src="https://code.jquery.com/jquery-migrate-1.4.1.js"></script>
@@ -54,7 +56,7 @@
         </div>
         <!-- 인증번호 입력란 -->
         <div class="admit_box">
-          <input type="text" class="info_certNum"><span class="token_timer" id="token"> 3 : 00 </span></input>
+          <input type="text" class="info_certNum" maxlength="4"><span class="token_timer" id="token"> 3 : 00 </span></input>
           <button class="admit_finish">인증완료</button>
         </div>
         <!-- 동의약관 -->
