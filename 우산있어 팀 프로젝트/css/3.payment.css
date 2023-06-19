@@ -187,25 +187,22 @@
   height: 50px;
   width: 35%;
 }
-.cancel {
-  width: 200px;
-  background-color: var(--yellow);
-  border: none;
-  border-radius: 5px;
-
-  font-weight: bold;
-  font-size: var(--medium-text);
-  cursor: pointer;
-}
+.cancel,
 .buy {
   width: 200px;
-  background-color: var(--yellow);
-  border: none;
+  background-color: var(--white);
+  box-shadow: 0px 0px 7px var(--dark-blue);
   border-radius: 5px;
 
   font-weight: bold;
   font-size: var(--medium-text);
   cursor: pointer;
+  transition: 0.5s;
+}
+.cancel:hover,
+.buy:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
 }
 
 @media all and (max-width: 767px) {

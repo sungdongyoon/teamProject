@@ -18,6 +18,8 @@
   line-height: 100px;
 
   margin: 30px 0;
+  opacity: 0;
+  animation: up 1s ease-in-out forwards;
 }
 .buy_complete_icon img {
   width: 100%;
@@ -28,6 +30,8 @@
 .buy_complete_title {
   text-align: center;
   width: 500px;
+  opacity: 0;
+  animation: up 1s ease-in-out forwards;
 }
 .buy_complete_title h1 {
   font-size: var(--medium-title);
@@ -52,6 +56,8 @@
 
   border-top: 3px solid var(--dark-blue);
   border-bottom: 3px solid var(--dark-blue);
+  opacity: 0;
+  animation: completePage 1s ease-in-out 0.7s forwards;
 }
 .buy_complete_info_type,
 .buy_complete_info_date,
@@ -91,10 +97,26 @@
   height: 50px;
   font-size: var(--medium-text);
   font-weight: bold;
-  background-color: var(--yellow);
-  border: none;
+  background-color: var(--white);
+  border: 1px solid var(--dark-blue);
   border-radius: 5px;
   cursor: pointer;
+  opacity: 0;
+  animation: completePage 1s ease-in-out 1.5s forwards;
+  transition: 0.5s;
+}
+.go_home:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+@keyframes completePage {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media all and (max-width:767px) {
