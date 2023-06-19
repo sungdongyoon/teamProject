@@ -80,7 +80,7 @@ function toggleSubmitButton() {
   if(first_agree && second_agree) {
     buyBtn.disabled = false;
     mobileNextBtn.disabled = false;
-  } else if (!first_agree || !second_agree) {
+  } else if (!first_agree && !second_agree) {
     buyBtn.disabled = true;
     mobileNextBtn.disabled = true;
   }

@@ -9,36 +9,27 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
-  background-color: transparent;
+  background-color: var(--white);
   font-size: var(--large-text);
   color: var(--white);
   z-index: 999;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1) ;
 }
-/* Main Menu Top*/
-.main_gnb.on {
-  background-color: var(--white);
-}
-.main_gnb > .logo a.on,
-.gnb-content.on a,
-.gnb-content.on a i {
-  color: var(--dark-blue);
-}
-
 /* PC Navigation*/
-.main_gnb > .logo a {
-  color: var(--white);
+.main_gnb > .logo {
+  color: var(--dark-blue);
 }
 .gnb-content {
   margin: 0 20px;
-  color: var(--white);
+  color: var(--dark-blue);
 }
 .gnb-content a {
   margin-right: 42px;
-  color: var(--white);
+  color: var(--dark-blue);
 }
 .gnb-content a i {
   font-size: var(--large-text);
-  color: var(--white);
+  color: var(--dark-blue);
 }
 
 /* Mobile Navigation */
@@ -47,6 +38,7 @@
 }
 .Mobile_gnb_content {
   display: none;
+  z-index: 2;
 }
 
 @media all and (max-width:767px) {
@@ -74,6 +66,7 @@
     padding-left: 20px;
     color: var(--white);
   }
+
   /* Toggle Button */
   .toggleBtn{
     display: block;
@@ -147,7 +140,7 @@
     width: 100vw;
     height: 100vh;
     transform: translateX(100%);
-    transition: transform 0.5s ease-in-out,
+    transition: transform 0.5s ease-in-out;
   }
   .Mobile_gnb_content.active {
     display: flex;
@@ -160,26 +153,26 @@
   .Mobile_gnb_content a {
     position: relative;
   }
-  .Mobile_gnb_content a::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 45vw;
-    height: 100%;
-    border-radius: 50%;
-    background-color: var(--dark-blue);
-    text-align: center;
-    color: var(--white);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
-  .Mobile_gnb_content a:hover{
-    color: var(--white);
-  }
-  .Mobile_gnb_content a:hover::after{
-    opacity: 1;
-  }
+}
+.Mobile_gnb_content a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45vw;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--dark-blue);
+  text-align: center;
+  color: var(--white);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.Mobile_gnb_content a:hover{
+  color: var(--white);
+}
+.Mobile_gnb_content a:hover::after{
+  opacity: 1;
 }

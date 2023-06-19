@@ -43,42 +43,45 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url('https://img.freepik.com/free-photo/copy-space-yellow-umbrella_23-2148467193.jpg?w=740&t=st=1687165445~exp=1687166045~hmac=2457ba458d6b1c4dd01a94f1e26a0750fb72bf5fc11882c10191cfda946d0b15') center no-repeat;
-  background-size: cover;
 
   box-shadow: 0 5px 15px var(--gray);
   border-radius: 3px;
   width: 300px;
   height: 450px;
   padding: 30px;
+  position: relative;
   margin: 0 50px;
   opacity: 0;
+}
+.member_ticket::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.03);
+  width: 110%;
+  height: 106%;
+  z-index: -100;
 }
 .member_ticket::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.57);
   width: 100%;
   height: 100%;
   z-index: -10;
-}
-.member_ticket:hover .member_ticket_title {
-  color: var(--black);
-}
-.member_ticket:hover .member_ticket_content li {
-  color: var(--black);
-}
-.member_ticket:hover .member_ticket_price {
-  color: var(--black);
+  transition: 0.5s;
 }
 .member_ticket:hover::after {
-  background-color: rgba(0, 0, 0, 0.1);
+  background: url('https://img.freepik.com/free-photo/copy-space-yellow-umbrella_23-2148467193.jpg?w=740&t=st=1687165445~exp=1687166045~hmac=2457ba458d6b1c4dd01a94f1e26a0750fb72bf5fc11882c10191cfda946d0b15') center no-repeat;
+  background-size: cover;
+  opacity: 0.5;
 }
 .member_ticket_title {
   font-size: var(--small-title);
-  color: var(--white);
+  color: var(--black);
   margin: 10px 0;
   margin-bottom: 40px;
 }
@@ -90,7 +93,7 @@
 }
 .member_ticket_content li {
   font-size: var(--small-text);
-  color: var(--white);
+  color: var(--black);
   text-align: left;
   margin-bottom: 15px;
 }
@@ -101,7 +104,7 @@
 }
 .member_ticket_price {
   font-size: var(--small-text);
-  color: var(--white);
+  color: var(--black);
   width: 100%;
   text-align: right;
 }
@@ -245,20 +248,27 @@
     height: 330px;
     margin-top: 20px;
     padding: 10px 20px;
+    position: relative;
   }
   .member_ticket_title {
     font-size: var(--large-text);
     margin-bottom: 20px;
+    color: var(--black);
   }
   .member_ticket_content ul {
     height: 170px;
     padding-top: 20px;
+    color: var(--black);
+  }
+  .member_ticket_content li {
+    color: var(--black);
   }
   .member_ticket_price {
     font-size: var(--small-text);
     width: 100%;
     text-align: right;
     margin-bottom: 10px;
+    color: var(--black);
   }
   .member_ticket_total_price b {
     font-size: var(--large-text);

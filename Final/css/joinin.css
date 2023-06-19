@@ -4,16 +4,13 @@
 @import url('/css/navigation.css');
 @import url('/css/footer.css');
 
-/* 전체 구조 */
-body {
-  html.swal2-height-auto {
-    height: 100% !important;
-  }
-  body.swal2-height-auto {
-    height: 100% !important;
-  }
+/* Common CSS */
+html.swal2-height-auto {
+  height: 100% !important;
 }
-
+body.swal2-height-auto {
+  height: 100% !important;
+}
 
 .joinin {
   width: 100%;
@@ -27,7 +24,7 @@ body {
 .joinin .title {
   text-align: center;
   font-size: var(--small-title);
-  margin-bottom: 20px;
+  margin-top: 34px;
 }
 .joinin hr {
   margin: 0 200px;
@@ -214,7 +211,7 @@ body {
 /* 미디어쿼리 */
 @media all and (max-width: 767px) {
   .swal2-title {
-    width: 230px;
+    width: 240px;
     height: 50px;
     font-size: var(--medium-text);
   }
@@ -225,16 +222,16 @@ body {
     width: 300px;
   }
   .swal2-modal {
-    width: 310px;
+    width: 340px;
   }
   .swal2-icon {
     width: 50px;
     height: 50px;
   }
-  .swal2-warning {
+  .swal2-info {
     font-size: var(--small-text);
   }
-  .swal2-info {
+  .swal2-success {
     font-size: var(--small-text);
   }
   .swal2-actions {
@@ -244,14 +241,23 @@ body {
     width: 60px;
     height: 30px;
   }
-  .swal2-cancel {
-    width: 60px;
-    height: 30px;
+  .swal2-success-ring {
+
+  }
+  .swal2-success-line-tip {
+    
+  }
+  .swal2-success-line-long {
+    
   }
 
 
   .joinin {
     width: 100%;
+  }
+  .joinin .title {
+    margin-top: 0;
+    margin-bottom: 14px;
   }
   .joinin hr {
     margin: 0 50px;

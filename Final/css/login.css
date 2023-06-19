@@ -1,8 +1,8 @@
 /* Import Local CSS */
-@import url('/CSS/reset.css');
-@import url('/CSS/variables.css');
-@import url('/CSS/navigation.css');
-@import url('/Navigation&Footer/footer.css');
+@import url('/css/reset.css');
+@import url('/css/variables.css');
+@import url('/css/navigation.css');
+@import url('/css/footer.css');
 
 /* 전체 구조 */
 .login {
@@ -26,7 +26,7 @@
   height: 90%;
   background-color: var(--white);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-  border-radius: 15px 0 0 15px;
+  border-radius: 5px 0 0 5px;
   margin: 40px auto;
   position: relative;
   right: 0;
@@ -75,7 +75,7 @@
   /* border: 5px solid blue; */
   margin: 40px 0;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-  border-radius: 0 15px 15px 0;
+  border-radius: 0 5px 5px 0;
   overflow: hidden;
   
   /* background: url('/img/로그인페이지\ 일러스트.jpg') center;
@@ -130,7 +130,7 @@ figure video {
     width: 80%;
     height: 500px;
     font-size: var(--small-text);
-    border-radius: 15px;
+    border-radius: 5px;
     margin-top: 60px;
   }
 
@@ -168,6 +168,7 @@ figure video {
     height: 810px;
     margin: 0;
     top: 0;
+    border-radius: 0;
   }
   .inner1 {
     display: none;

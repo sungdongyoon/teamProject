@@ -96,7 +96,7 @@
 }
 .rentalBtn {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 20px 30px;
   font-size: var(--large-text);
   font-weight: bold;
   color: var(--dark-blue);
@@ -497,7 +497,7 @@
 
   .rentalBtn {
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 20px 30px;
     font-size: var(--medium-text);
     font-weight: bold;
     color: var(--dark-blue);
