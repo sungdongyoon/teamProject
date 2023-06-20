@@ -149,7 +149,7 @@
     margin: 20px 0;
     background-color: var(--dark-blue);
     border: 1px solid var(--gray);
-    border-radius: 5px;
+    /* border-radius: 5px; */
     font-size: var(--medium-text);
     font-weight: bold;
     color: var(--white);

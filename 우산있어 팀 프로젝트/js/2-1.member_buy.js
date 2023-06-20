@@ -80,9 +80,11 @@ function toggleSubmitButton() {
   if(first_agree && second_agree) {
     buyBtn.disabled = false;
     mobileNextBtn.disabled = false;
+    mobileNextBtn.style.opacity = 0.5;
   } else if (!first_agree || !second_agree) {
     buyBtn.disabled = true;
     mobileNextBtn.disabled = true;
+    mobileNextBtn.style.opacity = 0.2;
   }
 }
 
@@ -129,7 +131,8 @@ mobileNextBtn.addEventListener("click", () => {
   if(!paymentModal.classList.contains("active")) {
     paymentModal.classList.add("active");
     mobileNextBtn.disabled = true;
-    cancelBtn.innerText = "뒤로가기";
+    mobileNextBtn.style.opacity = 0.2;
+    cancelBtn.innerText = "close";
   } else {
     location.href = "/html/4.buy_complete.html";
   }
@@ -159,18 +162,27 @@ one.addEventListener("click", () => {
   firstTicket.classList.remove("hide");
   secondTicket.classList.remove("show");
   thirdTicket.classList.remove("show");
+  if(window.innerWidth < 767) {
+    firstTicket.style.animation = "mobileup 1s ease-in-out forwards";
+  }
 })
 three.addEventListener("click", () => {
   ticketThreeValue();
   firstTicket.classList.add("hide");
   secondTicket.classList.add("show");
   thirdTicket.classList.remove("show");
+  if(window.innerWidth < 767) {
+    secondTicket.style.animation = "mobileup 1s ease-in-out forwards";
+  }
 })
 five.addEventListener("click", () => {
   ticketFiveValue();
   firstTicket.classList.add("hide");
   secondTicket.classList.remove("show");
   thirdTicket.classList.add("show");
+  if(window.innerWidth < 767) {
+    thirdTicket.style.animation = "mobileup 1s ease-in-out forwards";
+  }
 })
 
 

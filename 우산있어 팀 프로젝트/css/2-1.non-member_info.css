@@ -234,7 +234,7 @@
   margin-top: 80px;
 
   border: 1px solid #ccc;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   background-color: var(--white);
   color: var(--dark-blue);
   font-size: var(--large-text);
@@ -242,6 +242,11 @@
 
   cursor: pointer;
   opacity: 0.5;
+  transition: 0.5s;
+}
+.non_member_info_btn:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
 }
 
 

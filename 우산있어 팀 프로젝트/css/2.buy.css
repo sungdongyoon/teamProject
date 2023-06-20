@@ -157,7 +157,8 @@
   display: block;
 }
 
-.first_ticket {
+.first_ticket,
+.non_first_ticket {
   animation: up 1s ease-in-out forwards;
 }
 .second_ticket {
@@ -170,7 +171,17 @@
 @keyframes up {
   0% {
     /* opacity: 0; */
-    transform: translateY(100px);
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes mobileup {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -202,10 +213,10 @@
   }
   .member_content {
     flex-direction: column;
-    border-top: 3px solid var(--gray);
+    /* border-top: 3px solid var(--gray); */
     border-bottom: none;
     width: 80%;
-    height: 65%;
+    height: 60%;
   }
   .member_ticket_select {
     display: block;
@@ -225,20 +236,26 @@
     background-color: var(--dark-blue);
     color: var(--white);
   }
+  .member_ticket_select_btn label:nth-of-type(1) {
+    border-radius: 20px 0 0 20px;
+  }
+  .member_ticket_select_btn label:nth-of-type(3) {
+    border-radius: 0 20px 20px 0;
+  }
   .member_ticket_select_btn {
     width: 230px;
-    height: 50px;
-    margin: 20px 0;
+    height: 30px;
+    margin: 10px 0;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
   .member_ticket_select_btn label {
     border: 2px solid var(--dark-blue);
     padding: 0 20px;
 
-    line-height: 50px;
+    line-height: 30px;
     text-align: center;
     font-size: var(--small-text);
     font-weight: bold;
@@ -249,6 +266,11 @@
     margin-top: 20px;
     padding: 10px 20px;
     position: relative;
+  }
+  .member_ticket::after {
+    background: url('https://img.freepik.com/free-photo/copy-space-yellow-umbrella_23-2148467193.jpg?w=740&t=st=1687165445~exp=1687166045~hmac=2457ba458d6b1c4dd01a94f1e26a0750fb72bf5fc11882c10191cfda946d0b15') center no-repeat;
+    background-size: cover;
+    opacity: 0.5;
   }
   .member_ticket_title {
     font-size: var(--large-text);
@@ -275,20 +297,27 @@
   }
   .member_mobile_bottom {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: 130px;
   }
   .mobile_bottom_left {
-    width: 80%;
+    width: 100%;
+    height: 85px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--black);
-    border-right: none;
+    /* border: 1px solid var(--black);
+    border-right: none; */
+    border: none;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 10px var(--gray);
+    background-color: var(--dark-blue);
+    color: var(--white);
   }
   .mobile_bottom_type {
     width: 70%;
@@ -314,10 +343,14 @@
     font-size: var(--medium-text);
   }
   .mobile_bottom_right {
-    width: 20%;
-    background-color: var(--yellow);
-    border: 1px solid var(--gray);
+    width: 100%;
+    height: 45px;
+    background-color: var(--dark-blue);
+    opacity: 0.5;
+    /* border: 1px solid var(--gray); */
+    border: none;
     font-weight: bold;
+    color: var(--white);
     letter-spacing: 2px;
   }
   .payment_modal {

@@ -61,9 +61,11 @@ function toggleSubmitButton() {
   if(first_agree && second_agree) {
     buyBtn.disabled = false;
     mobileNextBtn.disabled = false;
+    mobileNextBtn.style.opacity = 0.5;
   } else if (!first_agree || !second_agree) {
     buyBtn.disabled = true;
     mobileNextBtn.disabled = true;
+    mobileNextBtn.style.opacity = 0.2;
   }
 }
 
@@ -106,8 +108,16 @@ mobileNextBtn.addEventListener("click", () => {
     paymentModal.classList.add("active");
     ticketOneValue()
     mobileNextBtn.disabled = true;
+    mobileNextBtn.style.opacity = 0.2;
+    cancelBtn.innerText = "close";
   } else {
     location.href = "/html/4.buy_complete.html";
+  }
+})
+/* 취소 버튼 */
+cancelBtn.addEventListener("click", () => {
+  if(window.innerWidth < 767) {
+    mobileNextBtn.disabled = false;
   }
 })
 
