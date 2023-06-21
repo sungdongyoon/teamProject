@@ -124,7 +124,7 @@ buyBtn.addEventListener("click", () => {
 /* 모바일 하단 메뉴 */
 const mobileType = document.querySelector(".mobile_type");
 const mobilePrice = document.querySelector(".mobile_price");
-const mobileNextBtn = document.querySelector(".mobile_bottom_right");
+const mobileNextBtn = document.querySelector(".mobile_bottom_next");
 
 /* 다음 버튼 */
 mobileNextBtn.addEventListener("click", () => {

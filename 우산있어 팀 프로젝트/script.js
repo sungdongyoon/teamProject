@@ -1,4 +1,4 @@
-$(".member_btn").click(function() {
+$(".member_btn_bottom").click(function() {
   Swal.fire({
     title: "웹 상에서는<br/> 대여권 구매만 가능합니다!",
     text: "대여권 사용은 앱을 이용해주세요😳",
@@ -14,7 +14,7 @@ $(".member_btn").click(function() {
     }
   })
 })
-$(".non_member_btn").click(function() {
+$(".non_member_btn_bottom").click(function() {
   Swal.fire({
     title: "웹 상에서는<br/> 대여권 구매만 가능합니다!",
     text: "대여권 사용은 앱을 이용해주세요😳",

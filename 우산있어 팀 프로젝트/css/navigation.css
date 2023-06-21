@@ -26,19 +26,19 @@
 
 /* PC Navigation*/
 .main_gnb > .logo a {
-  color: var(--white);
+  color: var(--dark-blue);
 }
 .gnb-content {
   margin: 0 20px;
-  color: var(--white);
+  color: var(--dark-blue);
 }
 .gnb-content a {
   margin-right: 42px;
-  color: var(--white);
+  color: var(--dark-blue);
 }
 .gnb-content a i {
   font-size: var(--large-text);
-  color: var(--white);
+  color: var(--dark-blue);
 }
 .logo img {
   width: 50px;

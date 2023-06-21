@@ -302,23 +302,22 @@
   .member_mobile_bottom {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 130px;
   }
-  .mobile_bottom_left {
+  .mobile_bottom_info {
     width: 100%;
-    height: 85px;
+    height: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid var(--black);
-    border-right: none; */
     border: none;
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px 10px 0 0;
     box-shadow: 0 0 10px var(--gray);
     background-color: var(--dark-blue);
     color: var(--white);
@@ -346,14 +345,14 @@
   .mobile_bottom_price span:last-child {
     font-size: var(--medium-text);
   }
-  .mobile_bottom_right {
+  .mobile_bottom_next {
     width: 100%;
-    height: 45px;
+    height: 50px;
     background-color: var(--dark-blue);
     opacity: 0.5;
-    /* border: 1px solid var(--gray); */
     border: none;
     font-weight: bold;
+    font-size: var(--medium-text);
     color: var(--white);
     letter-spacing: 2px;
   }
