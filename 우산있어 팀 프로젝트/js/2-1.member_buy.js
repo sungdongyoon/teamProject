@@ -132,7 +132,7 @@ mobileNextBtn.addEventListener("click", () => {
     paymentModal.classList.add("active");
     mobileNextBtn.disabled = true;
     mobileNextBtn.style.opacity = 0.2;
-    cancelBtn.innerText = "close";
+    cancelBtn.innerHTML = "<i class='fa-solid fa-xmark'></i>";
   } else {
     location.href = "/html/4.buy_complete.html";
   }

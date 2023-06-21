@@ -239,6 +239,10 @@
   .member_ticket_select_btn label:nth-of-type(1) {
     border-radius: 20px 0 0 20px;
   }
+  .member_ticket_select_btn label:nth-of-type(2) {
+    border-left: none;
+    border-right: none;
+  }
   .member_ticket_select_btn label:nth-of-type(3) {
     border-radius: 0 20px 20px 0;
   }

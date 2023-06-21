@@ -191,7 +191,7 @@
 .buy {
   width: 200px;
   background-color: var(--white);
-  box-shadow: 0px 0px 3px 1px var(--dark-blue);
+  /* box-shadow: 0px 0px 3px 1px var(--dark-blue); */
   border: none;
   /* border-radius: 5px; */
 
@@ -343,13 +343,13 @@
   }
   .cancel {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0px;
+    right: -10px;
     background-color: var(--white);
     border: none;
     height: 30px;
     width: 50px;
-    font-size: var(--small-text);
+    font-size: var(--large-text);
     color: var(--dark-blue);
   }
   .cancel:hover {

@@ -10,6 +10,7 @@
 }
 .map_title {
   font-size: var(--medium-title);
+  color: var(--dark-blue);
   text-align: center;
   margin: 35px 0;
 }

@@ -26,7 +26,8 @@ const check = function() {
   if(infoNum1.length === 11) {
     numRequest.disabled = false;
     numRequest.style.opacity = 1;
-    numRequest.style.border = "2px solid #ccc";
+    numRequest.style.backgroundColor = "var(--dark-blue)";
+    numRequest.style.color = "var(--white)";
   } else {
     numRequest.disabled = true;
   }
@@ -74,7 +75,8 @@ numRequest.addEventListener("click", (e) => {
     if(infoCertNum.value.length === 4) {
       certComplete.disabled = false;
       certComplete.style.opacity = 1;
-      certComplete.style.border = "2px solid #ccc";
+      certComplete.style.backgroundColor = "var(--dark-blue)";
+      certComplete.style.color = "var(--white)";
     }
   })
   setInterval(timer, 1000);
@@ -86,7 +88,9 @@ certComplete.addEventListener("click", (e) => {
   e.preventDefault();
   nextBtn.disabled = false;
   nextBtn.style.opacity = 1;
-  nextBtn.style.border = "2px solid #ccc";
+  nextBtn.style.backgroundColor = "var(--dark-blue)";
+  nextBtn.style.color = "var(--white)";
+  nextBtn.style.boxShadow = "0px 5px 10px var(--gray)";
 })
 
 
