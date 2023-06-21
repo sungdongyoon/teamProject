@@ -15,6 +15,22 @@
 //   }
 // }
 
+
+
+/* 이름 */
+const infoName = document.querySelector("#info_name");
+infoName.addEventListener("click", () => {
+  console.log("hi")
+})
+infoName.addEventListener("keypress", onlyKorean);
+
+/* 한글, 숫자 */
+function onlyKorean() {
+  let pattern = hi;
+  this.value = this.value.replace(pattern, '');
+}
+
+
 /* 인증번호 요청버튼 활성화 */
 const numRequest = document.querySelector(".num_request");
 
