@@ -30,8 +30,6 @@ ticketOne.addEventListener("click", () => {
 /* 결제수단 & 이용약관 체크 유무  */
 const agreeAll = document.querySelector(".buy_modal_agreeAll input");
 const agrees = document.querySelectorAll(".agree_left input");
-// const firstAgree = document.querySelector("#first_agree");
-// const secondAgree = document.querySelector("#second_agree");
 
 const agreements = {
   first_agree: false,

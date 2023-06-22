@@ -47,10 +47,8 @@ ticketFive.addEventListener("click", () => {
 
 
 /* 결제수단 & 이용약관 체크 유무  */
-const agreeAll = document.querySelector(".buy_modal_agreeAll");
-const agrees = document.querySelectorAll(".buy_modal_agree input");
-const firstAgree = document.querySelector("#first_agree");
-const secondAgree = document.querySelector("#second_agree");
+const agreeAll = document.querySelector(".buy_modal_agreeAll input");
+const agrees = document.querySelectorAll(".agree_left input");
 
 const agreements = {
   first_agree: false,
@@ -85,7 +83,7 @@ function toggleSubmitButton() {
     buyBtn.style.opacity = 1;
     mobileNextBtn.disabled = false;
     mobileNextBtn.style.opacity = 1;
-  } else if (!first_agree || !second_agree) {
+  } else {
     buyBtn.disabled = true;
     buyBtn.style.opacity = 0.2;
     mobileNextBtn.disabled = true;

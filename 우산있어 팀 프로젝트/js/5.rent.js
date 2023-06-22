@@ -9,10 +9,9 @@ umbNumCheck.addEventListener("click", () => {
   }
 })
 
-/* rent_complete.html */
+/* 우산번호 숫자만 */
+function onlyNumber() {
+  this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+}
 
-// const rentalCompleteBtn = document.querySelector(".rental_complete_btn");
-
-// rentalCompleteBtn.addEventListener("click", () => {
-//   location.href = ""
-// })
+umbNumInput.addEventListener("input", onlyNumber)
