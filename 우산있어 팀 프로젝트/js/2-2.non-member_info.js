@@ -15,31 +15,34 @@
 //   }
 // }
 
+/* 한글, 숫자 */
+function onlyKorean() {
+  this.value = this.value.replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g, '').replace(/(\..*)\./g, '$1');
+}
+function onlyNumber() {
+  this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+}
 
 
 /* 이름 */
 const infoName = document.querySelector("#info_name");
-infoName.addEventListener("click", () => {
-  console.log("hi")
-})
-infoName.addEventListener("keypress", onlyKorean);
+infoName.addEventListener("input", onlyKorean);
 
-/* 한글, 숫자 */
-function onlyKorean() {
-  let pattern = hi;
-  this.value = this.value.replace(pattern, '');
-}
+/* 연락처 */
+const infoNum = document.querySelector("#info_num");
+infoNum.addEventListener("input", onlyNumber)
+
 
 
 /* 인증번호 요청버튼 활성화 */
 const numRequest = document.querySelector(".num_request");
 
 const check = function() {
-  let infoNum1 = document.querySelector("#info_num1").value;
+  let infoNum = document.querySelector("#info_num").value;
   // let infoNum2 = document.querySelector("#info_num2").value;
   // let infoNum3 = document.querySelector("#info_num3").value;
   
-  if(infoNum1.length === 11) {
+  if(infoNum.length === 11) {
     numRequest.disabled = false;
     numRequest.style.opacity = 1;
     numRequest.style.backgroundColor = "var(--dark-blue)";
@@ -76,7 +79,7 @@ const infoCertNum = document.querySelector("#info_certNum");
 numRequest.addEventListener("click", (e) => {
   e.preventDefault();
 
-  let time = 180;
+  let time = 10;
   function timer() {
     if(time >= 0) {
       let min = Math.floor(time / 60);
@@ -97,6 +100,8 @@ numRequest.addEventListener("click", (e) => {
   })
   setInterval(timer, 1000);
 })
+
+infoCertNum.addEventListener("input", onlyNumber);
 
 /* 인증완료 */
 

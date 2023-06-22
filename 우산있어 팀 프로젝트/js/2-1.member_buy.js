@@ -18,28 +18,31 @@ const kakao = document.querySelector(".kakao");
 const zero = document.querySelector(".zero");
 
 
+/* 모달 검은 배경 */
+const blackBg = document.querySelector(".blackBg");
+
 /* 1회권 */
 ticketOne.addEventListener("click", () => {
   paymentModal.classList.add("active");
   ticketOneValue();
-  // buyBtn.disabled = true;
   toggleSubmitButton();
+  blackBg.classList.add("active");
 })
 
 /* 3회권 */
 ticketThree.addEventListener("click", () => {
   paymentModal.classList.add("active");
   ticketThreeValue();
-  // buyBtn.disabled = true;
   toggleSubmitButton();
+  blackBg.classList.add("active");
 })
 
 /* 5회권 */
 ticketFive.addEventListener("click", () => {
   paymentModal.classList.add("active");
   ticketFiveValue();
-  // buyBtn.disabled = true;
   toggleSubmitButton();
+  blackBg.classList.add("active");
 })
 
 
@@ -79,12 +82,14 @@ function toggleSubmitButton() {
   const { first_agree, second_agree } = agreements;
   if(first_agree && second_agree) {
     buyBtn.disabled = false;
+    buyBtn.style.opacity = 1;
     mobileNextBtn.disabled = false;
-    mobileNextBtn.style.opacity = 0.5;
+    mobileNextBtn.style.opacity = 1;
   } else if (!first_agree || !second_agree) {
     buyBtn.disabled = true;
+    buyBtn.style.opacity = 0.2;
     mobileNextBtn.disabled = true;
-    mobileNextBtn.style.opacity = 0.2;
+    mobileNextBtn.style.opacity = 0.5;
   }
 }
 
@@ -109,10 +114,13 @@ agreeAll.addEventListener('click', (e) => {
 /* 모달 취소 */
 cancelBtn.addEventListener("click", () => {
   paymentModal.classList.remove("active");
+  blackBg.classList.remove("active");
+  mobileNextBtn.style.opacity = 1;
 })
 /* 모달 결제하기 */
 buyBtn.addEventListener("click", () => {
   location.href = "/html/4.buy_complete.html";
+  blackBg.classList.remove("active");
 })
 
 
@@ -131,7 +139,7 @@ mobileNextBtn.addEventListener("click", () => {
   if(!paymentModal.classList.contains("active")) {
     paymentModal.classList.add("active");
     mobileNextBtn.disabled = true;
-    mobileNextBtn.style.opacity = 0.2;
+    mobileNextBtn.style.opacity = 0.5;
     cancelBtn.innerHTML = "<i class='fa-solid fa-xmark'></i>";
   } else {
     location.href = "/html/4.buy_complete.html";

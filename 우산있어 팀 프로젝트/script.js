@@ -44,6 +44,19 @@ $(".num_request").click(function() {
     // reverseButtons: true // 버튼 순서 거꾸로
   })
 })
+$(".cert_complete").click(function() {
+  Swal.fire({
+    title: "인증이 완료되었습니다!",
+    // text: "이용권 구매가 가능합니다🤩",
+    icon: "success",
+    showCancelButton: false,
+    confirmButtonColor: "#001665",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "확인",
+    cancelButtonText: "취소",
+    // reverseButtons: true // 버튼 순서 거꾸로
+  })
+})
 
 $(function() {
   /* Navigation & Footer */ 
