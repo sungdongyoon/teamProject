@@ -34,7 +34,7 @@ $(".non_member_btn_bottom").click(function() {
 $(".num_request").click(function() {
   Swal.fire({
     title: "인증번호를 전송해드렸습니다!",
-    text: "인증번호 4자리를 3분 이내로 입력해주세요😄",
+    text: "3분 이내로 인증을 완료해주세요😄",
     icon: "info",
     showCancelButton: false,
     confirmButtonColor: "#001665",

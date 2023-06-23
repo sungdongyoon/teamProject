@@ -267,13 +267,13 @@
     justify-content: center;
   }
   .member_ticket_select_btn label {
-    border: 2px solid var(--dark-blue);
+    border: 1px solid var(--dark-blue);
     padding: 0 20px;
 
     line-height: 30px;
     text-align: center;
     font-size: var(--small-text);
-    font-weight: bold;
+    font-weight: normal;
   }
   .member_ticket {
     width: 230px;

@@ -42,11 +42,8 @@ const check = function() {
   // let infoNum2 = document.querySelector("#info_num2").value;
   // let infoNum3 = document.querySelector("#info_num3").value;
   
-  if(infoNum.length === 11) {
-    numRequest.disabled = false;
-    numRequest.style.opacity = 1;
-    numRequest.style.backgroundColor = "var(--dark-blue)";
-    numRequest.style.color = "var(--white)";
+  if(infoNum.length === 11 && infoName.value !== "") {
+    numRequestDisabledFalse();
   } else {
     numRequest.disabled = true;
   }
@@ -79,23 +76,23 @@ const infoCertNum = document.querySelector("#info_certNum");
 numRequest.addEventListener("click", (e) => {
   e.preventDefault();
 
-  let time = 10;
+  let time = 5;
   function timer() {
     if(time >= 0) {
-      let min = Math.floor(time / 60);
+      let min = String(Math.floor(time / 60)).padStart(2, "0");
       let sec = String(time%60).padStart(2, "0");
       certTime.innerText = `${min}:${sec}`;
       time = time - 1;
     } else {
-      certComplete.disabled = true;
+      certCompleteDisabledTrue();
     }
   }
+  
   infoCertNum.addEventListener("input", () => {
     if(infoCertNum.value.length === 4) {
-      certComplete.disabled = false;
-      certComplete.style.opacity = 1;
-      certComplete.style.backgroundColor = "var(--dark-blue)";
-      certComplete.style.color = "var(--white)";
+      certCompleteDisabledFalse()
+    } else {
+      certCompleteDisabledTrue();
     }
   })
   setInterval(timer, 1000);
@@ -107,11 +104,7 @@ infoCertNum.addEventListener("input", onlyNumber);
 
 certComplete.addEventListener("click", (e) => {
   e.preventDefault();
-  nextBtn.disabled = false;
-  nextBtn.style.opacity = 1;
-  nextBtn.style.backgroundColor = "var(--dark-blue)";
-  nextBtn.style.color = "var(--white)";
-  nextBtn.style.boxShadow = "0px 5px 10px var(--gray)";
+  nextBtnDisabledFalse();
 })
 
 
@@ -131,3 +124,40 @@ const goJoin = document.querySelector(".non_member_right_three");
 goJoin.addEventListener("click", () => {
   location.href = "";
 })
+
+
+
+
+
+
+
+/* disabled 상태 함수 */
+
+function numRequestDisabledFalse() {
+  numRequest.disabled = false;
+  numRequest.style.opacity = 1;
+  numRequest.style.backgroundColor = "var(--dark-blue)";
+  numRequest.style.color = "var(--white)";
+}
+
+function certCompleteDisabledTrue() {
+  certComplete.disabled = true;
+  certComplete.style.opacity = 0.5;
+  certComplete.style.backgroundColor = "var(--white)";
+  certComplete.style.color = "var(--dark-blue)";
+}
+
+function certCompleteDisabledFalse() {
+  certComplete.disabled = false;
+  certComplete.style.opacity = 1;
+  certComplete.style.backgroundColor = "var(--dark-blue)";
+  certComplete.style.color = "var(--white)";
+}
+
+function nextBtnDisabledFalse() {
+  nextBtn.disabled = false;
+  nextBtn.style.opacity = 1;
+  nextBtn.style.backgroundColor = "var(--dark-blue)";
+  nextBtn.style.color = "var(--white)";
+  nextBtn.style.boxShadow = "0px 5px 10px var(--gray)";
+}
