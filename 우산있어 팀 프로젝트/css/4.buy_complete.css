@@ -112,15 +112,6 @@
   color: var(--white);
 }
 
-@keyframes completePage {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @media all and (max-width:767px) {
   .buy_complete {
     height: calc(100% - 90px);

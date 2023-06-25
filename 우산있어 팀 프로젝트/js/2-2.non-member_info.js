@@ -24,11 +24,11 @@ function onlyNumber() {
 }
 
 
-/* 이름 */
+/** 이름 input */
 const infoName = document.querySelector("#info_name");
 infoName.addEventListener("input", onlyKorean);
 
-/* 연락처 */
+/** 연락처 input */
 const infoNum = document.querySelector("#info_num");
 infoNum.addEventListener("input", onlyNumber)
 
@@ -37,19 +37,19 @@ infoNum.addEventListener("input", onlyNumber)
 /* 인증번호 요청버튼 활성화 */
 const numRequest = document.querySelector(".num_request");
 
-const check = function() {
-  let infoNum = document.querySelector("#info_num").value;
+const activeRequest = function() {
   // let infoNum2 = document.querySelector("#info_num2").value;
   // let infoNum3 = document.querySelector("#info_num3").value;
   
-  if(infoNum.length === 11 && infoName.value !== "") {
+  if(infoNum.value.length === 11 && infoName.value !== "") {
     numRequestDisabledFalse();
+    
   } else {
     numRequest.disabled = true;
   }
 }
 
-check();
+activeRequest();
 
 /* 통신사 버튼 */
 const mobileCarrier = document.querySelector(".mobile_carrier");
@@ -62,11 +62,14 @@ function select(mc, span) {
     span.classList.add("carrier_active");
   }
 }
-mobileCarrier.addEventListener("click", e => {
+
+function clickMobileCarrier(e) {
   const selected = e.target;
   select(mobileCarrier, selected);
-  check();
-})
+  activeRequest();
+}
+
+mobileCarrier.addEventListener("click", clickMobileCarrier);
 
 /* 인증번호 요청 클릭 */
 const certTime = document.querySelector(".cert_time");
@@ -76,39 +79,91 @@ const infoCertNum = document.querySelector("#info_certNum");
 numRequest.addEventListener("click", (e) => {
   e.preventDefault();
 
-  let time = 5;
+  let time = 180;
   function timer() {
     if(time >= 0) {
       let min = String(Math.floor(time / 60)).padStart(2, "0");
       let sec = String(time%60).padStart(2, "0");
       certTime.innerText = `${min}:${sec}`;
       time = time - 1;
+      if(infoCertNum.value.length === 4) {
+        certCompleteDisabledFalse();
+      } else {
+        certCompleteDisabledTrue();
+      }
+      infoCertNum.disabled = false;
     } else {
       certCompleteDisabledTrue();
+      infoCertNum.disabled = true;
+      Swal.fire({
+        title: "제한시간이 초과되었습니다😞",
+        text: "다시 인증요청 버튼을 클릭해주세요!",
+        icon: "warning",
+        showCancelButton: false,
+        confirmButtonColor: "#001665",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "확인",
+        cancelButtonText: "취소",
+      })
+      clearInterval(interval);
     }
   }
-  
-  infoCertNum.addEventListener("input", () => {
-    if(infoCertNum.value.length === 4) {
-      certCompleteDisabledFalse()
+
+  let interval = setInterval(timer, 1000);
+
+  numRequest.addEventListener("click", () => {
+    clearInterval(interval);
+    interval;
+  })
+
+
+  /* 인증완료 */
+  certComplete.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    /**인증번호 */
+    const certNum = "1234";
+    
+    if(infoCertNum.value === certNum) {
+      numRequest.disabled = true;
+      certComplete.disabled = true;
+      clearInterval(interval);
+      nextBtnDisabledFalse();
+      Swal.fire({
+        title: "인증이 완료되었습니다!",
+        icon: "success",
+        showCancelButton: false,
+        confirmButtonColor: "#001665",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "확인",
+        cancelButtonText: "취소",
+        // reverseButtons: true // 버튼 순서 거꾸로
+      })
     } else {
-      certCompleteDisabledTrue();
+      infoCertNum.value = "";
+      Swal.fire({
+        title: "인증번호가 일치하지 않습니다",
+        text: "다시 입력해주세요!",
+        icon: "warning",
+        showCancelButton: false,
+        confirmButtonColor: "#001665",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "확인",
+        cancelButtonText: "취소",
+      })
+      nextBtn.disabled = true;
     }
   })
-  setInterval(timer, 1000);
 })
 
 infoCertNum.addEventListener("input", onlyNumber);
 
-/* 인증완료 */
-
-certComplete.addEventListener("click", (e) => {
-  e.preventDefault();
-  nextBtnDisabledFalse();
-})
 
 
-/* 다음 버튼 */
+
+
+
+/** 다음 버튼 */
 
 const nextBtn = document.querySelector(".non_member_info_btn");
 
@@ -118,7 +173,7 @@ nextBtn.addEventListener("click", (e) => {
 })
 
 
-/* 회원가입 하러 가기 */
+/** 회원가입 하러 가기 */
 const goJoin = document.querySelector(".non_member_right_three");
 
 goJoin.addEventListener("click", () => {

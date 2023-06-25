@@ -179,26 +179,7 @@
   animation: up 1s ease-in-out 1s forwards;
 }
 
-@keyframes up {
-  0% {
-    /* opacity: 0; */
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes mobileup {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 @media all and (max-width:767px) {
   .second_ticket,

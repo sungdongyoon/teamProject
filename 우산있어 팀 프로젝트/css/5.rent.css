@@ -112,6 +112,8 @@
   .rental_complete_icon {
     margin-top: 100px;
     margin-bottom: 30px;
+    opacity: 0;
+    animation: up 1s ease-in-out forwards;
   }
   .rental_complete_icon img {
     width: 170px;
@@ -121,6 +123,8 @@
     text-align: center;
     line-height: 70px;
     font-size: var(--large-text);
+    opacity: 0;
+    animation: up 1s ease-in-out forwards 1s;
   }
   .rental_complete_btn {
     background-color: var(--dark-blue);
@@ -130,6 +134,7 @@
     font-size: var(--medium-text);
     font-weight: bold;
     color: var(--white);
+    opacity: 0;
+    animation: up 1s ease-in-out forwards 1.5s;
   }
 }
-
