@@ -2,16 +2,22 @@
 const navGnb = document.querySelector(".main_gnb");
 const logs = document.querySelector(".main_gnb > .logo a");
 const navGnbHeight = navGnb.getBoundingClientRect().height;
+const imgLogo = document.querySelector(".main_gnb > .logo a > img");
+
+
+
 
 document.addEventListener("scroll", ()=> {
   if(window.scrollY > navGnbHeight) {
     logs.classList.add("on")
     navGnb.classList.add("on");
     gnbContent.classList.add("on");
+    imgLogo.src = "/Logo/SVGFile/iconLogo01.svg"
   } else {
     logs.classList.remove("on")
     navGnb.classList.remove("on");
     gnbContent.classList.remove("on");
+    imgLogo.src = "/Logo/SVGFile/iconLogoWhite.svg"
   }
 })
 

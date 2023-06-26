@@ -19,6 +19,10 @@
 .main_gnb > .logo {
   color: var(--dark-blue);
 }
+.logo img  {
+  height: 70px;
+  /* border: 2px solid green; */
+}
 .gnb-content {
   margin: 0 20px;
   color: var(--dark-blue);
@@ -38,7 +42,7 @@
 }
 .Mobile_gnb_content {
   display: none;
-  z-index: 2;
+  z-index: 3;
 }
 
 @media all and (max-width:767px) {
@@ -65,6 +69,12 @@
   .mobileNav .logo a {
     padding-left: 20px;
     color: var(--white);
+  }
+  .mobileNav .logo img {
+    filter: invert();
+    width: 200px;
+    height: 70px;
+    margin-top: 10px;
   }
 
   /* Toggle Button */
@@ -114,7 +124,8 @@
     height: 5px;
     left: 0;
     top: 0;
-    transform: rotate(-270deg);
+    transform: rotate(-90deg);
+    transform-origin: center;
   }
   .toggleBtn.active .hamburger_icon::before {
     transform: scale(0);

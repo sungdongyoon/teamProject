@@ -8,18 +8,30 @@ $(function() {
 
 
 //*FAQ 페이지 아코디언 메뉴
-let acc = document.getElementsByClassName("q-menu");
-let i;
+const accodion = document.querySelectorAll(".q-menu");
+const accodionItem = document.querySelectorAll(".a-menu");
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    let panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
+accodion.forEach(function(el) {
+  el.addEventListener("click", toggleAccordian);
+})
+
+function toggleAccordian(el) {
+  let targetAccodion = el.currentTarget;
+  let targetText = el.currentTarget.nextElementSibling.classList;
+
+  if(targetText.contains("show")) {
+    targetText.remove("show");
+  } else {
+    accodion.forEach((el) => {
+      accodionItem.forEach((el) => {
+        el.classList.remove("show");
+      }) 
+      el.classList.remove("show");
+    })
+    targetAccodion.classList.add("show");
+    targetText.add("show");
+  }
+
 }
 
 //*FAQ 페이지 모달

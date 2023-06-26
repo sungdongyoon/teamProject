@@ -12,12 +12,13 @@
 }
 .preloading-inner {
   height: inherit;
-  background: url('/img/homepagesimage/main01.jpg') -150px center no-repeat;
+  /* background: url('/img/homepagesimage/main01.jpg') -150px center no-repeat; */
+  background-color: var(--white);
   background-size: cover;
   opacity: 1;
   position: relative;
 }
-.preloading-inner::after {
+/* .preloading-inner::after {
   content: '';
   width: 100vw;
   height: inherit;
@@ -25,15 +26,18 @@
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.3);
-}
+} */
 
 .preloading-header {
-  padding-left: 1em;
   position: absolute;
-  top: 30%;
-  color: var(--white);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: var(--dark-blue);
   font-size: var(--large-text);
   z-index: 1;
+  text-align: center;
 }
 .slogan {
   margin-bottom: 1em;
@@ -47,6 +51,12 @@
 }
 .preloading-header > p:last-child {
   letter-spacing: 1.4px;
+}
+.preloading-icon {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes splashed {

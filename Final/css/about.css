@@ -70,7 +70,7 @@
   transform: translate(-50%, -50%);
   color: var(--white);
   text-align: center;
-  /* animation: Updown 1s linear; */
+  animation: Updown 1s linear;
 }
 .images .imageText h2 {
   font-size: var(--large-title);
@@ -115,18 +115,15 @@
 }
 
 /* Main image Section Text Animation */
-/* @keyframes Updown {
+@keyframes Updown {
   0% {
+    transform: translate(-50%, -50%);
     opacity: 0;
-    top: 40%;
-  }
-  50%{
-    opacity: 0.5;
   }
   100% {
     opacity: 1;
   }
-} */
+}
 /* Main Slider Left Right */
 .slideBtn {
   width: 100vw;
@@ -458,6 +455,14 @@
 /* Mobile Main CSS */
 
 @media all and (max-width: 767px) {
+  .container {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--Main-kr);
+  }
   /* === Main Section === */
   .main-pics {
     height: auto;
@@ -476,15 +481,20 @@
   }
   /* Main image Section Text */
   .images .imageText {
-    width: 80vw;
+    width: 84vw;
+    opacity: 0;
+    transition: all 0.5s linear;
+  }
+  .images .imageText.show {
+    opacity: 1;
   }
   .images .imageText h2 {
     display: block;
-    font-size: var(--large-text);
+    font-size: 26px;
     text-align: left;
   }
   .images03 .imageText h2 {
-    width: 55vw;
+    width: 61vw;
   }
   .imageText p {
     display: none;
@@ -495,9 +505,9 @@
   }
 
   .rentalBtn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: var(--medium-text);
+    margin-top: 30px;
+    padding: 14px 30px;
+    font-size: 20px;
     font-weight: bold;
     color: var(--dark-blue);
     background-color: var(--white);

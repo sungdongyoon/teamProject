@@ -2,8 +2,22 @@ $(function() {
   /* Navigation & Footer */ 
     $('.main_gnb').load('/include/navigation.html');
     $('.footer').load('/include/footer.html');
-  })
+})
 
+const aboutSize = 50;
+const aboutTextElement = document.querySelectorAll(".imageText");
+
+const AboutFnc = () => {
+  for(let el of aboutTextElement) {
+    if(!el.classList.contains("show")) {
+      if(window.innerHeight > el.getBoundingClientRect().top + aboutSize) {
+        el.classList.add("show");
+      }
+    }
+  }
+}
+window.addEventListener("load", AboutFnc);
+window.addEventListener("scroll", AboutFnc);
 
 /* === Main Down Scroll === */
 const DownBtn = document.querySelector(".fa-angle-down");

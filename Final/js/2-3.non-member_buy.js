@@ -16,19 +16,20 @@ const naver = document.querySelector(".naver");
 const kakao = document.querySelector(".kakao");
 const zero = document.querySelector(".zero");
 
+/* 모달 검은 배경 */
+const blackBg = document.querySelector(".blackBg");
 
 /* 1회권 */
 ticketOne.addEventListener("click", () => {
   toggleSubmitButton();
   paymentModal.classList.add("active");
   ticketOneValue()
+  blackBg.classList.add("active");
 })
 
 /* 결제수단 & 이용약관 체크 유무  */
-const agreeAll = document.querySelector(".buy_modal_agreeAll");
-const agrees = document.querySelectorAll(".buy_modal_agree input");
-const firstAgree = document.querySelector("#first_agree");
-const secondAgree = document.querySelector("#second_agree");
+const agreeAll = document.querySelector(".buy_modal_agreeAll input");
+const agrees = document.querySelectorAll(".agree_left input");
 
 const agreements = {
   first_agree: false,
@@ -60,10 +61,14 @@ function toggleSubmitButton() {
   const { first_agree, second_agree } = agreements;
   if(first_agree && second_agree) {
     buyBtn.disabled = false;
+    buyBtn.style.opacity = 1;
     mobileNextBtn.disabled = false;
-  } else if (!first_agree && !second_agree) {
+    mobileNextBtn.style.opacity = 1;
+  } else {
     buyBtn.disabled = true;
+    buyBtn.style.opacity = 0.2;
     mobileNextBtn.disabled = true;
+    mobileNextBtn.style.opacity = 0.5;
   }
 }
 
@@ -88,17 +93,20 @@ agreeAll.addEventListener('click', (e) => {
 /* 모달 취소 */
 cancelBtn.addEventListener("click", () => {
   paymentModal.classList.remove("active");
+  blackBg.classList.remove("active");
+  mobileNextBtn.style.opacity = 1;
 })
 /* 모달 결제하기 */
 buyBtn.addEventListener("click", () => {
   location.href = "/html/4.buy_complete.html";
+  blackBg.classList.remove("active");
 })
 
 
 /* 모바일 하단 메뉴 */
 const mobileType = document.querySelector(".mobile_type");
 const mobilePrice = document.querySelector(".mobile_price");
-const mobileNextBtn = document.querySelector(".mobile_bottom_right");
+const mobileNextBtn = document.querySelector(".mobile_bottom_next");
 
 /* 다음 버튼 */
 mobileNextBtn.addEventListener("click", () => {
@@ -106,8 +114,16 @@ mobileNextBtn.addEventListener("click", () => {
     paymentModal.classList.add("active");
     ticketOneValue()
     mobileNextBtn.disabled = true;
+    mobileNextBtn.style.opacity = 0.5;
+    cancelBtn.innerHTML = "<i class='fa-solid fa-xmark'></i>";
   } else {
     location.href = "/html/4.buy_complete.html";
+  }
+})
+/* 취소 버튼 */
+cancelBtn.addEventListener("click", () => {
+  if(window.innerWidth < 767) {
+    mobileNextBtn.disabled = false;
   }
 })
 

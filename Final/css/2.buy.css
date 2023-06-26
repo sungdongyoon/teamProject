@@ -1,3 +1,14 @@
+.blackBg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+}
+
 /* Section - member */
 .member {
   width: 100%;
@@ -49,10 +60,39 @@
   width: 300px;
   height: 450px;
   padding: 30px;
+  position: relative;
   margin: 0 50px;
+  opacity: 0;
+}
+.member_ticket::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.03);
+  width: 110%;
+  height: 106%;
+  z-index: -100;
+}
+.member_ticket::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  transition: 0.5s;
+}
+.member_ticket:hover::after {
+  background: url('https://img.freepik.com/free-photo/copy-space-yellow-umbrella_23-2148467193.jpg?w=740&t=st=1687165445~exp=1687166045~hmac=2457ba458d6b1c4dd01a94f1e26a0750fb72bf5fc11882c10191cfda946d0b15') center no-repeat;
+  background-size: cover;
+  opacity: 0.5;
 }
 .member_ticket_title {
   font-size: var(--small-title);
+  color: var(--black);
   margin: 10px 0;
   margin-bottom: 40px;
 }
@@ -64,6 +104,7 @@
 }
 .member_ticket_content li {
   font-size: var(--small-text);
+  color: var(--black);
   text-align: left;
   margin-bottom: 15px;
 }
@@ -74,6 +115,7 @@
 }
 .member_ticket_price {
   font-size: var(--small-text);
+  color: var(--black);
   width: 100%;
   text-align: right;
 }
@@ -90,9 +132,18 @@
 .member_ticket_buy {
   padding: 10px 50px;
   border: none;
-  background-color: var(--yellow);
+  /* border-radius: 5px; */
+  box-shadow: 0px 3px 5px var(--gray);
+  background-color: var(--white);
+  transition: 0.5s;
   font-weight: 700;
   cursor: pointer;
+}
+.member_ticket_buy:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border: none;
+  transform: scale(1.05);
 }
 .member_mobile_bottom {
   display: none;
@@ -107,15 +158,28 @@
   transform: translate(-50%, -50%);
   background-color: var(--white);
   border: none;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5),
   -5px -5px 15px rgba(0, 0, 0, 0.5);
-  
+  z-index: 10000;
   display: none;
 }
 .active {
   display: block;
 }
+
+.first_ticket,
+.non_first_ticket {
+  animation: up 1s ease-in-out forwards;
+}
+.second_ticket {
+  animation: up 1s ease-in-out 0.5s forwards;
+}
+.third_ticket {
+  animation: up 1s ease-in-out 1s forwards;
+}
+
+
 
 @media all and (max-width:767px) {
   .second_ticket,
@@ -127,6 +191,7 @@
   }
   .member {
     height: calc(100% - 90px);
+    margin-top: 90px;
   }
   .member_title {
     margin: 15px 0;
@@ -140,10 +205,10 @@
   }
   .member_content {
     flex-direction: column;
-    border-top: 3px solid var(--gray);
+    /* border-top: 3px solid var(--gray); */
     border-bottom: none;
     width: 80%;
-    height: 65%;
+    height: 60%;
   }
   .member_ticket_select {
     display: block;
@@ -163,63 +228,92 @@
     background-color: var(--dark-blue);
     color: var(--white);
   }
+  .member_ticket_select_btn label:nth-of-type(1) {
+    border-radius: 20px 0 0 20px;
+  }
+  .member_ticket_select_btn label:nth-of-type(2) {
+    border-left: none;
+    border-right: none;
+  }
+  .member_ticket_select_btn label:nth-of-type(3) {
+    border-radius: 0 20px 20px 0;
+  }
   .member_ticket_select_btn {
     width: 230px;
-    height: 50px;
-    margin: 20px 0;
+    height: 30px;
+    margin: 10px 0;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
   .member_ticket_select_btn label {
-    border: 2px solid var(--dark-blue);
+    border: 1px solid var(--dark-blue);
     padding: 0 20px;
 
-    line-height: 50px;
+    line-height: 30px;
     text-align: center;
     font-size: var(--small-text);
-    font-weight: bold;
+    font-weight: normal;
   }
   .member_ticket {
     width: 230px;
     height: 330px;
     margin-top: 20px;
     padding: 10px 20px;
+    position: relative;
+  }
+  .member_ticket::after {
+    background: url('https://img.freepik.com/free-photo/copy-space-yellow-umbrella_23-2148467193.jpg?w=740&t=st=1687165445~exp=1687166045~hmac=2457ba458d6b1c4dd01a94f1e26a0750fb72bf5fc11882c10191cfda946d0b15') center no-repeat;
+    background-size: cover;
+    opacity: 0.5;
   }
   .member_ticket_title {
     font-size: var(--large-text);
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    color: var(--black);
   }
   .member_ticket_content ul {
     height: 170px;
-    padding-top: 20px;
+    padding-top: 35px;
+    color: var(--black);
+  }
+  .member_ticket_content li {
+    color: var(--black);
   }
   .member_ticket_price {
     font-size: var(--small-text);
     width: 100%;
     text-align: right;
     margin-bottom: 10px;
+    color: var(--black);
   }
   .member_ticket_total_price b {
     font-size: var(--large-text);
   }
   .member_mobile_bottom {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: 150px;
   }
-  .mobile_bottom_left {
-    width: 80%;
+  .mobile_bottom_info {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border: 1px solid var(--black);
-    border-right: none;
+    justify-content: start;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 10px var(--gray);
+    background-color: var(--white);
+    color: var(--dark-blue);
   }
   .mobile_bottom_type {
     width: 70%;
@@ -244,12 +338,17 @@
   .mobile_bottom_price span:last-child {
     font-size: var(--medium-text);
   }
-  .mobile_bottom_right {
-    width: 20%;
-    background-color: var(--yellow);
-    border: 1px solid var(--gray);
+  .mobile_bottom_next {
+    width: 80%;
+    height: 40px;
+    background-color: var(--dark-blue);
+    border: none;
     font-weight: bold;
+    font-size: var(--medium-text);
+    color: var(--white);
     letter-spacing: 2px;
+    position: absolute;
+    bottom: 20px;
   }
   .payment_modal {
     width: 100%;
@@ -260,11 +359,24 @@
     border: 1px solid var(--gray);
     border-radius: 0px;
     box-shadow: none;
+    z-index: 0;
   }
   .show {
     display: flex;
   }
   .hide {
     display: none;
+  }
+  .first_ticket {
+    animation: none;
+    opacity: 1;
+  }
+  .second_ticket {
+    animation: none;
+    opacity: 1;
+  }
+  .third_ticket {
+    animation: none;
+    opacity: 1;
   }
 }

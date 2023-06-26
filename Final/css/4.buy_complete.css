@@ -2,7 +2,7 @@
   width: 100%;
   height: calc(100% - 120px);
 
-  margin-top: 120px;
+  margin-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +18,8 @@
   line-height: 100px;
 
   margin: 30px 0;
+  opacity: 0;
+  animation: up 1s ease-in-out forwards;
 }
 .buy_complete_icon img {
   width: 100%;
@@ -28,6 +30,8 @@
 .buy_complete_title {
   text-align: center;
   width: 500px;
+  opacity: 0;
+  animation: up 1s ease-in-out forwards;
 }
 .buy_complete_title h1 {
   font-size: var(--medium-title);
@@ -52,6 +56,8 @@
 
   border-top: 3px solid var(--dark-blue);
   border-bottom: 3px solid var(--dark-blue);
+  opacity: 0;
+  animation: completePage 1s ease-in-out 0.7s forwards;
 }
 .buy_complete_info_type,
 .buy_complete_info_date,
@@ -91,15 +97,25 @@
   height: 50px;
   font-size: var(--medium-text);
   font-weight: bold;
-  background-color: var(--yellow);
+  color: var(--dark-blue);
+  background-color: var(--white);
   border: none;
-  border-radius: 5px;
+  box-shadow: 0 0 5px 1px var(--dark-blue);
+  /* border-radius: 5px; */
   cursor: pointer;
+  opacity: 0;
+  animation: completePage 1s ease-in-out 1.5s forwards;
+  transition: 0.5s;
+}
+.go_home:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
 }
 
 @media all and (max-width:767px) {
   .buy_complete {
     height: calc(100% - 90px);
+    margin-top: 120px;
   }
   /* 우산 아이콘 */
   .buy_complete_icon {
@@ -153,12 +169,24 @@
   .go_home,
   .go_rent {
     width: 130px;
-    height: 50px;
+    height: 40px;
+    margin: 0 5px;
     font-size: var(--medium-text);
     font-weight: bold;
-    background-color: var(--yellow);
+    color: var(--dark-blue);
+    background-color: var(--white);
     border: none;
+    box-shadow: 0px 0px 3px 1px var(--dark-blue);
     border-radius: 0px;
     cursor: pointer;
+    animation: completePage 1s ease-in-out 1.5s forwards;
+    opacity: 0;
+  }
+  .go_home {
+    transition: none;
+  }
+  .go_home:hover {
+    background-color: var(--white);
+    color: var(--dark-blue);
   }
 }

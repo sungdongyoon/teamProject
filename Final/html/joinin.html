@@ -36,7 +36,7 @@
           <div class="error" id="error_password"></div>
 
           <input type="password" class="inputbox" id="passwordCheck" placeholder="비밀번호를 다시 입력해주세요">
-          <div class="error"></div>
+          <div class="error" id="error_passwordCheck"></div>
         </div>
         <!-- 통신사 선택박스 -->
         <div class="mobile_carrier">
@@ -52,12 +52,12 @@
           onchange="changePhone2()" onkeyup="onchange()"/> -
           <input type="text" id="phone3" class="phoneNum"
           onchange="changePhone3()" onkeyup="onchange()" maxlength="4"/>
-          <button class="admit_send">인증요청</button>
+          <button class="admit_send" onclick="timer()">인증요청</button>
         </div>
         <!-- 인증번호 입력란 -->
         <div class="admit_box">
-          <input type="text" class="info_certNum" maxlength="4"><span class="token_timer" id="token"> 3 : 00 </span></input>
-          <button class="admit_finish">인증완료</button>
+          <input type="text" class="info_certNum" maxlength="4"><span class="token_timer" id="token" > 3 : 00 </span>
+          <button class="admit_finish" onclick="stopTimer()" disabled>인증완료</button>
         </div>
         <!-- 동의약관 -->
         <div id="agreement_box">
@@ -77,7 +77,7 @@
             </div>
           </div>
         </div>
-        <button class="btn_joinin" disabled>가입하기</button>
+        <button class="btn_joinin" disabled onclick="signup()">가입하기</button>
       </div>
     </section>
     <footer class="footer"></footer>  

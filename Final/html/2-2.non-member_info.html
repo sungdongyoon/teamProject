@@ -12,7 +12,7 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/1792b891d9.js" crossorigin="anonymous"></script>
     <!-- Custom -->
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script defer src="/script.js"></script>
     <script defer src="/js/2-2.non-member_info.js"></script>
     <title>우산있어? - 이용권 구매</title>
@@ -31,12 +31,7 @@
             </div>
             <div class="non_member_info_phoneNum">
               <label for="">연락처</label>
-              <input type="text" id="info_num1" maxlength="11" placeholder="연락처를 입력해주세요(하이픈(-) 제외)">
-              <!-- <div class="phoneNum_input">
-                <input type="text" id="info_num1" maxlength="3" placeholder="연락처를 입력해주세요(하이픈(-) 제외)">
-                <input type="text" id="info_num2" maxlength="4">
-                <input type="text" id="info_num3" maxlength="4">
-              </div> -->
+              <input type="text" id="info_num" maxlength="11" placeholder="연락처를 입력해주세요(하이픈(-) 제외)">
             </div>
             <div class="non_member_info_cert">
               <div class="mobile_carrier">
@@ -50,7 +45,7 @@
             <div class="non_member_info_certNum">
               <label for="info_certNum">인증번호</label>
               <div class="certNum_detail">
-                <input type="text" id="info_certNum" maxlength="4" placeholder="인증번호 4자리">
+                <input type="text" id="info_certNum" maxlength="4" placeholder="인증번호 4자리" disabled>
                 <div class="cert_time">03:00</div>
                 <button class="cert_complete" disabled>인증 완료</button>
               </div>

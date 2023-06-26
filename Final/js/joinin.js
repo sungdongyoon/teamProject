@@ -37,51 +37,74 @@ function changePhone3() {
   const phone3 = document.querySelector("#phone3").value;
 
   if(phone1.length === 3 &&  phone2.length === 4 && phone3.length === 4) {
-    document.querySelector(".admit_send").style = "background-color: gold; cursor: pointer; color: black" ;
+    document.querySelector(".admit_send").style = "background-color: #ffe610; cursor: pointer; color: black" ;
     document.querySelector(".admit_send").removeAttribute("disabled");
   }
 }
 
 /* 인증번호 요청 클릭 */
 const token_timer = document.querySelector(".token_timer");
+const admit_send = document.querySelector(".admit_send");
 const admit_finish = document.querySelector(".admit_finish");
 const infoCertNum = document.querySelector(".info_certNum");
-const admit_send = document.querySelector(".admit_send");
 
 
 admit_send.addEventListener("click", (e) => {
   e.preventDefault();
 
-  let time = 180;
+  let time = 5;
   function timer() {
     if(time >= 0) {
-      let min = Math.floor(time / 60);
+      let min = String(Math.floor(time / 60));
       let sec = String(time%60).padStart(2, "0");
       token_timer.innerText = `${min} : ${sec}`;
-      time -= 1;
+      time = time - 1;
+      if(infoCertNum.value.length === 4) {
+        certCompleteDisabledFalse();
+      } else {
+        certCompleteDisabledTrue();
+      }
+      infoCertNum.disabled = false;
     } else {
-      admit_finish.disabled = true;
+      infoCertNum.disabled = true;
+      Swal.fire({
+        title: "제한시간이 초과되었습니다😞",
+        text: "다시 인증요청 버튼을 클릭해주세요!",
+        icon: "warning",
+        showCancelButton: false,
+        confirmButtonColor: "#001665",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "확인",
+        cancelButtonText: "취소",
+      })
+      clearInterval(interval);
     }
   }
+
+  let interval = setInterval(timer, 1000);
+
+  admit_send.addEventListener("click", () => {
+    clearInterval(interval);
+    interval;
+  })
   infoCertNum.addEventListener("input", () => {
     if(infoCertNum.value.length === 4) {
       admit_finish.disabled = false;
       admit_finish.style.opacity = 1;
-      admit_finish.style.backgroundColor = "gold";
+      admit_finish.style.backgroundColor = "#ffe610";
       admit_finish.style.color = "black";
       admit_finish.style.cursor = "pointer";
     }
   })
-  setInterval(timer, 1000);
+  function stopTimer() {
+    clearInterval(interval);
+  }
 })
 
 
 
 
-
-
 // 회원가입 동의약관 
-const form = document.querySelector("#agreement_box"); // 데이터 전송 form
 const checkAll = document.querySelector("#check_all input"); // 모두 동의 체크박스
 const checkBoxes = document.querySelectorAll(".agreement_detail_choice input"); // 모두 동의 제외 체크박스
 const submitButton = document.querySelector(".btn_joinin"); // 가입 버튼
@@ -139,15 +162,6 @@ checkAll.addEventListener("click", (e) => {
 });
 
 
-
-
-
-
-
-
-
-
-
   function signup() {
     const email = document.querySelector("#email").value;
     const name = document.querySelector("#name").value;
@@ -179,7 +193,15 @@ checkAll.addEventListener("click", (e) => {
       isValid = false;
     }
     if(isValid === true) {
-      alert("회원가입을 축하합니다")
+      Swal.fire({
+        icon: 'success',
+        title: '회원가입이 완료되었습니다!',
+        text: '우산있어?와 함께 해주셔서 감사합니다😄',
+      }).then((result) => {
+        if(result.isConfirmed) {
+          location.href = "/html/login.html";
+        }
+      })
     }
   }
 

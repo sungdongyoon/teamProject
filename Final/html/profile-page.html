@@ -7,8 +7,8 @@
   <!--jquery-->
   <script defer src="https://code.jquery.com/jquery-3.6.4.js"></script>
   <!-- Custom Style -->
-  <script defer src="/js/script_user_FAQ/script.js"></script>
-  <link rel="stylesheet" href="/css/style (1).css">
+  <link rel="stylesheet" href="/css/profile-page.css">
+  <script defer src="/js/profile-page.js"></script>
   <!-- Font Awesome -->
   <script defer src="https://kit.fontawesome.com/45bfd28599.js" crossorigin="anonymous"></script>
   <title>Profile page</title>
@@ -57,6 +57,7 @@
             <div class="ticket-remain_detail">
               <h5><i class="fas fa-caret-right"></i> 현재 대여권이 <span>3장</span> 남았습니다.</h5>
               <div class="profile-more_detail_btn"><a href="/html/ticketHistory.html">상세 내역 보기</a></div>
+              <div class="profile-more_detail_btn"><i class="fas fa-caret-right"></i></div>
             </div>
         </div>
         <div class="penalty">
@@ -71,6 +72,15 @@
     <!-- Main Footer Include -->
     <div class="footer"></div>
     <!-- Main Footer Include -->
+  </div>
+
+  <div class="modal-history">
+    <i class="fa-solid fa-circle-xmark"></i>
+    <div class="rental_site" onclick="location.href='/html/5.rent.html'">렌탈</div>
+    <div class="ticket_site" onclick="location.href='/html/2-1.member_buy.html'">이용권구매</div>
+    <div class="iframe_modals">
+      <iframe id="historyModal" src="/html/ticketHistory.html" scrolling="no" ></iframe>
+    </div>
   </div>
 </body>
 </html>

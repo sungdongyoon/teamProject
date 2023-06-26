@@ -20,11 +20,13 @@ body.swal2-height-auto {
   justify-content: center;
   margin-top: 120px;
   background-color: #fcfcfc;
+  font-family: var(--Main-kr);
 }
 .joinin .title {
   text-align: center;
   font-size: var(--small-title);
   margin-top: 34px;
+  font-family: var(--Main-en);
 }
 .joinin hr {
   margin: 0 200px;
@@ -62,6 +64,7 @@ body.swal2-height-auto {
 .error {
   color: crimson;
   height: 10px;
+  font-size: var(--small-text);
 }
 
 /* 통신사 선택박스 */
@@ -145,14 +148,14 @@ body.swal2-height-auto {
   outline: none;
 }
 .token_timer {
-  width: 78px;
+  width: 78.5px;
   height: 36px;
   position: absolute;
   background-color: var(--yellow);
   border-left: 1px solid var(--dark-blue);
   margin-left: 90px;
   border-radius: 0 7px 7px 0;
-  padding: 8px 17px;
+  padding: 6px 18px;
 }
 
 
@@ -224,10 +227,6 @@ body.swal2-height-auto {
   .swal2-modal {
     width: 340px;
   }
-  .swal2-icon {
-    width: 50px;
-    height: 50px;
-  }
   .swal2-info {
     font-size: var(--small-text);
   }
@@ -241,15 +240,7 @@ body.swal2-height-auto {
     width: 60px;
     height: 30px;
   }
-  .swal2-success-ring {
 
-  }
-  .swal2-success-line-tip {
-    
-  }
-  .swal2-success-line-long {
-    
-  }
 
 
   .joinin {

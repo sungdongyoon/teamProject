@@ -28,6 +28,9 @@
 .main_gnb > .logo a {
   color: var(--white);
 }
+.logo img  {
+  height: 70px;
+}
 .gnb-content {
   margin: 0 20px;
   color: var(--white);
@@ -73,6 +76,12 @@
   .mobileNav .logo a {
     padding-left: 20px;
     color: var(--white);
+  }
+  .mobileNav .logo img {
+    filter: invert();
+    width: 200px;
+    height: 70px;
+    margin-top: 10px;
   }
   /* Toggle Button */
   .toggleBtn{

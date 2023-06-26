@@ -12,11 +12,13 @@
   justify-content: center;
   /* border: 5px solid red; */
   color: var(--dark-blue);
+  font-family: var(--Main-kr);
 }
 
 .ticket_history .title {
   text-align: center;
   font-size: var(--medium-title);
+  margin-top: 140px;
   margin-bottom: 10px;
 }
 .ticket_history .subtitle {
@@ -66,8 +68,25 @@
   font-weight: bold;
 }
 
+.btns_go_to {
+  margin-top: 50px;
+}
+
 .btn_go_to_rental {
   display: none;
+}
+.btn_go_to_buy {
+  display: block;
+  width: 300px;
+  height: 80px;
+  margin: 0 auto;
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 5px;
+  margin: 10px auto 30px;
+  font-size: var(--large-text);
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* 미디어 쿼리 */
@@ -79,13 +98,14 @@
   }
   .ticket_history .title {
     text-align: center;
-    font-size: var(--large-text);
+    font-size: var(--small-title);
+    margin-top: 10px;
     margin-bottom: 10px;
   }
   .ticket_history .subtitle {
     text-align: center;
     font-size: var(--medium-text);
-    margin-bottom: 20px;
+    margin-bottom: 4px;
   }
   .ticket_history hr {
     width: 300px;
@@ -130,10 +150,30 @@
   .one_left, .three_left {
     background-color: #ccc;
   } 
-
+  .btns_go_to {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 14px;
+    gap: 10px;
+  }
   .btn_go_to_rental {
-    display: block;
-    width: 150px;
+    display: inline;
+    width: 140px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 5px;
+    margin: 10px auto 30px;
+    font-size: var(--medium-text);
+    font-weight: bold;
+  }
+  .btn_go_to_buy {
+    display: inline;
+    width: 140px;
     height: 60px;
     margin: 0 auto;
     background-color: var(--yellow);

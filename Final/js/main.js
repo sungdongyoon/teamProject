@@ -45,7 +45,7 @@ mainPics.addEventListener("mouseup", (e)=> {
 // Mouse focus Pause // 
 let loopInterval = setInterval(()=> {
   next()
-}, 3000);
+}, 6500);
 
 mainPics.addEventListener("mouseover", ()=> {
   clearInterval(loopInterval);
