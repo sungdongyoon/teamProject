@@ -139,6 +139,7 @@ let textDownObserved = new IntersectionObserver((e) => {
 const solutions = document.querySelectorAll(".solutions > div");
 textDownObserved.observe(solutions[0]);
 textDownObserved.observe(solutions[1]);
+textDownObserved.observe(solutions[2]);
 
 /* ESG Section animation */
 const esgText = document.querySelectorAll(".esgText span");

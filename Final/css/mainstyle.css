@@ -208,7 +208,7 @@
 /* === Raise Problem Section === */
 .raiseProblem {
   width: 100vw;
-  height: 180vh;
+  height: 200vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -234,8 +234,8 @@
 }
 .problem_section1 .photo,
 .problem_section2 .photo {
-  width: 600px;
-  height: 800px;
+  width: 1000px;
+  height: 1150px;
   border-radius: 20px;
   overflow: hidden;
 }
@@ -247,6 +247,10 @@
   filter: grayscale(1);
   transition: 0.8s;
 }
+
+.problem_section2 .photo {
+  border-radius: 0 20px 20px 0;
+}
 .problem_section1 .photo:hover img,
 .problem_section2 .photo:hover img {
   transform: scale(1.1);
@@ -256,21 +260,52 @@
 /* Problem Section Text */
 .problem_section1 .head_text,
 .problem_section2 .head_text {
-  width: 600px;
+  width: 850px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: end;
   color: var(--white);
+  /* transform: scale(1.2); */
+}
+.problem_section1 .head_text::after {
+  content: '';
+  width: 104%;
+  height: 50%;
+  background: url('/img/homepagesimage/uzb4_s30n_161109.png') no-repeat center right;
+  background-size: cover;
+  position: absolute;
+  bottom: -2%;
+  right: -23%;
+  filter: grayscale(1);
+  opacity: 0.2;
+}
+.problem_section2 .head_text::after {
+  content: '';
+  width: 118%;
+  height: 85.2%;
+  background: url('/img/homepagesimage/2563003.png') no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  bottom: 0%;
+  right: -17.8%;
+  filter: grayscale(1);
+  opacity: 0.2;
+  border-radius: 20px 0 0 20px;
+}
+
+.problem_section2 .head_text {
+  margin-right: 100px;
 }
 .head_text h3{
-  font-size: var(--small-title);
+  font-size: 58px;
   margin-bottom: 0.9375rem;
   /* margin-bottom: 15px; */
 }
 .head_text p {
   text-align: center;
-  font-size: var(--medium-text);
+  font-size: var(--large-text);
   margin-right: 1.875rem;
   /* margin-right: 30px; */
 }
@@ -283,7 +318,7 @@
   font-weight: bold;
 }
 .head_text span {
-  font-size: var(--small-text);
+  font-size: var(--medium-text);
   margin-right: 1.875rem;
 }
 /* Problem Section 02 */
@@ -300,7 +335,8 @@
   gap: 100px;
 }
 .solution_1,
-.solution_2 {
+.solution_2,
+.solution_3 {
   width: 600px;
   height: 800px;
   border-radius: 10px;
@@ -314,15 +350,26 @@
 .solution_2 {
   transition-delay: 0.3s;
 }
+.solution_3 {
+  transition-delay: 0.6s;
+}
 .solution_1 img,
-.solution_2 img {
+.solution_2 img,
+.solution_3 img {
   width: inherit;
   height: inherit;
   object-fit: cover;
   opacity: 0.75;
+  transition: 0.5s linear;
+}
+.solution_1 img:hover,
+.solution_2 img:hover,
+.solution_3 img:hover {
+  transform: scale(1.1);
 }
 .solution_1 .solutionText,
-.solution_2 .solutionText {
+.solution_2 .solutionText,
+.solution_3 .solutionText {
   position: absolute;
   top: 0;
   left: 0;
@@ -330,22 +377,26 @@
   color: var(--white);
 }
 .solution_1 .solutionText h3,
-.solution_2 .solutionText h3 {
+.solution_2 .solutionText h3,
+.solution_3 .solutionText h3 {
   font-size: var(--large-text);
 }
 .solution_1 .solutionText p, 
-.solution_2 .solutionText p {
+.solution_2 .solutionText p,
+.solution_3 .solutionText p {
   margin-left: 15px;
   padding: 10px 10px 10px 0;
   font-weight: normal;
 }
 .solution_1 .solutionText p:last-child,
-.solution_2 .solutionText p:last-child {
+.solution_2 .solutionText p:last-child,
+.solution_3 .solutionText p:last-child {
   padding: 0 10px 10px 0;
   font-weight: normal;
 }
 .solution_1 .solutionText span, 
-.solution_2 .solutionText span {
+.solution_2 .solutionText span,
+.solution_3 .solutionText span {
   font-weight: bold;
 }
 

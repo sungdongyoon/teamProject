@@ -52,17 +52,23 @@ const infoCertNum = document.querySelector(".info_certNum");
 admit_send.addEventListener("click", (e) => {
   e.preventDefault();
 
-  let time = 5;
+  let time = 50;
   function timer() {
     if(time >= 0) {
       let min = String(Math.floor(time / 60));
       let sec = String(time%60).padStart(2, "0");
       token_timer.innerText = `${min} : ${sec}`;
-      time = time - 1;
+      time =- 1;
       if(infoCertNum.value.length === 4) {
-        certCompleteDisabledFalse();
+        admit_finish.disabled = false;
+        admit_finish.style.opacity = 1;
+        admit_finish.style.backgroundColor = "var(--dark-blue)";
+        admit_finish.style.color = "var(--white)";
       } else {
-        certCompleteDisabledTrue();
+        admit_finish.disabled = true;
+        admit_finish.style.opacity = 0.5;
+        admit_finish.style.backgroundColor = "var(--white)";
+        admit_finish.style.color = "var(--dark-blue)";
       }
       infoCertNum.disabled = false;
     } else {
@@ -96,9 +102,10 @@ admit_send.addEventListener("click", (e) => {
       admit_finish.style.cursor = "pointer";
     }
   })
-  function stopTimer() {
-    clearInterval(interval);
-  }
+  // function stopTimer() {
+  //   clearInterval(interval);
+  //   interval;
+  // }
 })
 
 

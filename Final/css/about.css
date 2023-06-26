@@ -204,12 +204,13 @@
 /* === Raise Problem Section === */
 .raiseProblem {
   width: 100vw;
-  height: 250vh;
+  height: 210vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--dark-blue);
+  background-color: rgb(24, 24, 127);
   position: relative;
   opacity: 0;
   transition: all 0.8s;
@@ -258,6 +259,7 @@
   justify-content: center;
   align-items: end;
   color: var(--white);
+  /* color: var(--dark-blue); */
 }
 .head_text h3{
   font-size: var(--small-title);
@@ -284,7 +286,7 @@
 }
 /* Problem Section 02 */
 .problem_section2 .photo {
-  margin-top: 12.5rem;
+  margin-top: 10rem;
   /* margin-top: 200px; */
   order: 2;
 }
@@ -537,7 +539,7 @@
   .problem_section1,
   .problem_section2 {
     width: inherit;
-    gap: 0;
+    gap: 0px;
   }
   .raiseProblem .problem_section1 {
     padding-left: 20px;

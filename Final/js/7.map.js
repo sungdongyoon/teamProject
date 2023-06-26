@@ -2,14 +2,10 @@ const kakaoMapMarker = obj => {
   // 지도 표시 영역
   let mapContainer = document.querySelector('.map');
   
-  
-
   navigator.geolocation.getCurrentPosition(function(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
 
-    
-    
     // 지도 옵션
     let mapOption = {
     // 지도 중심좌표
@@ -22,22 +18,33 @@ const kakaoMapMarker = obj => {
     // 지도를 표시할 div와 지도 옵션으로 지도를 생성
     let map = new kakao.maps.Map(mapContainer, mapOption)
 
+
     // 위치 정보 저장
     let positions = obj.map(item => ({
       title: item.RENT_ID_NM,
+      subtitle: item.RENT_NM,
       latlng: new kakao.maps.LatLng(item.STA_LAT, item.STA_LONG),
     }))
 
-
+    // 인포윈도우 생성
+    let infowindow = new kakao.maps.InfoWindow({
+      map: map,
+      position: position.latlng, 
+      content : position.title,
+    });
+  
+    
     // 이미지 마커 경로
-    let imageSrc = `https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png`
+    let imageSrc = `https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png`;
+
+    const umbrellaInfo = document.querySelector(".umbrella_info");
 
     // 이미지 마커 표시
     positions.forEach(position => {
       let imageSize = new kakao.maps.Size(30, 40)
 
-      let markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize)
-
+      let markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+      
       // 마커 생성
       let marker = new kakao.maps.Marker({
         map: map,
@@ -45,9 +52,9 @@ const kakaoMapMarker = obj => {
         title: position.title,
         image: markerImage,
       })
+ 
       kakao.maps.event.addListener(marker, "click", () => {
-        document.querySelector(".umbrella_info").classList.toggle("show");
-        console.log(marker)
+        umbrellaInfo.classList.toggle("show");
 
         document.querySelector(".umbrella_info_top h2").innerText = marker.Gb;
 
@@ -57,8 +64,30 @@ const kakaoMapMarker = obj => {
 
         document.querySelector(".umbrella_leftover").innerText = umb;
         document.querySelector(".sunshield_leftover").innerText = sunshield;
-
         document.querySelector(".umbrella_total span").innerText = umb + sunshield;
+      })
+
+      // 검색
+      const searchInput = document.querySelector("#search");
+      // let places = new kakao.maps.services.Places();
+      searchInput.addEventListener("change", () => {
+        if(searchInput.value === position.subtitle) {
+          umbrellaInfo.classList.add("show");
+          document.querySelector(".umbrella_info_top h2").innerText = marker.Gb;
+
+          let randomNum = Math.floor(Math.random() * 15 + 1);
+          let umb = Math.floor(Math.random() * 15 + 1);
+          let sunshield = randomNum;
+
+          document.querySelector(".umbrella_leftover").innerText = umb;
+          document.querySelector(".sunshield_leftover").innerText = sunshield;
+          document.querySelector(".umbrella_total span").innerText = umb + sunshield;
+
+          map.setCenter(position.latlng);
+          searchInput.value = "";
+        } else if(searchInput.value !== "") {
+          umbrellaInfo.classList.remove("show");
+        }
       })
     })
 
@@ -99,18 +128,6 @@ const kakaoMapMarker = obj => {
       marker.setMap(map);
 
           
-      // let iwContent = message, // 인포윈도우에 표시할 내용
-      //     iwRemoveable = true;
-        
-      // 인포윈도우를 생성합니다
-      // let infowindow = new kakao.maps.InfoWindow({
-      //     content : iwContent,
-      //     removable : iwRemoveable
-      // });
-          
-      // 인포윈도우를 마커위에 표시합니다 
-      // infowindow.open(map, marker);
-          
       // 지도 중심좌표를 접속위치로 변경합니다
       map.setCenter(locPosition);      
     }
@@ -142,29 +159,6 @@ const kakaoMapMarker = obj => {
     }
     document.querySelector(".reload_btn").addEventListener("click", setBounds)
 
-    let searchInput = document.querySelector("#search");
-    let geocoder = new kakao.maps.services.Geocoder();
-
-    searchInput.addEventListener("submit", function (event) {
-      event.preventDefault();
-    })
-
-    geocoder.addressSearch(searchInput.value, function(result, status) {
-      if(status === kakao.maps.services.Status.OK) {
-        let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-        let dummy = document.createElement("textarea");
-        document.body.appendChild(dummy);
-        dummy.value = coords
-          .toString()
-          .replace(/[()]/g, "")
-          .replace(", ", ",");
-        dummy.select();
-        document.execCommand("copy");
-        document.body.removeChild(dummy);
-        alert
-      }
-    })
   })
 }
 
