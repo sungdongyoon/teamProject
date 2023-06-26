@@ -35,7 +35,7 @@ const kakaoMapMarker = obj => {
   
     
     // 이미지 마커 경로
-    let imageSrc = `https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png`;
+    let imageSrc = "/img/marker.png";
 
     const umbrellaInfo = document.querySelector(".umbrella_info");
 

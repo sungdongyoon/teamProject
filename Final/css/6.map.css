@@ -110,6 +110,7 @@
   right: 20px;
   height: 40px;
   line-height: 40px;
+  cursor: pointer;
 }
 .reload_btn {
   width: 50px;
