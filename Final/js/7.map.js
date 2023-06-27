@@ -1,6 +1,6 @@
 const kakaoMapMarker = obj => {
   // 지도 표시 영역
-  let mapContainer = document.querySelector('.map');
+  let mapContainer = document.querySelector('#map');
   
   navigator.geolocation.getCurrentPosition(function(position) {
     const lat = position.coords.latitude;
