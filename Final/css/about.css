@@ -361,7 +361,7 @@
 }
 .esginner::before {
   content: '';
-  background-color: black;
+  background-color: white;
   width: inherit;
   height: 50vh;
   position: absolute;

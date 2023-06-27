@@ -186,3 +186,5 @@ const mapRental = document.querySelector(".map_rental");
 mapRental.addEventListener("click", () => {
   location.href = "/html/5.rent.html";
 })
+
+
