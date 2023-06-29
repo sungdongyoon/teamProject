@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/1792b891d9.js" crossorigin="anonymous"></script>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/1792b891d9.js" crossorigin="anonymous"></script>
+  <!-- Custom -->
+  <link rel="stylesheet" href="/css/style.css">
+  <script defer src="/js/map.js"></script>
+  <script defer src="/script.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d5749bbe3e18ab918a6e8aa29cfb8be&libraries=services"></script>
+  <title>우산있어? - 이용권 구매</title>
+</head>
+<body>
+  <div class="container">
+    <nav class="main_gnb"></nav>
+    <section class="rental_office">
+      <h1 class="map_title">
+        대여소 조회
+      </h1>
+      <div class="map_wrap">
+        <div id="map">
+          <div id="search_rental_office">
+            <input type="text" id="search" placeholder="정확한 대여소 명을 입력해주세요 ex) 남영역 건너편">
+            <label for="search"><i class="fa-solid fa-magnifying-glass"></i><label>
+          </div>
+          <div class="umbrella_info">
+            <div class="umbrella_info_top">
+              <h2>834. 효창공원앞역 3번출구 뒤</h2>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="umbrella_info_bottom">
+              <div class="umbrella_type">
+                <div id="umbrella">
+                  <span>우산</span>
+                  <span class="umbrella_leftover">3</span>
+                </div>
+                <div id="sun_shield">
+                  <span>양산</span>
+                  <span class="sunshield_leftover">4</span>
+                </div>
+              </div>
+              <div class="umbrella_total">
+                <span>7</span>
+              </div>
+            </div>
+          </div>
+          <button class="reload_btn"><i class="fa-solid fa-rotate-right"></i></button>
+        </div>
+      </div>
+      <button class="map_rental">대여하기</button>
+    </section>
+    <footer class="footer"></footer>
+  </div>
+</body>
+</html>
