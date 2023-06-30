@@ -1,0 +1,188 @@
+/* Import Local CSS */
+@import url('/css/reset.css');
+@import url('/css/variables.css');
+@import url('/css/navigation.css');
+@import url('/css/footer.css');
+
+/* 전체 구조 */
+.login {
+  width: 100%;
+  height: calc(100vh - 240px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 120px;
+  /* border: 5px solid green; */
+  background-color: #fcfcfc;
+  font-family: var(--Main-kr);
+}
+
+.login_wrapper {
+  /* border: 2px solid coral; */
+  width: 1600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_box {
+  width: 500px;
+  height: 850px; 
+  /* border: 3px solid purple; */
+  margin-bottom: 18px;
+}
+.login_box_inner {
+  width: 100%;
+  height: 785px;
+  background-color: var(--white);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 5px 0 0 5px;
+  margin: 40px auto;
+  position: relative;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--medium-text);
+}
+.login_box_inner .title {
+  font-size: var(--medium-title);
+  margin-bottom: 50px;
+  font-family: var(--Main-en);
+}
+.login_box_inner hr {
+  margin: 0 70px;
+  margin-bottom: 50px;
+}
+
+.login_box_inner #login_inputBox input{
+  width: 300px;
+  padding: 17px 20px;
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px;
+  font-size: var(--medium-text);
+  outline: none;
+}
+
+.login_find, .joinin {
+  margin-top: 12px;
+}
+
+.btn_login {
+  width: 300px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border-radius: 5px;
+  margin-top: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 오른쪽 섹션 : 이미지 */
+.login_photo {
+  width: 1000px;
+  height: 787px;
+  /* border: 3px solid blue; */
+  margin: auto 0;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 0 5px 5px 0;
+  overflow: hidden;
+}
+figure {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+
+  position: relative;
+  overflow: hidden;
+  padding-top: 250px;
+}
+figure video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+
+  position: absolute;
+  top: 0; left: 0;
+  filter: brightness(0.5);
+}
+.inner1 {
+  width: 850px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.inner1 h1 {
+  color: var(--white);
+  font-weight: normal;
+  font-size: 80px;
+  margin: 30px 0;
+  font-family: var(--Main-en);
+}
+.inner1 p {
+  color: var(--white);
+  font-size: var(--medium-text);
+}
+
+
+/* 미디어 쿼리 */
+@media all and (max-width: 767px) {
+  .login_box {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .login_box_inner {
+    z-index: 5;
+    background-color: #fff;
+    width: 80%;
+    height: 500px;
+    font-size: var(--small-text);
+    border-radius: 5px;
+    margin-top: 60px;
+  }
+
+  .login_box_inner .title {
+    font-size: var(--small-title);
+    margin-top: 30px;
+  }
+
+  .login_box_inner hr {
+    margin: 0 30px;
+    margin-top: -20px;
+    margin-bottom: 40px;
+  }
+
+  .login_box_inner #login_inputBox input{
+    width: 240px;
+    font-size: var(--small-text);
+  }
+
+  .btn_login {
+    width: 200px;
+    margin: 0 auto;
+    padding: 18px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border-radius: 5px;
+    margin-top: 50px;
+    font-size: var(--medium-text);
+  }
+
+
+  /* 오른쪽 섹션 : 이미지 */
+  .login_photo {
+    position: absolute;
+    width: 100%;
+    height: 810px;
+    margin: 0;
+    top: 0;
+    border-radius: 0;
+  }
+  .inner1 {
+    display: none;
+  }
+}
