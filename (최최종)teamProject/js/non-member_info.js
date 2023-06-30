@@ -30,7 +30,7 @@ infoName.addEventListener("input", onlyKorean);
 
 /** 연락처 input */
 const infoNum = document.querySelector("#info_num");
-infoNum.addEventListener("input", onlyNumber)
+infoNum.addEventListener("input", onlyNumber);
 
 
 
