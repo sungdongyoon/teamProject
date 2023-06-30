@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.4.1.js"></script>
+  <!-- font-awesome -->
+  <script src="https://kit.fontawesome.com/0a33749607.js" crossorigin="anonymous"></script>
+  <!-- Custom -->
+  <link rel="stylesheet" href="/css/joinin.css">
+  <script defer src="/script.js"></script>
+  <script defer src="/js/joinin.js"></script>
+  <title>회원가입</title>
+</head>
+<body>
+  <div class="container">
+    <nav class="main_gnb"></nav>
+    <section class="joinin">
+      <h2 class="title">JOIN IN</h2>
+      <!-- <hr /> -->
+      <div class="joinin_box">
+        <!-- 정보입력란 -->
+        <div class="input_box_carrier">
+          <input type="text" class="inputbox" id="email" placeholder="이메일을 입력해주세요">
+          <div class="error" id="error_email"></div>
+
+          <input type="text" class="inputbox" id="name" placeholder="이름을 입력해주세요">
+          <div class="error" id="error_name"></div>
+
+          <input type="password" class="inputbox" id="password" placeholder="비밀번호를 입력해주세요">
+          <div class="error" id="error_password"></div>
+
+          <input type="password" class="inputbox" id="passwordCheck" placeholder="비밀번호를 다시 입력해주세요">
+          <div class="error" id="error_passwordCheck"></div>
+        </div>
+        <!-- 통신사 선택박스 -->
+        <div class="mobile_carrier">
+          <span id="skt">SKT</span>
+          <span id="kt">KT</span>
+          <span id="lg">LGU+</span>
+          <span id="frugal">알뜰폰</span>
+        </div>
+        <!-- 전화번호 입력란 -->
+        <div class="phone_box">
+          <input type="text" id="phone1" class="phoneNum" onchange="changePhone1()" onkeyup="onchange()"/> -
+          <input type="text" id="phone2" class="phoneNum"
+          onchange="changePhone2()" onkeyup="onchange()"/> -
+          <input type="text" id="phone3" class="phoneNum"
+          onchange="changePhone3()" onkeyup="onchange()" maxlength="4"/>
+          <button class="admit_send" onclick="timer()">인증요청</button>
+        </div>
+        <!-- 인증번호 입력란 -->
+        <div class="admit_box">
+          <input type="text" class="info_certNum" maxlength="4"><span class="token_timer" id="token" > 3 : 00 </span>
+          <button class="admit_finish" disabled>인증완료</button>
+        </div>
+        <!-- 동의약관 -->
+        <div id="agreement_box">
+          <div id="check_all">
+            <input type="checkbox" name="checkAll" id="checkAll"> 
+            <label for="checkAll">모두 동의합니다</label> 
+          </div>
+          <div class="agreement_detail">
+            <div class="agreement_detail_choice">
+              <input type="checkbox" name="agreement" id="privacyPolicy" value="privacyPolicy" required><label for="privacyPolicy" class="required"> (필수) 이용약관과 개인정보 수집 및 이용에 동의합니다</label>
+            </div>
+            <div class="agreement_detail_choice">
+              <input type="checkbox" name="agreement" id="checkAge" value="checkAges" required><label for="checkAge" class="required"> (필수) 만 14세 이상입니다.</label>
+            </div>
+            <div class="agreement_detail_choice">
+              <input type="checkbox" name="agreement" id="allowPromotions" value="allowPromotions"><label for="allowPromotions"> (선택) 이메일 및 SMS 마케팅 정보 수신에 동의합니다</label>
+            </div>
+          </div>
+        </div>
+        <button class="btn_joinin" disabled onclick="signup()">가입하기</button>
+      </div>
+    </section>
+    <footer class="footer"></footer>  
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
