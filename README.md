@@ -16,13 +16,13 @@ html, css, javascript로 제작한 우산 대여 서비스 프로젝트 입니�
 - Intersection Observer
 
 ## 👨‍💻팀원
-- 이동하(조장)
+- 이OO(조장)
   - Place
   - 회원 로그인 및 회원가입
-- 박혜원
+- 박OO
   - FAQ
   - Profile
-- 황영재
+- 황OO
   - 메인 페이지
   - 호스팅
 - 윤동성
